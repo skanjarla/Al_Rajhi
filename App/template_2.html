@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <title>Al Rajhi</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid px-0">
+        <a href="index.html">
+            <img src="./assets/img/navbar.PNG" alt="navbar" class="navbar">
+        </a>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="container-fluid px-5 mx-5 form-wrapper mt-5 py-4 px-5 mx-5">
+            <form class="py-4 px-5 mx-5" id="appForm">
+                <!-- Row - 1 -->
+                <div class="form-row">
+                    <!-- 1 -->
+                    <div class="form-group col-md-6 col-lg-4 col-12">
+                        <label for="todayDate">Invoice Date</label>
+                        <input type="date" class="form-control" id="todayDate" name="date_invoice" required>
+                    </div>
+                    <!-- 2 -->
+                    <div class="form-group col-md-6 col-lg-4 col-12">
+                        <label for="customerName">Invoic Number</label>
+                        <input type="text" class="form-control" id="customerName" name="number_invoice" required>
+                    </div>
+                    <!-- 3 -->
+                    <div class="form-group col-md-6 col-lg-4 col-12">
+                        <label for="customerNumber">From</label>
+                        <input type="text" class="form-control" id="customerNumber" name="from" required>
+                    </div>
+                    <!-- 4 -->
+                    <div class="form-group col-md-6 col-lg-4 col-12">
+                        <label for="propertyType">VAT Number</label>
+                        <input type="text" class="form-control" id="propertyType" name="number_vat" required>
+                    </div>
+                    <!-- 5 -->
+                    <div class="form-group col-md-6 col-lg-4 col-12">
+                        <label for="propertyType">Item Description</label>
+                        <input type="text" class="form-control" id="propertyType" name="item_description" required>
+                    </div>
+                    <!-- 6 -->
+                    <div class="form-group col-md-6 col-lg-4 col-12">
+                        <label for="propertyType">Total without VAT</label>
+                        <input type="text" class="form-control" id="propertyType" name="total_without_vat" required>
+                    </div>
+                    <!-- 7 -->
+                    <div class="form-group col-md-6 col-lg-4 col-12">
+                        <label for="propertyType">Date of Sale</label>
+                        <input type="text" class="form-control" id="propertyType" name="date_of_sale" required>
+                    </div>
+                    <!-- 8 -->
+                    <div class="form-group col-md-6 col-lg-4 col-12">
+                        <label for="propertyType">VAT Percentage</label>
+                        <input type="text" class="form-control" id="propertyType" name="vat_percentage" required>
+                    </div>
+                    <!-- 9 -->
+                    <div class="form-group col-md-6 col-lg-4 col-12">
+                        <label for="propertyType">Quantity</label>
+                        <input type="text" class="form-control" id="propertyType" name="quantity" required>
+                    </div>
+                    <!-- 10 -->
+                    <div class="form-group col-md-6 col-lg-4 col-12">
+                        <label for="propertyType">VAT in Riyals</label>
+                        <input type="text" class="form-control" id="propertyType" name="vat_riyals" required>
+                    </div>
+                    <!-- 11 -->
+                    <div class="form-group col-md-6 col-lg-4 col-12">
+                        <label for="propertyType">Contact Number</label>
+                        <input type="text" class="form-control" id="propertyType" name="contact_number" required>
+                    </div>
+                    <!-- 12 -->
+                    <div class="form-group col-md-6 col-lg-4 col-12">
+                        <label for="propertyType">Total Riyals</label>
+                        <input type="text" class="form-control" id="propertyType" name="total_riyals" required>
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary app-btn px-5 py-2">Submit
+                        Application <span class="ml-2">قدم
+                            الطلب</span></button>
+                </div>
+                <!-- <button onclick="generate()">Generate document</button> -->
+            </form>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.19.3/docxtemplater.js"></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip-utils.js"></script>
+<!--
+    Mandatory in IE 6, 7, 8 and 9.
+    -->
+<!--[if IE]>
+        <script type="text/javascript" src="https://unpkg.com/pizzip@3.0.6/dist/pizzip-utils-ie.js"></script>
+    <![endif]-->
+<script>
+
+    // function generate() {
+    document.getElementById("appForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var formData = new FormData(document.forms[0])
+        // payload = {
+        //     date_invoice: "18-09-2020",
+        //     number_invoice: 123456789,
+        //     from: "Hyderabad",
+        //     number_vat: 123456789,
+        //     item_description: 'test data',
+        //     total_without_vat: 150,
+        //     date_of_sale: "20-09-2020",
+        //     vat_percentage: '10%',
+        //     quantity: 10,
+        //     vat_riyals: 300,
+        //     contact_number: 1234567890,
+        //     total_riyals: 350,
+        // }
+        fetch('http://localhost:3000/get_report?template=template_2.docx', {
+            method: 'post',
+            body: JSON.stringify(Object.fromEntries(formData)),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((res) => {
+            return res.json();
+        })
+            .then((json) => {
+                console.log(json);
+                window.location = `http://localhost:3000/Reports/${json.name}.docx`
+            })
+    })
+</script>
+
+</html>

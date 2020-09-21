@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Rajhi</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid px-0">
+        <a href="index.html">
+            <img src="./assets/img/navbar.PNG" alt="navbar" class="navbar">
+        </a>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="container-fluid px-5 mx-5 form-wrapper mt-5 py-4">
+            <form class="py-4" id="appForm">
+                <div class="panel-group" id="accordionOne" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title py-3 px-4 ">
+                                <a role="button" data-toggle="collapse" data-parent="#accordionOne" href="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne" class="title-link  ">
+                                    معلومات شخصية <span class="title-icon ml-3"></span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in py-3 show" role="tabpanel"
+                            aria-labelledby="headingOne">
+                            <div class="form-row">
+                                <!-- 2 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerName">إسم العميل</label>
+                                    <input type="text" class="form-control" id="customerName" name="إسم العميل"
+                                        required>
+                                </div>
+                                <!-- 3 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">رقم العميل</label>
+                                    <input type="text" class="form-control" id="customerNumber" name="رقم العميل"
+                                        required>
+                                </div>
+                                <!-- 19 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="homePhone">هاتف المنزل</label>
+                                    <input type="text" class="form-control" id="homePhone" name="هاتف المنزل" required>
+                                </div>
+
+                                <!-- 20 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">هاتف العمل</label>
+                                    <input type="text" class="form-control" id="workPhone" name="هاتف العمل" required>
+                                </div>
+
+                                <!-- 21 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="converted">تحويلة</label>
+                                    <input type="text" class="form-control" id="converted" name="تحويلة" required>
+                                </div>
+                                <!-- 22 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="mobile">جوال</label>
+                                    <input type="text" class="form-control" id="mobile" name="رقم العميل" required>
+                                </div>
+                                <!-- 23 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="email">بريد إلكتروني</label>
+                                    <input type="email" class="form-control" id="email" name="بريد إلكتروني" required>
+                                </div>
+                                <!-- 26 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="estateOffice">إسم المكتب العقاري</label>
+                                    <input type="text" class="form-control" id="estateOffice" name="إسم المكتب العقاري"
+                                        required>
+                                </div>
+                            </div>
+                            <br>
+                            <hr><br>
+                            <div class="form-row">
+                                <!-- 27 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerName">صاحب المكتب العقاري</label>
+                                    <input type="text" class="form-control" id="customerName" name="صاحب المكتب العقاري"
+                                        required>
+                                </div>
+                                <!-- 28 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">هاتف المكتب</label>
+                                    <input type="text" class="form-control" id="customerNumber" name="هاتف المكتب"
+                                        required>
+                                </div>
+                                <!-- 29 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="homePhone">فاكس</label>
+                                    <input type="text" class="form-control" id="homePhone" name="فاكس" required>
+                                </div>
+                                <!-- 30 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone"></label>
+                                    <input type="text" class="form-control" id="workPhone" name="إقرار العميل" required>
+                                </div>
+                                <!-- 33 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerName">اسم المالك/البائع</label>
+                                    <input type="text" class="form-control" id="customerName" name="اسم المالك/البائع"
+                                        required>
+                                </div>
+                                <!-- 34 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">بصفته المالك</label>
+                                    <input type="text" class="form-control" id="customerNumber" name="بصفته المالك"
+                                        required>
+                                </div>
+                                <!-- 35 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="homePhone"> بصفته الموظف</label>
+                                    <input type="text" class="form-control" id="homePhone" name=" بصفته الموظف"
+                                        required>
+                                </div>
+                                <!-- 40 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">الطرف الأول (البائع) الاسم</label>
+                                    <input type="text" class="form-control" id="workPhone"
+                                        name="الطرف الأول (البائع) الاسم" required>
+                                </div>
+                            </div>
+                            <br>
+                            <hr><br>
+                            <div class="form-row">
+                                <!-- 42 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerName">الطرف الثاني (المشتري) الاسم</label>
+                                    <input type="text" class="form-control" id="customerName"
+                                        name="الطرف الثاني (المشتري) الاسم" required>
+                                </div>
+                                <!-- 44 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">الشهود 1 الاسم</label>
+                                    <input type="text" class="form-control" id="customerNumber" name="الشهود 1 الاسم"
+                                        required>
+                                </div>
+                                <!-- 45 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="homePhone">الشهود 1 الهوية</label>
+                                    <input type="text" class="form-control" id="homePhone" name="الشهود 1 الهوية"
+                                        required>
+                                </div>
+                                <!-- 46 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">الشهود 1 التوقيع</label>
+                                    <input type="text" class="form-control" id="workPhone" name="الشهود 1 التوقيع"
+                                        required>
+                                </div>
+                                <!-- 47 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">الشهود 1 العنوان</label>
+                                    <input type="text" class="form-control" id="workPhone" name="الشهود 1 العنوان"
+                                        required>
+                                </div>
+                                <!-- 48 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">الشهود 2 الاسم</label>
+                                    <input type="text" class="form-control" id="workPhone" name="الشهود 2 الاسم"
+                                        required>
+                                </div>
+                                <!-- 49 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">الشهود 2 الهوية</label>
+                                    <input type="text" class="form-control" id="workPhone" name="الشهود 2 الهوية"
+                                        required>
+                                </div>
+                                <!-- 50 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">الشهود 2 التوقيع</label>
+                                    <input type="text" class="form-control" id="workPhone" name="الشهود 2 التوقيع"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <!-- 51 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">الشهود 2 العنوان</label>
+                                    <input type="text" class="form-control" id="workPhone" name="الشهود 2 العنوان"
+                                        required>
+                                </div>
+                                <!-- 52 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">رقم الهوية الوطنية</label>
+                                    <input type="text" class="form-control" id="workPhone" name="رقم الهوية الوطنية"
+                                        required>
+                                </div>
+                                <!-- 73 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">رقم الهوية الوطنية</label>
+                                    <input type="text" class="form-control" id="workPhone" name="رقم الهوية الوطنية"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="panel-group" id="accordionTwo" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title py-3 px-4 ">
+                                <a role="button" data-toggle="collapse" data-parent="#accordionTwo" href="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo" class="title-link  ">
+                                    معلومات الرهن العقاري <span class="title-icon ml-3"></span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse in py-3 " role="tabpanel"
+                            aria-labelledby="headingTwo">
+                            <div class="form-row">
+                                <!-- 4 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerName">نوع العقار</label>
+                                    <input type="text" class="form-control" id="customerName" name="نوع العقار"
+                                        required>
+                                </div>
+                                <!-- 5 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">قطعة رقم</label>
+                                    <input type="text" class="form-control" id="customerNumber" name="قطعة رقم"
+                                        required>
+                                </div>
+                                <!-- 6 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="homePhone">مساحته الإجمالية</label>
+                                    <input type="text" class="form-control" id="homePhone" name="مساحته الإجمالية"
+                                        required>
+                                </div>
+
+                                <!-- 7 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">مخطط رقم</label>
+                                    <input type="text" class="form-control" id="workPhone" name="مخطط رقم" required>
+                                </div>
+
+                                <!-- 8 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="converted">فسح بناء رقم</label>
+                                    <input type="text" class="form-control" id="converted" name="فسح بناء رقم" required>
+                                </div>
+                                <!-- 9 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="mobile"> الحي</label>
+                                    <input type="text" class="form-control" id="mobile" name=" الحي" required>
+                                </div>
+                                <!-- 11 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="email">عمر المبنى</label>
+                                    <input type="email" class="form-control" id="email" name="عمر المبنى" required>
+                                </div>
+                                <!-- 12 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="estateOffice">شمالاً</label>
+                                    <input type="text" class="form-control" id="estateOffice" name="شمالاً" required>
+                                </div>
+                            </div>
+                            <br>
+                            <hr><br>
+                            <div class="form-row">
+                                <!-- 13 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerName">جنوباً</label>
+                                    <input type="text" class="form-control" id="customerName" name="جنوباً" required>
+                                </div>
+                                <!-- 14 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">شرقاً</label>
+                                    <input type="text" class="form-control" id="customerNumber" name="شرقاً" required>
+                                </div>
+                                <!-- 15 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="homePhone">غرباً</label>
+                                    <input type="text" class="form-control" id="homePhone" name="غرباً" required>
+                                </div>
+                                <!-- 16 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">بطول</label>
+                                    <input type="text" class="form-control" id="workPhone" name="بطول" required>
+                                </div>
+                                <!-- 17 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerName">عنوانه</label>
+                                    <input type="text" class="form-control" id="customerName" name="عنوانه" required>
+                                </div>
+                                <!-- 18 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">المدينة</label>
+                                    <input type="text" class="form-control" id="customerNumber" name="المدينة" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="panel-group" id="accordionThree" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title py-3 px-4 ">
+                                <a role="button" data-toggle="collapse" data-parent="#accordionThree"
+                                    href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
+                                    class="title-link  ">القيم والنسب المالية<span class="title-icon ml-3"></span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse in py-3 " role="tabpanel"
+                            aria-labelledby="headingThree">
+                            <div class="form-row">
+                                <!-- 24 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerName">قيمة السعي</label>
+                                    <input type="text" class="form-control" id="customerName" name="قيمة السعي"
+                                        required>
+                                </div>
+                                <!-- 25 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">نسبة السعي</label>
+                                    <input type="text" class="form-control" id="customerNumber" name="نسبة السعي"
+                                        required>
+                                </div>
+                                <!-- 38 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="homePhone">إجمالي العقار بدون ضريبة القيمة المضافة</label>
+                                    <input type="text" class="form-control" id="homePhone"
+                                        name="إجمالي العقار بدون ضريبة القيمة المضافة" required>
+                                </div>
+
+                                <!-- 57 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">مجموع مبلغ بيع العقار بالريال السعودي</label>
+                                    <input type="text" class="form-control" id="workPhone"
+                                        name="مجموع مبلغ بيع العقار بالريال السعودي" required>
+                                </div>
+
+                                <!-- 58 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="converted"> مبلغ ضريبة القيمة المضافة بالريال السعودي</label>
+                                    <input type="text" class="form-control" id="converted"
+                                        name=" مبلغ ضريبة القيمة المضافة بالريال السعودي" required>
+                                </div>
+                                <!-- 64 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="mobile">النسبة المئوية لضريبة القيمة المضافة</label>
+                                    <input type="text" class="form-control" id="mobile"
+                                        name="النسبة المئوية لضريبة القيمة المضافة" required>
+                                </div>
+                                <!-- 70 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="email">الدفعة الأولى (35% نسبة الدفعة)</label>
+                                    <input type="email" class="form-control" id="email"
+                                        name="الدفعة الأولى (35% نسبة الدفعة)" required>
+                                </div>
+                                <!-- 71 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="estateOffice">الدفعة الثانية (35% نسبة الدفعة)</label>
+                                    <input type="text" class="form-control" id="estateOffice"
+                                        name="الدفعة الثانية (35% نسبة الدفعة)" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <!-- 72 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerName">الدفعة الثالثة (20% نسبة الدفعة)</label>
+                                    <input type="text" class="form-control" id="customerName"
+                                        name="الدفعة الثالثة (20% نسبة الدفعة)" required>
+                                </div>
+                                <!--  -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">الدفعة الرابعة (10% نسبة الدفعة)</label>
+                                    <input type="text" class="form-control" id="customerNumber"
+                                        name="الدفعة الرابعة (10% نسبة الدفعة)" required>
+                                </div>
+                                <!-- 74 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="homePhone">مبلغ التمويل</label>
+                                    <input type="text" class="form-control" id="homePhone" name="" required>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="panel-group" id="accordionFour" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title py-3 px-4 ">
+                                <a role="button" data-toggle="collapse" data-parent="#accordionFour"
+                                    href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"
+                                    class="title-link  ">الفعل والشهادات<span class="title-icon ml-3"></span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse in py-3 " role="tabpanel"
+                            aria-labelledby="headingThree">
+                            <div class="form-row">
+                                <!-- 31 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerName">رقم العقد/رقم الطلب</label>
+                                    <input type="text" class="form-control" id="customerName" name="رقم العقد/رقم الطلب"
+                                        required>
+                                </div>
+                                <!-- 36 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">رقم الصك</label>
+                                    <input type="text" class="form-control" id="customerNumber" name="رقم الصك"
+                                        required>
+                                </div>
+                                <!-- 37 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="homePhone">مدينة إصدار الصك</label>
+                                    <input type="text" class="form-control" id="homePhone" name="مدينة إصدار الصك"
+                                        required>
+                                </div>
+
+                                <!-- 39 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone"> المدة</label>
+                                    <input type="text" class="form-control" id="workPhone" name=" المدة" required>
+                                </div>
+
+                                <!-- 53 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="converted">إسم البنك</label>
+                                    <input type="text" class="form-control" id="converted" name="إسم البنك" required>
+                                </div>
+                                <!-- 55 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="mobile">رقم شهادة إستحقاق تحمل الدولة ضريبة القيمة المضافة من المسكن
+                                        الأول</label>
+                                    <input type="text" class="form-control" id="mobile"
+                                        name="رقم شهادة إستحقاق تحمل الدولة ضريبة القيمة المضافة  من المسكن الأول"
+                                        required>
+                                </div>
+                                <!-- 56 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="email">رقم التسجيل لضريبة القيمة المضافة</label>
+                                    <input type="email" class="form-control" id="email"
+                                        name="رقم التسجيل لضريبة القيمة المضافة" required>
+                                </div>
+                                <!-- 60 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="estateOffice">رقم الفاتورة</label>
+                                    <input type="text" class="form-control" id="estateOffice" name="رقم الفاتورة"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <!-- 61 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerName">وصف البند</label>
+                                    <input type="text" class="form-control" id="customerName" name="وصف البند" required>
+                                </div>
+                                <!-- 62 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">الكمية</label>
+                                    <input type="text" class="form-control" id="customerNumber" name="الكمية" required>
+                                </div>
+                                <!-- 63 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="homePhone">رقم عقد التمويل</label>
+                                    <input type="text" class="form-control" id="homePhone" name="رقم عقد التمويل"
+                                        required>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="panel-group" id="accordionFive" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFive">
+                            <h4 class="panel-title py-3 px-4 ">
+                                <a role="button" data-toggle="collapse" data-parent="#accordionFive"
+                                    href="#collapseFive" aria-expanded="false" aria-controls="collapseFive"
+                                    class="title-link  ">تواريخ<span class="title-icon ml-3"></span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse in py-3 " role="tabpanel"
+                            aria-labelledby="headingFive">
+                            <div class="form-row">
+                                <!-- 1 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerName">تاريخ اليوم</label>
+                                    <input type="text" class="form-control" id="customerName" name="تاريخ اليوم"
+                                        required>
+                                </div>
+                                <!-- 10 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">تاريخ الصك</label>
+                                    <input type="text" class="form-control" id="customerNumber" name="تاريخ الصك"
+                                        required>
+                                </div>
+                                <!-- 32 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="homePhone">تاريخ العقد</label>
+                                    <input type="text" class="form-control" id="homePhone" name="تاريخ العقد" required>
+                                </div>
+
+                                <!-- 54 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">تاريخ الإتفاقية</label>
+                                    <input type="text" class="form-control" id="workPhone" name="تاريخ الإتفاقية"
+                                        required>
+                                </div>
+
+                                <!-- 59 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="converted">تاريخ إصدار الفاتورة</label>
+                                    <input type="text" class="form-control" id="converted" name="تاريخ إصدار الفاتورة"
+                                        required>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="panel-group" id="accordionSix" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingSix">
+                            <h4 class="panel-title py-3 px-4 ">
+                                <a role="button" data-toggle="collapse" data-parent="#accordionSix" href="#collapseSix"
+                                    aria-expanded="false" aria-controls="collapseSix" class="title-link  ">تفاصيل
+                                    أخرى<span class="title-icon ml-3"></span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse in py-3 " role="tabpanel"
+                            aria-labelledby="headingSix">
+                            <div class="form-row">
+                                <!-- 41 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerName">الطرف الأول (البائع) التوقيع</label>
+                                    <input type="text" class="form-control" id="customerName"
+                                        name="الطرف الأول (البائع) التوقيع" required>
+                                </div>
+                                <!-- 43 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">الطرف الثاني (المشتري) التوقيع</label>
+                                    <input type="text" class="form-control" id="customerNumber"
+                                        name="الطرف الثاني (المشتري) التوقيع" required>
+                                </div>
+                                <!-- 69 -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="homePhone">رأي الموظف المباشر للتعاقد</label>
+                                    <input type="text" class="form-control" id="homePhone"
+                                        name="رأي الموظف المباشر للتعاقد" required>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            تفاوت بين سعر التقييم و سعر البيع في العقار بأكثر من (20%)#
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            صلة قرابة بيني و بين مالك العقار#
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            تملك سابق للعقار#
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            أخرى#
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            غير مكتملة
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            مكتملة
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            مكتمل التشطيبات من بويا و تركيبات خاصة بالكهرباء و السباكة و غيرها
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            مشتمل عالملحوظات الآتية
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            أن التشطيبات لم تكتمل من :
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            بويات خارجية أو أعمال الجبس
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            تركيبات خاصة بالكهرباء أو السباكة أو غيرها
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            بلاط السطح أو عوازا السطح
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            أبواب العقار الداخلية(الخشب)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            الأدوات الصحية
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            إختلاف البناء عن الرخصة كعدم بناء غرفة السائق أو الملحق أو إختلاف مسطحات البناء
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            عدم توصيل المياه إلى العداد
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            عمر العقار أكثر من عشرين سنة , و قد علمت أنه قد تظهر فيه بعض العيوب نتيجة لطول عمر العقار
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            أخرى:
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            تم سداد رسوم إيصال خدمة المهرباء للعقار , ولكن لم يتم تركيب عداد الكهرباء حتى الآنو/أو لم
+                            تصل إليه خدمة الكهرباء , و سيظل كذلك لمدة لا تزيد عن (60) يوم تبدأ من تاريخ العقد
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary app-btn px-5 py-2">Submit Application <span
+                            class="ml-2">قدم
+                            الطلب</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./assets//js/jquery.js"></script>
+    <script src="./assets//js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("appForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            console.log("submit form")
+            var formData = new FormData(document.forms[0])
+
+            // var obj = Object.fromEntries(Array.from(formData.keys()).map(key => [key, formData.getAll(key).length > 1 ? formData.getAll(key) : formData.get(key)]))
+
+            // document.write(`<pre>${JSON.stringify(obj)}</pre>`)
+            var data = JSON.stringify(Object.fromEntries(formData));
+            let res = JSON.parse(data);
+
+
+            // for (const key in res) {
+            for (const key in Object.fromEntries(formData)) {
+                document.getElementById("tbl").innerHTML += `<p>${key} - ${res[key]}</p>`
+            }
+            var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " + "xmlns:w='urn:schemas-microsoft-com:office:word' " + "xmlns='http://www.w3.org/TR/REC-html40'>" + "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+            var footer = "<//body><//html>"
+            var sourceHTML = header + document.getElementById("tbl").innerHTML + footer;
+            var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+            var fileDownload = document.createElement("a");
+            document.body.appendChild(fileDownload);
+            fileDownload.href = source;
+            fileDownload.download = 'customerdetails.doc';
+            fileDownload.click();
+            document.body.removeChild(fileDownload);
+        })
+    </script>
+</body>
+
+</html>

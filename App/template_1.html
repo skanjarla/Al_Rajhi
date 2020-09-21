@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>Al Rajhi</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid px-0">
+        <a href="index.html">
+            <img src="./assets/img/navbar.PNG" alt="navbar" class="navbar">
+        </a>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="container-fluid px-5 mx-5 form-wrapper mt-5 py-4 px-5 mx-5">
+            <form class="py-4 px-5 mx-5" id="appForm">
+                <!-- Row - 1 -->
+                <div class="form-row">
+                    <!-- 1 -->
+                    <div class="form-group col-md-6 col-lg-6 col-12">
+                        <label for="todayDate">Application Date</label>
+                        <input type="date" class="form-control" id="todayDate" name="app_date" required>
+                    </div>
+                    <!-- 2 -->
+                    <div class="form-group col-md-6 col-lg-6 col-12">
+                        <label for="customerName">First Name</label>
+                        <input type="text" class="form-control" id="customerName" name="first_name" required>
+                    </div>
+                    <!-- 3 -->
+                    <div class="form-group col-md-6 col-lg-6 col-12">
+                        <label for="customerNumber">Last Name</label>
+                        <input type="text" class="form-control" id="customerNumber" name="last_name" required>
+                    </div>
+                    <!-- 4 -->
+                    <div class="form-group col-md-6 col-lg-6 col-12">
+                        <label for="propertyType">Email</label>
+                        <input type="text" class="form-control" id="propertyType" name="email">
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary app-btn px-5 py-2">Submit
+                        Application <span class="ml-2">قدم
+                            الطلب</span></button>
+                </div>
+
+            </form>
+</body>
+
+<script>
+
+    document.getElementById("appForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var formData = new FormData(document.forms[0])
+        fetch('http://localhost:3000/get_report?template=template_1.docx', {
+            method: 'post',
+            body: JSON.stringify(Object.fromEntries(formData)),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((res) => {
+            return res.json();
+        })
+            .then((json) => {
+                console.log(json);
+                window.location = `http://localhost:3000/Reports/${json.name}.docx`
+            })
+    })
+</script>
+
+</html>

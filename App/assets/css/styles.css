@@ -1,0 +1,101 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+.navbar {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+.form-wrapper {
+  background-color: #f2f2f2;
+}
+.group-title {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
+label {
+  color: #333333;
+}
+label span {
+  margin-left: 0.8rem;
+}
+.form-control {
+  padding: 1.4rem 0.5rem;
+}
+.form-group {
+  padding-left: 1rem !important;
+  margin-bottom: 1.2rem;
+  padding-right: 1rem !important;
+}
+li {
+  padding: 0.5rem 0.2rem;
+}
+
+.app-btn {
+  background-color: #29419b;
+}
+.app-btn:hover {
+  background-color: hsl(227, 58%, 42%);
+}
+/* date picker */
+input[type="date"] {
+  position: relative;
+}
+
+/* create a new arrow, because we are going to mess up the native one
+see "List of symbols" below if you want another, you could also try to add a font-awesome icon.. */
+input[type="date"]:after {
+  content: "\25BC";
+  color: #555;
+  padding: 0 5px;
+}
+
+/* change color of symbol on hover */
+input[type="date"]:hover:after {
+  color: #000000;
+}
+
+/* make the native arrow invisible and stretch it over the whole field so you can click anywhere in the input field to trigger the native datepicker*/
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  color: transparent;
+  background: transparent;
+}
+
+/* adjust increase/decrease button */
+input[type="date"]::-webkit-inner-spin-button {
+  z-index: 1;
+}
+
+/* adjust clear button */
+input[type="date"]::-webkit-clear-button {
+  z-index: 1;
+}
+.panel-title {
+  border-radius: 12px;
+  box-shadow: 0 0 5px 0px #abbded;
+}
+.title-link {
+  display: flex;
+  align-items: center;
+}
+.title-icon {
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+.title-link:hover {
+  text-decoration: none;
+}
+.title-link[aria-expanded="true"] .title-icon {
+  background-image: url("../img/minus-circle.svg");
+}
+.title-link[aria-expanded="false"] .title-icon {
+  background-image: url("../img/plus-circle.svg");
+}
