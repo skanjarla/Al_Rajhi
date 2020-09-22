@@ -79,11 +79,13 @@ input[type="date"]::-webkit-clear-button {
 }
 .panel-title {
   text-transform: capitalize;
+  background-color: #ffffff;
+  margin-bottom: 0;
 }
 .panel-group {
-  box-shadow: 0 0 5px 0px hsl(224, 65%, 95%);
-  border-radius: 16px;
-  background-color: #f7f7f7;
+  box-shadow: 0 0 2px 0px #ffffff;
+  background-color: #f9f9f9;
+  border: 1px solid #ffffff;
 }
 .title-link {
   display: flex;
