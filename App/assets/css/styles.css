@@ -15,6 +15,7 @@ body {
 }
 label {
   color: #333333;
+  text-transform: capitalize;
 }
 label span {
   margin-left: 0.8rem;
