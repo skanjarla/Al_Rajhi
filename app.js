@@ -5,7 +5,7 @@ const url = require("url");
 const path = require("path");
 const PizZip = require("pizzip");
 const Docxtemplater = require("docxtemplater");
-const port = 3000;
+const port = 8080;
 app.use(express.static("App"));
 
 app.use(express.json());
@@ -35,10 +35,6 @@ function errorHandler(error) {
   }
   throw error;
 }
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
 
 app.post("/get_report", (req, res) => {
   const queryObject = url.parse(req.url, true).query;
