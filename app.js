@@ -36,6 +36,13 @@ function errorHandler(error) {
   throw error;
 }
 
+// Test path for the download file
+
+app.get("/download", (req, res) => {
+  console.log(req.body);
+  return res.download(__dirname, `App/Templates/template_1.docx`);
+});
+
 app.post("/get_report", (req, res) => {
   const queryObject = url.parse(req.url, true).query;
   //Load the docx file as a binary
