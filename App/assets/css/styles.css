@@ -115,3 +115,8 @@ input[type="date"]::-webkit-clear-button {
 .form-control {
   border-color: rgb(33 66 155 / 10%);
 }
+@media (max-width: 576px) {
+  .panel-title {
+    font-size: 1rem;
+  }
+}
