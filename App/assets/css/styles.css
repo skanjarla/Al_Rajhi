@@ -105,3 +105,9 @@ input[type="date"]::-webkit-clear-button {
 .title-link[aria-expanded="false"] .title-icon {
   background-image: url("../img/plus-circle.svg");
 }
+.form-check-input {
+  height: 18px;
+  width: 18px;
+  margin-left: -1.55rem;
+  margin-top: 0.15rem;
+}
