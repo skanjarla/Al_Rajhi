@@ -80,5 +80,5 @@ app.post("/get_report", (req, res) => {
   //res.download(`App/Reports/${filename}.docx`, `${filename}.docx`);
 });
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`App running at http://localhost:${port}`);
 });
