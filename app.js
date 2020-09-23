@@ -6,6 +6,7 @@ const path = require("path");
 const PizZip = require("pizzip");
 const Docxtemplater = require("docxtemplater");
 const port = 8080;
+
 app.use(express.static("App"));
 
 app.use(express.json());
@@ -42,6 +43,8 @@ app.get("/download", (req, res) => {
   console.log(req.body);
   return res.download(__dirname, `App/Templates/template_1.docx`);
 });
+
+// Quotation form
 
 app.post("/get_report", (req, res) => {
   const queryObject = url.parse(req.url, true).query;

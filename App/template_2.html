@@ -118,7 +118,7 @@
         //     contact_number: 1234567890,
         //     total_riyals: 350,
         // }
-        fetch('http://localhost:3000/get_report?template=template_2.docx', {
+        fetch('http://localhost:8080/get_report?template=template_2.docx', {
             method: 'post',
             body: JSON.stringify(Object.fromEntries(formData)),
             headers: {
@@ -129,7 +129,7 @@
         })
             .then((json) => {
                 console.log(json);
-                window.location = `http://localhost:3000/Reports/${json.name}.docx`
+                window.location = `http://localhost:8080/Reports/${json.name}.docx`
             })
     })
 </script>
