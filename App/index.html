@@ -272,8 +272,9 @@
                                 </div>
                                 <!-- 11 - the age of the building -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="email">عمر المبنى</label>
-                                    <input type="email" class="form-control" id="email" name="building_age" required>
+                                    <label for="buildingAge">عمر المبنى</label>
+                                    <input type="text" class="form-control" id="buildingAge" name="building_age"
+                                        required>
                                 </div>
 
                             </div>
@@ -375,8 +376,9 @@
                                 </div>
                                 <!-- 70 -->
                                 <div class="form-group col-md-6 col-lg-4 col-12">
-                                    <label for="email">الدفعة الأولى (35% نسبة الدفعة)</label>
-                                    <input type="email" class="form-control" id="email" name="first_payment" required>
+                                    <label for="firstPayment">الدفعة الأولى (35% نسبة الدفعة)</label>
+                                    <input type="text" class="form-control" id="firstPayment" name="first_payment"
+                                        required>
                                 </div>
 
                             </div>
@@ -465,8 +467,8 @@
                                 </div>
                                 <!-- 56 -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="email">رقم التسجيل لضريبة القيمة المضافة</label>
-                                    <input type="email" class="form-control" id="email" name="reg_number_for_vat"
+                                    <label for="regNumberVat">رقم التسجيل لضريبة القيمة المضافة</label>
+                                    <input type="text" class="form-control" id="regNumberVat" name="reg_number_for_vat"
                                         required>
                                 </div>
 
@@ -750,7 +752,7 @@
                 </div>
 
                 <div class="container p-4 pb-5 my-4 bg-white shadow shadow-lg rounded">
-                    <fieldset class="p-3">
+                    <fieldset class="p-3 px-5">
                         <legend class="w-auto px-2"> حدد المستندات لتنزيلها </legend>
                         <div class="row">
                             <div class="col-md-4 col-12">
@@ -856,7 +858,8 @@
                                 <!-- Template - 10  -->
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <input class="form-check-input" type="checkbox" value="quotation_form"
+                                            id="quotation_form">
                                         <label class="form-check-label" for="gridCheck">
                                             نموذج عرض السعر
                                         </label>
@@ -888,6 +891,41 @@
     </div>
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
+    <script>
+        var quotationForm = document.getElementById('quotation_form');
+        document.getElementById("appForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var formData = new FormData(document.forms[0])
+            console.log(JSON.stringify(Object.fromEntries(formData)))
+            // payload = {
+            //     date_invoice: "18-09-2020",
+            //     number_invoice: 123456789,
+            //     from: "Hyderabad",
+            //     number_vat: 123456789,
+            //     item_description: 'test data',
+            //     total_without_vat: 150,
+            //     date_of_sale: "20-09-2020",
+            //     vat_percentage: '10%',
+            //     quantity: 10,
+            //     vat_riyals: 300,
+            //     contact_number: 1234567890,
+            //     total_riyals: 350,
+            // }
+            fetch('http://localhost:8080/get_report?template=quotation_form.docx', {
+                method: 'post',
+                body: JSON.stringify(Object.fromEntries(formData)),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then((res) => {
+                return res.json();
+            })
+                .then((json) => {
+                    console.log(json);
+                    window.location = `http://localhost:8080/Reports/${json.name}.docx`
+                })
+        })
+    </script>
 </body>
 
 </html>
