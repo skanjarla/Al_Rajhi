@@ -37,20 +37,11 @@ function errorHandler(error) {
   throw error;
 }
 
-// Test path for the download file
-
-app.get("/download", (req, res) => {
-  console.log(req.body);
-  return res.download(__dirname, `App/Templates/template_1.docx`);
-});
-
-// Quotation form
-
-app.post("/get_report", (req, res) => {
-  const queryObject = url.parse(req.url, true).query;
+// Generate document from template using form data
+function generateDocument(template, payload) {
   //Load the docx file as a binary
   var content = fs.readFileSync(
-    path.resolve(__dirname, `App/Templates/${queryObject.template}`),
+    path.resolve(__dirname, `App/Templates/${template}.docx`),
     "binary"
   );
 
@@ -63,9 +54,9 @@ app.post("/get_report", (req, res) => {
     errorHandler(error);
   }
 
-  doc.setData(req.body);
+  doc.setData(payload);
   try {
-    // render the document (replace all occurences of {first_name} ...)
+    // render the document (replace all occurences of {label} )
     doc.render();
   } catch (error) {
     // Catch rendering errors (errors relating to the rendering of the template : angularParser throws an error)
@@ -73,15 +64,26 @@ app.post("/get_report", (req, res) => {
   }
 
   var buf = doc.getZip().generate({ type: "nodebuffer" });
-  let filename = `report_${Date.now()}`;
+  let filename = `${template}_${Date.now()}`;
   // buf is a nodejs buffer, you can either write it to a file or do anything else with it.
   fs.writeFileSync(
     path.resolve(__dirname, `App/Reports/${filename}.docx`),
     buf
   );
-  res.send({ name: filename });
-  //res.download(`App/Reports/${filename}.docx`, `${filename}.docx`);
+  return filename;
+}
+// Test path for the download file
+app.post("/generate_documents", (req, res) => {
+  let docsArr = [];
+
+  req.body.templates &&
+    req.body.templates.map((temp) => {
+      // console.log(generateDocument(temp, req.body.data));
+      docsArr.push(generateDocument(temp, req.body.data));
+    });
+  res.send({ files: docsArr });
 });
+
 app.listen(port, () => {
   console.log(`App running at http://localhost:${port}`);
 });

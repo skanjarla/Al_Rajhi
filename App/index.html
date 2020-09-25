@@ -37,7 +37,7 @@
                                 <!-- 2 - Customer Name-->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="customerName">إسم العميل</label>
-                                    <input type="text" class="form-control" id="customerName" name="customer_name"
+                                    <input type="text" class="form-control" id="customerName" name="name_customer"
                                         required>
                                 </div>
                                 <!-- 3 - Customer Number -->
@@ -110,7 +110,7 @@
                                 <!-- 33 - Owner / seller name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="sellerName">اسم المالك/البائع</label>
-                                    <input type="text" class="form-control" id="sellerName" name="owners_name" required>
+                                    <input type="text" class="form-control" id="sellerName" name="owner_name" required>
                                 </div>
                                 <!-- 34 -As the owner -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
@@ -358,20 +358,20 @@
                                 <!-- 57 - total_amount_of_sale_riyals -->
                                 <div class="form-group col-md-6 col-lg-4 col-12">
                                     <label for="workPhone">مجموع مبلغ بيع العقار بالريال السعودي</label>
-                                    <input type="text" class="form-control" id="workPhone" name="property_value"
+                                    <input type="text" class="form-control" id="workPhone" name="amount_of_sale_riyals"
                                         required>
                                 </div>
 
                                 <!-- 58 -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="converted"> مبلغ ضريبة القيمة المضافة بالريال السعودي</label>
-                                    <input type="text" class="form-control" id="converted" name="total_vat_in_riyals"
+                                    <input type="text" class="form-control" id="converted" name="amount_of_vat_riyals"
                                         required>
                                 </div>
-                                <!-- 64 -->
+                                <!-- 64 - percentage of vat-->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="mobile">النسبة المئوية لضريبة القيمة المضافة</label>
-                                    <input type="text" class="form-control" id="mobile" name="percentage_of_tax"
+                                    <input type="text" class="form-control" id="mobile" name="percentage_of_vat"
                                         required>
                                 </div>
                                 <!-- 70 -->
@@ -428,7 +428,7 @@
                         <div id="collapseFour" class="panel-collapse collapse in py-3 px-4" role="tabpanel"
                             aria-labelledby="headingThree">
                             <div class="form-row">
-                                <!-- 31 -->
+                                <!-- 31 Contract / Order Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="customerName">رقم العقد/رقم الطلب</label>
                                     <input type="text" class="form-control" id="customerName" name="order_number"
@@ -529,7 +529,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="customerNumber">تاريخ الصك</label>
                                     <input type="date" class="form-control" id="customerNumber"
-                                        name="instrument_history" required>
+                                        name="history_instrument" required>
                                 </div>
                                 <!-- 32 -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
@@ -750,16 +750,17 @@
                         </label>
                     </div>
                 </div>
-
+                <!-- TEMPLATES -->
                 <div class="container p-4 pb-5 my-4 bg-white shadow shadow-lg rounded">
                     <fieldset class="p-3 px-5">
                         <legend class="w-auto px-2"> حدد المستندات لتنزيلها </legend>
-                        <div class="row">
+                        <div class="row" id="templates">
                             <div class="col-md-4 col-12">
-                                <!-- Template - 1 -->
+                                <!-- Template - 1 - Real will buy -->
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck"
+                                            value="real_will_buy">
                                         <label class="form-check-label" for="gridCheck">
                                             ارادة الشراء الحقيقي
                                         </label>
@@ -767,10 +768,11 @@
                                 </div>
                             </div>
                             <div class="col-md-4 col-12">
-                                <!-- Template - 2 -->
+                                <!-- Template - 2 - Approval Of Inspecting A Rentable Property -->
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck"
+                                            value="acknowledgment_rentable_property">
                                         <label class="form-check-label" for="gridCheck">
                                             أقرار معاينة عقار قابل للتأجير
                                         </label>
@@ -778,10 +780,11 @@
                                 </div>
                             </div>
                             <div class="col-md-4 col-12">
-                                <!-- Template - 3 -->
+                                <!-- Template - 3 - Acknowledgment Preview -->
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck"
+                                            value="acknowledgment_preview">
                                         <label class="form-check-label" for="gridCheck">
                                             إقرار معاينة
                                         </label>
@@ -789,10 +792,10 @@
                                 </div>
                             </div>
                             <div class="col-md-4 col-12">
-                                <!-- Template - 4 -->
+                                <!-- Template - 4 - Owner's Tax Return -->
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <input class="form-check-input" type="checkbox" value="owners_tax_return">
                                         <label class="form-check-label" for="gridCheck">
                                             الإقرار الضريبي للمالك
                                         </label>
@@ -800,10 +803,10 @@
                                 </div>
                             </div>
                             <div class="col-md-4 col-12">
-                                <!-- Template - 5 -->
+                                <!-- Template - 5 - The Undertaking -->
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <input class="form-check-input" type="checkbox" value="undertaking">
                                         <label class="form-check-label" for="gridCheck">
                                             التعهد
                                         </label>
@@ -811,10 +814,11 @@
                                 </div>
                             </div>
                             <div class="col-md-4 col-12">
-                                <!-- Template - 6 -->
+                                <!-- Template - 6 - Pledge And Commitment To The Construction Stages -->
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck"
+                                            value="commitment_to_the_construction_stages">
                                         <label class="form-check-label" for="gridCheck">
                                             تعهد والتزام بمراحل البناء
                                         </label>
@@ -822,10 +826,11 @@
                                 </div>
                             </div>
                             <div class="col-md-4 col-12">
-                                <!-- Template - 7 -->
+                                <!-- Template - 7 - Condition Option -->
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck"
+                                            value="condition_option">
                                         <label class="form-check-label" for="gridCheck">
                                             خيار الشرط
                                         </label>
@@ -833,10 +838,11 @@
                                 </div>
                             </div>
                             <div class="col-md-4 col-12">
-                                <!-- Template - 8 -->
+                                <!-- Template - 8 - Invoice For Selling A Property -->
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck"
+                                            value="invoice_for_selling_a_property">
                                         <label class="form-check-label" for="gridCheck">
                                             فاتورة بيع عقار
                                         </label>
@@ -844,10 +850,11 @@
                                 </div>
                             </div>
                             <div class="col-md-4 col-12">
-                                <!-- Template - 9  -->
+                                <!-- Template - 9 - A Purchase Order Form -->
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck"
+                                            value="purchase_order_form">
                                         <label class="form-check-label" for="gridCheck">
                                             نموذج إرادة شراء
                                         </label>
@@ -855,11 +862,10 @@
                                 </div>
                             </div>
                             <div class="col-md-4 col-12">
-                                <!-- Template - 10  -->
+                                <!-- Template - 10 - Quotation Form -->
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="quotation_form"
-                                            id="quotation_form">
+                                        <input class="form-check-input" type="checkbox" value="quotation_form">
                                         <label class="form-check-label" for="gridCheck">
                                             نموذج عرض السعر
                                         </label>
@@ -867,11 +873,11 @@
                                 </div>
                             </div>
                             <div class="col-md-4 col-12">
-                                <!-- Template - 11  -->
+                                <!-- Template - 11 - All Documents -->
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                                        <label class="form-check-label" for="gridCheck">
+                                        <input class="form-check-input" type="checkbox" id="checkAll">
+                                        <label class="form-check-label" for="checkAll">
                                             كل المستندات
                                         </label>
                                     </div>
@@ -892,37 +898,52 @@
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script>
-        var quotationForm = document.getElementById('quotation_form');
+
+        // select all documents checkbox
+        document.getElementById('checkAll').addEventListener('change', function (event) {
+            var allDocumentCheckBoxes = document.querySelectorAll('#templates input[type=checkbox]');
+            for (var i = 0; i < allDocumentCheckBoxes.length; i++) {
+                allDocumentCheckBoxes[i].checked === false;
+                if (this.checked === true) {
+                    allDocumentCheckBoxes[i].checked = true;
+                }
+
+                if (this.checked === false) {
+                    allDocumentCheckBoxes[i].checked = false;
+                }
+
+            }
+        })
         document.getElementById("appForm").addEventListener("submit", function (event) {
             event.preventDefault();
+            var templateDocumentsArray = []
+            var templateDocumentCheckboxes = document.querySelectorAll('#templates input[type=checkbox]:checked')
+
+            for (var i = 0; i < templateDocumentCheckboxes.length - 1; i++) {
+                templateDocumentsArray.push(templateDocumentCheckboxes[i].value)
+            }
+            console.log(templateDocumentsArray);
             var formData = new FormData(document.forms[0])
-            console.log(JSON.stringify(Object.fromEntries(formData)))
-            // payload = {
-            //     date_invoice: "18-09-2020",
-            //     number_invoice: 123456789,
-            //     from: "Hyderabad",
-            //     number_vat: 123456789,
-            //     item_description: 'test data',
-            //     total_without_vat: 150,
-            //     date_of_sale: "20-09-2020",
-            //     vat_percentage: '10%',
-            //     quantity: 10,
-            //     vat_riyals: 300,
-            //     contact_number: 1234567890,
-            //     total_riyals: 350,
-            // }
-            fetch('http://localhost:8080/get_report?template=quotation_form.docx', {
+            // TODO - update server path for production
+            fetch('http://localhost:8080/generate_documents', {
                 method: 'post',
-                body: JSON.stringify(Object.fromEntries(formData)),
+                body: JSON.stringify({ templates: templateDocumentsArray, data: Object.fromEntries(formData) }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
             }).then((res) => {
                 return res.json();
             })
-                .then((json) => {
-                    console.log(json);
-                    window.location = `http://localhost:8080/Reports/${json.name}.docx`
+                .then((outputDocuments) => {
+                    outputDocuments.files && outputDocuments.files.map(file => {
+                        let link = document.createElement('a');
+                        // TODO - update server path for production
+                        link.href = `http://localhost:8080/Reports/${file}.docx`;
+                        link.setAttribute('download', file);
+                        document.body.appendChild(link);
+                        link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
+                        link.remove();
+                    })
                 })
         })
     </script>
