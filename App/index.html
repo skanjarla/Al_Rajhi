@@ -345,7 +345,7 @@
                                 <!-- 25 -->
                                 <div class="form-group col-md-6 col-lg-2 col-12">
                                     <label for="customerNumber">نسبة السعي</label>
-                                    <input type="text" class="form-control" id="customerNumber" name="quest_ration"
+                                    <input type="text" class="form-control" id="customerNumber" name="quest_ratio"
                                         required>
                                 </div>
                                 <!-- 38 -->
@@ -758,7 +758,7 @@
                             <div class="col-md-4 col-12">
                                 <!-- Template - 1 - Real will buy -->
                                 <div class="form-group">
-                                    <div class="form-check">
+                                    <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
                                             value="real_will_buy">
                                         <label class="form-check-label" for="gridCheck">
@@ -770,7 +770,7 @@
                             <div class="col-md-4 col-12">
                                 <!-- Template - 2 - Approval Of Inspecting A Rentable Property -->
                                 <div class="form-group">
-                                    <div class="form-check">
+                                    <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
                                             value="acknowledgment_rentable_property">
                                         <label class="form-check-label" for="gridCheck">
@@ -782,7 +782,7 @@
                             <div class="col-md-4 col-12">
                                 <!-- Template - 3 - Acknowledgment Preview -->
                                 <div class="form-group">
-                                    <div class="form-check">
+                                    <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
                                             value="acknowledgment_preview">
                                         <label class="form-check-label" for="gridCheck">
@@ -794,7 +794,7 @@
                             <div class="col-md-4 col-12">
                                 <!-- Template - 4 - Owner's Tax Return -->
                                 <div class="form-group">
-                                    <div class="form-check">
+                                    <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" value="owners_tax_return">
                                         <label class="form-check-label" for="gridCheck">
                                             الإقرار الضريبي للمالك
@@ -805,7 +805,7 @@
                             <div class="col-md-4 col-12">
                                 <!-- Template - 5 - The Undertaking -->
                                 <div class="form-group">
-                                    <div class="form-check">
+                                    <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" value="undertaking">
                                         <label class="form-check-label" for="gridCheck">
                                             التعهد
@@ -816,7 +816,7 @@
                             <div class="col-md-4 col-12">
                                 <!-- Template - 6 - Pledge And Commitment To The Construction Stages -->
                                 <div class="form-group">
-                                    <div class="form-check">
+                                    <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
                                             value="commitment_to_the_construction_stages">
                                         <label class="form-check-label" for="gridCheck">
@@ -828,7 +828,7 @@
                             <div class="col-md-4 col-12">
                                 <!-- Template - 7 - Condition Option -->
                                 <div class="form-group">
-                                    <div class="form-check">
+                                    <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
                                             value="condition_option">
                                         <label class="form-check-label" for="gridCheck">
@@ -840,7 +840,7 @@
                             <div class="col-md-4 col-12">
                                 <!-- Template - 8 - Invoice For Selling A Property -->
                                 <div class="form-group">
-                                    <div class="form-check">
+                                    <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
                                             value="invoice_for_selling_a_property">
                                         <label class="form-check-label" for="gridCheck">
@@ -852,7 +852,7 @@
                             <div class="col-md-4 col-12">
                                 <!-- Template - 9 - A Purchase Order Form -->
                                 <div class="form-group">
-                                    <div class="form-check">
+                                    <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
                                             value="purchase_order_form">
                                         <label class="form-check-label" for="gridCheck">
@@ -864,7 +864,7 @@
                             <div class="col-md-4 col-12">
                                 <!-- Template - 10 - Quotation Form -->
                                 <div class="form-group">
-                                    <div class="form-check">
+                                    <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" value="quotation_form">
                                         <label class="form-check-label" for="gridCheck">
                                             نموذج عرض السعر
@@ -898,10 +898,11 @@
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script>
-
+        // ☑
+        // ☐
         // select all documents checkbox
         document.getElementById('checkAll').addEventListener('change', function (event) {
-            var allDocumentCheckBoxes = document.querySelectorAll('#templates input[type=checkbox]');
+            var allDocumentCheckBoxes = document.querySelectorAll('.template input[type=checkbox]');
             for (var i = 0; i < allDocumentCheckBoxes.length; i++) {
                 allDocumentCheckBoxes[i].checked === false;
                 if (this.checked === true) {
@@ -917,9 +918,9 @@
         document.getElementById("appForm").addEventListener("submit", function (event) {
             event.preventDefault();
             var templateDocumentsArray = []
-            var templateDocumentCheckboxes = document.querySelectorAll('#templates input[type=checkbox]:checked')
+            var templateDocumentCheckboxes = document.querySelectorAll('.template input[type=checkbox]:checked')
 
-            for (var i = 0; i < templateDocumentCheckboxes.length - 1; i++) {
+            for (var i = 0; i < templateDocumentCheckboxes.length; i++) {
                 templateDocumentsArray.push(templateDocumentCheckboxes[i].value)
             }
             console.log(templateDocumentsArray);
