@@ -77,8 +77,7 @@ app.post("/generate_documents", (req, res) => {
   let docsArr = [];
 
   req.body.templates &&
-    req.body.templates.map((temp, index) => {
-      console.log(index);
+    req.body.templates.map((temp) => {
       docsArr.push(generateDocument(temp, req.body.data));
     });
   res.send({ files: docsArr });
