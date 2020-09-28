@@ -5,8 +5,8 @@ const url = require("url");
 const path = require("path");
 const PizZip = require("pizzip");
 const Docxtemplater = require("docxtemplater");
-const port = 8080;
-
+// const port = 8080;
+const port = process.env.PORT || 8080;
 app.use(express.static("App"));
 
 app.use(express.json());
