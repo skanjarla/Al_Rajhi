@@ -135,11 +135,11 @@
                                         required>
                                 </div>
                                 <!-- 41 - The first party (seller) sign -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                <!-- <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="firstPartySign">الطرف الأول (البائع) التوقيع</label>
                                     <input type="text" class="form-control" id="firstPartySign" name="seller_sign"
                                         required>
-                                </div>
+                                </div> -->
                                 <!-- 42 - The second party (buyer) name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="secondPartyName">الطرف الثاني (المشتري) الاسم</label>
@@ -147,11 +147,11 @@
                                         required>
                                 </div>
                                 <!-- 43 - The second party (buyer) sign -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                <!-- <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="secondPartySign">الطرف الثاني (المشتري) التوقيع</label>
                                     <input type="text" class="form-control" id="secondPartySign" name="buyer_sign"
                                         required>
-                                </div>
+                                </div> -->
                                 <!-- 44 - Witnesses 1 name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="witnessOneName">الشهود 1 الاسم</label>
@@ -165,11 +165,11 @@
                                         required>
                                 </div>
                                 <!-- 46 - Witness 1 sign -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                <!-- <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="witnessOneSign">الشهود 1 التوقيع</label>
                                     <input type="text" class="form-control" id="witnessOneSign" name="witness_one_sign"
                                         required>
-                                </div>
+                                </div> -->
                                 <!-- 47 - Witness 1 address -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="witnessOneAddress">الشهود 1 العنوان</label>
@@ -189,11 +189,11 @@
                                         required>
                                 </div>
                                 <!-- 50 - Witness 2 sign -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                <!-- <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="witnessTwoSign">الشهود 2 التوقيع</label>
                                     <input type="text" class="form-control" id="witnessTwoSign" name="witness_two_sign"
                                         required>
-                                </div>
+                                </div> -->
                                 <!-- 51 - Witness 2 address -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="witnessTwoAddress">الشهود 2 العنوان</label>
@@ -591,59 +591,66 @@
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="form-group">
+                            <!-- Relationship -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="relation" name="relation">
+                                <label class="form-check-label" for="relation">
                                     صلة قرابة بيني و بين مالك العقار#
                                 </label>
                             </div>
                         </div>
 
                         <div class="form-group">
+                            <!-- completed -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="completed" name="completed">
+                                <label class="form-check-label" for="completed">
                                     مكتملة
                                 </label>
                             </div>
                         </div>
 
                         <div class="form-group">
+                            <!-- Other# -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="other" name="other">
+                                <label class="form-check-label" for="other">
                                     أخرى#
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
+                            <!-- Include the following notes -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="notes" name="notes">
+                                <label class="form-check-label" for="notes">
                                     مشتمل عالملحوظات الآتية
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
+                            <!-- External paints or gypsum works -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="paints" name="paints">
+                                <label class="form-check-label" for="paints">
                                     بويات خارجية أو أعمال الجبس
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
+                            <!-- Surface tiles or roof seals -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="tiles" name="tiles">
+                                <label class="form-check-label" for="tiles">
                                     بلاط السطح أو عوازا السطح
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
+                            <!-- Sanitary ware -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="sanitary" name="sanitary">
+                                <label class="form-check-label" for="sanitary">
                                     الأدوات الصحية
                                 </label>
                             </div>
@@ -651,57 +658,64 @@
                     </div>
                     <div class="col-md-6 col-12">
                         <div class="form-group">
+                            <!-- Previous ownership of the property # -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="prevOwner" name="prevowner">
+                                <label class="form-check-label" for="prevOwner">
                                     تملك سابق للعقار#
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
+                            <!-- not complete -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="notComplete" name="notComplete">
+                                <label class="form-check-label" for="notComplete">
                                     غير مكتملة
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
+                            <!-- Others: -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="others" name="others">
+                                <label class="form-check-label" for="others">
                                     أخرى:
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
+                            <!-- That the finishes are not completed from: -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="finishes" name="finishes">
+                                <label class="form-check-label" for="finishes">
                                     أن التشطيبات لم تكتمل من :
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
+                            <!-- Installations for electrical, plumbing, or others -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="electrical" name="electrical">
+                                <label class="form-check-label" for="electrical">
                                     تركيبات خاصة بالكهرباء أو السباكة أو غيرها
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
+                            <!-- Interior property doors (wood) -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="wood" name="wood">
+                                <label class="form-check-label" for="wood">
                                     أبواب العقار الداخلية(الخشب)
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
+                            <!-- Water is not connected to the meter -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
+                                <input class="form-check-input" type="checkbox" id="water" name="water">
+                                <label class="form-check-label" for="water">
                                     عدم توصيل المياه إلى العداد
                                 </label>
                             </div>
@@ -709,42 +723,48 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <!-- Fully finished with paint, electrical and plumbing fixtures and others -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
+                        <input class="form-check-input" type="checkbox" id="fullyFinished" name="fullyFinished">
+                        <label class="form-check-label" for="fullyFinished">
                             مكتمل التشطيبات من بويا و تركيبات خاصة بالكهرباء و السباكة و غيرها
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
+                    <!-- Discrepancy between the evaluation price and the selling price of the property by more than (20%) # -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
+                        <input class="form-check-input" type="checkbox" id="discrepancy" name="discrepancy">
+                        <label class="form-check-label" for="discrepancy">
                             تفاوت بين سعر التقييم و سعر البيع في العقار بأكثر من (20%)#
                         </label>
                     </div>
                 </div>
 
                 <div class="form-group">
+                    <!-- The difference between the building and the license, such as not building the driver’s room or the annex, or the different building areas -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
+                        <input class="form-check-input" type="checkbox" id="difference" name="difference">
+                        <label class="form-check-label" for="difference">
                             إختلاف البناء عن الرخصة كعدم بناء غرفة السائق أو الملحق أو إختلاف مسطحات البناء
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
+                    <!-- The age of the drug is more than twenty years, and I learned that some defects may appear in it due to the long life of the drug -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
+                        <input class="form-check-input" type="checkbox" id="age" name="age">
+                        <label class="form-check-label" for="age">
                             عمر العقار أكثر من عشرين سنة , و قد علمت أنه قد تظهر فيه بعض العيوب نتيجة لطول عمر العقار
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
+                    <!-- Fees for the smugglers' service delivery to the property have been paid, but the electricity meter has not yet been installed and / or not
+                             Electricity service reaches him, and it will remain so for a period not exceeding (60) days starting from the date of the contract -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
+                        <input class="form-check-input" type="checkbox" id="fees">
+                        <label class="form-check-label" for="fees">
                             تم سداد رسوم إيصال خدمة المهرباء للعقار , ولكن لم يتم تركيب عداد الكهرباء حتى الآنو/أو لم
                             تصل إليه خدمة الكهرباء , و سيظل كذلك لمدة لا تزيد عن (60) يوم تبدأ من تاريخ العقد
                         </label>
@@ -912,24 +932,58 @@
                 if (this.checked === false) {
                     allDocumentCheckBoxes[i].checked = false;
                 }
-
             }
         })
         document.getElementById("appForm").addEventListener("submit", function (event) {
             event.preventDefault();
+            $('.collapse').collapse('show')
+            var checkBoxes = {
+                relation: '☐',
+                completed: '☐',
+                other: '☐',
+                notes: '☐',
+                paints: '☐',
+                tiles: '☐',
+                sanitary: '☐',
+                prevowner: '☐',
+                notComplete: '☐',
+                others: '☐',
+                finishes: '☐',
+                electrical: '☐',
+                wood: '☐',
+                water: '☐',
+                fullyFinished: '☐',
+                discrepancy: '☐',
+                difference: '☐',
+                age: '☐',
+                fees: '☐',
+            }
             var templateDocumentsArray = []
             var templateDocumentCheckboxes = document.querySelectorAll('.template input[type=checkbox]:checked')
 
             for (var i = 0; i < templateDocumentCheckboxes.length; i++) {
                 templateDocumentsArray.push(templateDocumentCheckboxes[i].value)
             }
-            console.log(templateDocumentsArray);
+
             var formData = new FormData(document.forms[0])
+            let obj = Object.fromEntries(formData);
+
+            Object.entries(obj).forEach(entry => {
+                let key = entry[0];
+                let value = entry[1];
+                console.log(key, value);
+                if (checkBoxes[key]) {
+                    checkBoxes[key] = '☑';
+                }
+                //use key and value here
+            });
+            var payload = { ...obj, ...checkBoxes }
+            console.log(payload);
             // TODO - update server path for production
-            // fetch('http://localhost:8080/generate_documents', {
-            fetch('https://al-rajhi.herokuapp.com/generate_documents', {
+            fetch('http://localhost:8080/generate_documents', {
+                // fetch('https://al-rajhi.herokuapp.com/generate_documents', {
                 method: 'post',
-                body: JSON.stringify({ templates: templateDocumentsArray, data: Object.fromEntries(formData) }),
+                body: JSON.stringify({ templates: templateDocumentsArray, data: payload }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -940,8 +994,8 @@
                     outputDocuments.files && outputDocuments.files.map(file => {
                         let link = document.createElement('a');
                         // TODO - update server path for production
-                        // link.href = `http://localhost:8080/Reports/${file}.docx`;
-                        link.href = `https://al-rajhi.herokuapp.com/Reports/${file}.docx`;
+                        link.href = `http://localhost:8080/Reports/${file}.docx`;
+                        // link.href = `https://al-rajhi.herokuapp.com/Reports/${file}.docx`;
                         link.setAttribute('download', file);
                         document.body.appendChild(link);
                         link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
