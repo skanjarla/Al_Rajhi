@@ -374,40 +374,88 @@
                                     <input type="text" class="form-control" id="mobile" name="percentage_of_vat"
                                         required>
                                 </div>
-                                <!-- 70 -->
-                                <div class="form-group col-md-6 col-lg-4 col-12">
-                                    <label for="firstPayment">الدفعة الأولى (35% نسبة الدفعة)</label>
-                                    <input type="text" class="form-control" id="firstPayment" name="first_payment"
-                                        required>
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-                                <!-- 71 -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="estateOffice">الدفعة الثانية (35% نسبة الدفعة)</label>
-                                    <input type="text" class="form-control" id="estateOffice" name="second_payment"
-                                        required>
-                                </div>
-                                <!-- 72 -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="customerName">الدفعة الثالثة (20% نسبة الدفعة)</label>
-                                    <input type="text" class="form-control" id="customerName" name="third_payment"
-                                        required>
-                                </div>
-                                <!--  -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="customerNumber">الدفعة الرابعة (10% نسبة الدفعة)</label>
-                                    <input type="text" class="form-control" id="customerNumber" name="fourth_payment"
-                                        required>
-                                </div>
                                 <!-- 74 -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="homePhone">مبلغ التمويل</label>
                                     <input type="text" class="form-control" id="homePhone" name="amount_of_funding"
                                         required>
                                 </div>
+
+
+
+                            </div>
+
+                            <div class="form-row">
+                                <!-- 70  -  first payment-->
+                                <div class="form-group col-md-6 col-12">
+                                    <p>الدفعة الأولى (35% نسبة الدفعة)</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="firstPay" name="firstPay">
+                                        <label class="form-check-label" for="firstPay">
+                                            مكتملة
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="firstPayNot"
+                                            name="fistPayNot">
+                                        <label class="form-check-label" for="firstPayNot">
+                                            غير مكتملة
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <!-- 71 second payment-->
+                                <div class="form-group col-md-6 col-12">
+                                    <p>الدفعة الثانية (35% نسبة الدفعة)</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="secondPay" name="secondPay">
+                                        <label class="form-check-label" for="secondPay">
+                                            مكتملة
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="secondPayNot"
+                                            name="secondPayNot">
+                                        <label class="form-check-label" for="secondPayNot">
+                                            غير مكتملة
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- 72 third payment-->
+                                <div class="form-group col-md-6 col-12">
+                                    <p>الدفعة الثالثة (20% نسبة الدفعة)</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="thirdPay" name="thirdPay">
+                                        <label class="form-check-label" for="thirdPay">
+                                            مكتملة
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="thirdPayNot"
+                                            name="thirdPayNot">
+                                        <label class="form-check-label" for="thirdPayNot">
+                                            غير مكتملة
+                                        </label>
+                                    </div>
+                                </div>
+                                <!--  fourth payment-->
+                                <div class="form-group col-md-6 col-12">
+                                    <p>الدفعة الرابعة (10% نسبة الدفعة)</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="fourthPay" name="fourthPay">
+                                        <label class="form-check-label" for="fourthPay">
+                                            مكتملة
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="fourthPayNot"
+                                            name="fourthPayNot">
+                                        <label class="form-check-label" for="fourthPayNot">
+                                            غير مكتملة
+                                        </label>
+                                    </div>
+                                </div>
+
 
                             </div>
                         </div>
@@ -569,18 +617,36 @@
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseSix" class="panel-collapse collapse in py-3 px-4" role="tabpanel"
+                        <div id="collapseSix" class="panel-collapse collapse in py-3 px-4 show" role="tabpanel"
                             aria-labelledby="headingSix">
                             <div class="form-row">
 
 
                                 <!-- 69 -->
-                                <div class="form-group col-md-6 col-lg-4 col-12">
-                                    <label for="homePhone">رأي الموظف المباشر للتعاقد</label>
-                                    <input type="text" class="form-control" id="homePhone" name="employee_to_contract"
-                                        required>
+                                <div class="form-group  col-12">
+                                    <p>رأي الموظف المباشر للتعاقد</p>
                                 </div>
-
+                                <div class="form-group">
+                                    <!-- It Did not appear -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="notAppear" name="notAppear">
+                                        <label class="form-check-label" for="relation">
+                                            لم يتبين لي من المعاملة ومن الوثائق المرفقة بها وجود رغبة من أي طرف بالتحايل
+                                            للحصول على التمويل النقدي, بل يظهر لي أن غرض التعاقد على العقار حقيقة, من
+                                            المالك, و العميل
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <!-- I found out -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="foundOut" name="foundOut">
+                                        <label class="form-check-label" for="relation">
+                                            تبين لي من المعاملة و من الوثائق المرفقة بها وجود رغبة بالتحايل للحصول على
+                                            التمويل النقدي , و أن الغرض ليس التعاقد على العقار حقيقة.
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
 
 
@@ -600,15 +666,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <!-- completed -->
+                        <!-- <div class="form-group">
+                             
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="completed" name="completed">
                                 <label class="form-check-label" for="completed">
                                     مكتملة
                                 </label>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <!-- Other# -->
@@ -666,15 +732,15 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <!-- not complete -->
+                        <!-- <div class="form-group">
+                             
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="notComplete" name="notComplete">
                                 <label class="form-check-label" for="notComplete">
                                     غير مكتملة
                                 </label>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <!-- Others: -->
                             <div class="form-check">
@@ -934,6 +1000,74 @@
                 }
             }
         })
+        // Toggle check boxes for The opinion of the direct employee to contract 
+        var notAppearCheckBox = document.getElementById('notAppear');
+        var foundOutCheckBox = document.getElementById('foundOut');
+
+
+        notAppearCheckBox.addEventListener('change', function () {
+            if (foundOutCheckBox.checked === true) {
+                foundOutCheckBox.checked = false;
+            }
+        })
+        foundOutCheckBox.addEventListener('change', function () {
+            if (notAppearCheckBox.checked === true) {
+                notAppearCheckBox.checked = false;
+            }
+        })
+
+        // toggle payment checkboxes
+        var firstPay = document.getElementById('firstPay');
+        var firstPayNot = document.getElementById('firstPayNot');
+        var secondPay = document.getElementById('secondPay');
+        var secondPayNot = document.getElementById('secondPayNot');
+        var thirdPay = document.getElementById('thirdPay');
+        var thirdPayNot = document.getElementById('thirdPayNot');
+        var fourthPay = document.getElementById('fourthPay');
+        var fourthPayNot = document.getElementById('fourthPayNot');
+
+        firstPay.addEventListener('change', function () {
+            if (firstPayNot.checked === true) {
+                firstPayNot.checked = false;
+            }
+        })
+        firstPayNot.addEventListener('change', function () {
+            if (firstPay.checked === true) {
+                firstPay.checked = false;
+            }
+        })
+
+        secondPay.addEventListener('change', function () {
+            if (secondPayNot.checked === true) {
+                secondPayNot.checked = false;
+            }
+        })
+        secondPayNot.addEventListener('change', function () {
+            if (secondPay.checked === true) {
+                secondPay.checked = false;
+            }
+        })
+        thirdPay.addEventListener('change', function () {
+            if (thirdPayNot.checked === true) {
+                thirdPayNot.checked = false;
+            }
+        })
+        thirdPayNot.addEventListener('change', function () {
+            if (thirdPay.checked === true) {
+                thirdPay.checked = false;
+            }
+        })
+        fourthPay.addEventListener('change', function () {
+            if (fourthPayNot.checked === true) {
+                fourthPayNot.checked = false;
+            }
+        })
+        fourthPayNot.addEventListener('change', function () {
+            if (fourthPay.checked === true) {
+                fourthPay.checked = false;
+            }
+        })
+
         document.getElementById("appForm").addEventListener("submit", function (event) {
             event.preventDefault();
             $('.collapse').collapse('show')
@@ -957,6 +1091,16 @@
                 difference: '☐',
                 age: '☐',
                 fees: '☐',
+                foundOut: '☐',
+                notAppear: '☐',
+                firstPay: '☐',
+                firstPayNot: '☐',
+                secondPay: '☐',
+                secondPayNot: '☐',
+                thirdPay: '☐',
+                thirdPayNot: '☐',
+                fourthPay: '☐',
+                fourthPayNot: '☐',
             }
             var templateDocumentsArray = []
             var templateDocumentCheckboxes = document.querySelectorAll('.template input[type=checkbox]:checked')
@@ -980,8 +1124,8 @@
             var payload = { ...obj, ...checkBoxes }
             console.log(payload);
             // TODO - update server path for production
-            // fetch('http://localhost:8080/generate_documents', {
-            fetch('https://al-rajhi.herokuapp.com/generate_documents', {
+            fetch('http://localhost:8080/generate_documents', {
+                // fetch('https://al-rajhi.herokuapp.com/generate_documents', {
                 method: 'post',
                 body: JSON.stringify({ templates: templateDocumentsArray, data: payload }),
                 headers: {
@@ -994,8 +1138,8 @@
                     outputDocuments.files && outputDocuments.files.map(file => {
                         let link = document.createElement('a');
                         // TODO - update server path for production
-                        // link.href = `http://localhost:8080/Reports/${file}.docx`;
-                        link.href = `https://al-rajhi.herokuapp.com/Reports/${file}.docx`;
+                        link.href = `http://localhost:8080/Reports/${file}.docx`;
+                        // link.href = `https://al-rajhi.herokuapp.com/Reports/${file}.docx`;
                         link.setAttribute('download', file);
                         document.body.appendChild(link);
                         link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
