@@ -72,6 +72,20 @@ function generateDocument(template, payload) {
   );
   return filename;
 }
+
+// Delete Documents
+function deleteDocument(docs) {
+  docs.map((doc) => {
+    console.log(doc);
+    fs.unlink((__dirname, `App/Reports/${doc}.docx`), (err) => {
+      if (err) {
+        throw err;
+      }
+
+      console.log(`${doc} File is deleted.`);
+    });
+  });
+}
 // Test path for the download file
 app.post("/generate_documents", (req, res) => {
   let docsArr = [];
@@ -80,6 +94,9 @@ app.post("/generate_documents", (req, res) => {
     req.body.templates.map((temp) => {
       docsArr.push(generateDocument(temp, req.body.data));
     });
+  setTimeout(() => {
+    deleteDocument(docsArr);
+  }, 30000);
   res.send({ files: docsArr });
 });
 
