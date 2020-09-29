@@ -994,7 +994,7 @@
                     outputDocuments.files && outputDocuments.files.map(file => {
                         let link = document.createElement('a');
                         // TODO - update server path for production
-                        //  link.href = `http://localhost:8080/Reports/${file}.docx`;
+                        // link.href = `http://localhost:8080/Reports/${file}.docx`;
                         link.href = `https://al-rajhi.herokuapp.com/Reports/${file}.docx`;
                         link.setAttribute('download', file);
                         document.body.appendChild(link);
