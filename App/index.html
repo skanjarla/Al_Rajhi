@@ -1124,8 +1124,8 @@
             var payload = { ...obj, ...checkBoxes }
             console.log(payload);
             // TODO - update server path for production
-            fetch('http://localhost:8080/generate_documents', {
-                // fetch('https://al-rajhi.herokuapp.com/generate_documents', {
+            // fetch('http://localhost:8080/generate_documents', {
+            fetch('https://al-rajhi.herokuapp.com/generate_documents', {
                 method: 'post',
                 body: JSON.stringify({ templates: templateDocumentsArray, data: payload }),
                 headers: {
@@ -1138,8 +1138,8 @@
                     outputDocuments.files && outputDocuments.files.map(file => {
                         let link = document.createElement('a');
                         // TODO - update server path for production
-                        link.href = `http://localhost:8080/Reports/${file}.docx`;
-                        // link.href = `https://al-rajhi.herokuapp.com/Reports/${file}.docx`;
+                        // link.href = `http://localhost:8080/Reports/${file}.docx`;
+                        link.href = `https://al-rajhi.herokuapp.com/Reports/${file}.docx`;
                         link.setAttribute('download', file);
                         document.body.appendChild(link);
                         link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
