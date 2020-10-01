@@ -139,8 +139,9 @@
                                         required> -->
                                     <label for="asTheOwner">صفة المالك</label>
                                     <select class="custom-select" id="asTheOwner" name="as_the_owner">
-                                        <option value="1">موكل شخص آخر</option>
-                                        <option value="2">نفسه</option>
+                                        <option value="موكل شخص آخر" dir="rtl">موكل شخص آخر</option>
+                                        <option value="نفسه" dir="rtl">نفسه</option>
+
                                     </select>
                                 </div>
                                 <!-- 35 - As the employee -->
@@ -993,7 +994,7 @@
     <script>
         // ☑
         // ☐
-        // select all documents checkbox
+        // select all template document checkboxes
         document.getElementById('checkAll').addEventListener('change', function (event) {
             var allDocumentCheckBoxes = document.querySelectorAll('.template input[type=checkbox]');
             for (var i = 0; i < allDocumentCheckBoxes.length; i++) {
@@ -1023,10 +1024,9 @@
             }
         })
 
-        // select dropdown
+        // select dropdown - show/hide real estate information
         var persuit = document.getElementById('persuit').addEventListener('change', function () {
             var realEstateInfo = document.getElementById('realEstateInfo');
-            // console.log(this.options[this.selectedIndex].value);
             var selectedValue = this.options[this.selectedIndex].value;
             if (selectedValue === 'show') {
                 realEstateInfo.classList.remove('d-none');
@@ -1036,7 +1036,7 @@
             }
 
         })
-        // toggle payment checkboxes
+        // toggle payment info checkboxes - completed/not completed
         var firstPay = document.getElementById('firstPay');
         var firstPayNot = document.getElementById('firstPayNot');
         var secondPay = document.getElementById('secondPay');
@@ -1088,9 +1088,10 @@
             }
         })
 
+        // Submit form data
         document.getElementById("appForm").addEventListener("submit", function (event) {
             event.preventDefault();
-            $('.collapse').collapse('show')
+            // All check boxes default value
             var checkBoxes = {
                 relation: '☐',
                 completed: '☐',
@@ -1122,9 +1123,7 @@
                 fourthPay: '☐',
                 fourthPayNot: '☐',
             }
-            let owner = {
-                asTheOwner: 'موكل شخص آخر',
-            }
+
             var templateDocumentsArray = []
             var templateDocumentCheckboxes = document.querySelectorAll('.template input[type=checkbox]:checked')
 
@@ -1138,25 +1137,12 @@
             Object.entries(obj).forEach(entry => {
                 let key = entry[0];
                 let value = entry[1];
-                // console.log(key, value);
                 if (checkBoxes[key]) {
                     checkBoxes[key] = '☑';
                 }
-                if (owner[key]) {
-                    console.log(owner[key]);
-                    console.log(key, value);
-                    // if (owner[key] === '1') {
-                    //     console.log('this is 2')
-                    //     owner[key] = "موكل شخص آخر"
-                    // }
-                    // if (owner[key] === '2') {
-                    //     console.log('this is 2')
-                    //     owner[key] = "نفسه"
-                    // }
-                }
-                //use key and value here
             });
             var payload = { ...obj, ...checkBoxes }
+            // console.log(payload)
             // TODO - update server path for production
             fetch('http://localhost:8080/generate_documents', {
                 // fetch('https://al-rajhi.herokuapp.com/generate_documents', {
