@@ -1,11 +1,9 @@
 const express = require("express");
 const app = express();
 const fs = require("fs");
-const url = require("url");
 const path = require("path");
 const PizZip = require("pizzip");
 const Docxtemplater = require("docxtemplater");
-// const port = 8080;
 const port = process.env.PORT || 8080;
 app.use(express.static("App"));
 
@@ -81,8 +79,6 @@ function deleteDocument(docs) {
       if (err) {
         throw err;
       }
-
-      console.log(`${doc} File is deleted.`);
     });
   });
 }
