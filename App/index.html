@@ -7,7 +7,6 @@
     <title>Al Rajhi</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -73,40 +72,61 @@
                                     <label for="email">بريد إلكتروني</label>
                                     <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
-
+                                <!-- 52 - Customer Identification Number -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="nationalID">رقم هوية العميل</label>
+                                    <input type="text" class="form-control" id="nationalID" name="national_id_number"
+                                        required>
+                                </div>
                             </div>
                             <br>
                             <hr><br>
-                            <div class="form-row">
+
+                            <div class="form-group col-md-6 col-lg-3 col-12 mb-3">
+                                <label for="persuit">السعي</label>
+                                <select class="custom-select" id="persuit" name="persuit">
+                                    <option value="hide">لا يوجد سعي</option>
+                                    <option value="show">يوجد سعي </option>
+                                </select>
+                            </div>
+
+                            <div class="form-row d-none" id="realEstateInfo">
                                 <!-- 26 - The name of the real estate office -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="estateOffice">إسم المكتب العقاري</label>
-                                    <input type="text" class="form-control" id="estateOffice" name="realestate_name"
-                                        required>
+                                    <input type="text" class="form-control" id="estateOffice" name="realestate_name">
                                 </div>
                                 <!-- 27 - Real estate office owner -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="officeOwner">صاحب المكتب العقاري</label>
-                                    <input type="text" class="form-control" id="officeOwner" name="realestate_owner"
-                                        required>
+                                    <input type="text" class="form-control" id="officeOwner" name="realestate_owner">
                                 </div>
                                 <!-- 28 - Office Phone -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="officePhone">هاتف المكتب</label>
-                                    <input type="text" class="form-control" id="officePhone" name="office_phone"
-                                        required>
+                                    <input type="text" class="form-control" id="officePhone" name="office_phone">
                                 </div>
                                 <!-- 29 - Fax -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="fax">فاكس</label>
-                                    <input type="text" class="form-control" id="fax" name="fax" required>
+                                    <input type="text" class="form-control" id="fax" name="fax">
                                 </div>
-                                <!-- 30 - Client acknowledgment-->
+                                <!-- 24 - Quest value -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="acknowledgment">إقرار العميل</label>
-                                    <input type="text" class="form-control" id="acknowledgment"
-                                        name="client_acknowledgment" required>
+                                    <label for="customerName">قيمة السعي</label>
+                                    <input type="text" class="form-control" id="customerName" name="quest_value">
                                 </div>
+                                <!-- 25 - Quest ratio -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="customerNumber">نسبة السعي</label>
+                                    <input type="text" class="form-control" id="customerNumber" name="quest_ratio"
+                                        value="2.50">
+                                </div>
+                            </div>
+                            <br>
+                            <hr><br>
+
+                            <div class="form-row">
                                 <!-- 33 - Owner / seller name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="sellerName">اسم المالك/البائع</label>
@@ -114,20 +134,21 @@
                                 </div>
                                 <!-- 34 -As the owner -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="asTheOwner">بصفته المالك</label>
+                                    <!-- <label for="asTheOwner">بصفته المالك</label>
                                     <input type="text" class="form-control" id="asTheOwner" name="as_the_owner"
-                                        required>
+                                        required> -->
+                                    <label for="asTheOwner">صفة المالك</label>
+                                    <select class="custom-select" id="asTheOwner" name="as_the_owner">
+                                        <option value="1">موكل شخص آخر</option>
+                                        <option value="2">نفسه</option>
+                                    </select>
                                 </div>
                                 <!-- 35 - As the employee -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="asTheEmployee">بصفته الموظف</label>
+                                    <label for="asTheEmployee">صفة الموظف</label>
                                     <input type="text" class="form-control" id="asTheEmployee" name="as_the_employee"
                                         required>
                                 </div>
-                            </div>
-                            <br>
-                            <hr><br>
-                            <div class="form-row">
                                 <!-- 40 - First party (seller) name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="firstPartyName">الطرف الأول (البائع) الاسم</label>
@@ -200,16 +221,6 @@
                                     <input type="text" class="form-control" id="witnessTwoAddress"
                                         name="witness_two_address" required>
                                 </div>
-                            </div>
-
-                            <div class="form-row">
-
-                                <!-- 52 - National Identification Number -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="nationalID">رقم الهوية الوطنية</label>
-                                    <input type="text" class="form-control" id="nationalID" name="national_id_number"
-                                        required>
-                                </div>
                                 <!-- 73 - Name of the employee / employee -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="employeeName">إسم الموطف/الموظفة</label>
@@ -249,7 +260,7 @@
                                 </div>
                                 <!-- 6 - its-total-area -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="homePhone">مساحته الإجمالية</label>
+                                    <label for="homePhone">مساحة الأرض الإجمالية</label>
                                     <input type="text" class="form-control" id="homePhone" name="total_area" required>
                                 </div>
 
@@ -276,36 +287,6 @@
                                     <input type="text" class="form-control" id="buildingAge" name="building_age"
                                         required>
                                 </div>
-
-                            </div>
-                            <br>
-                            <hr><br>
-                            <div class="form-row">
-                                <!-- 12 - north -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="estateOffice">شمالاً</label>
-                                    <input type="text" class="form-control" id="estateOffice" name="north" required>
-                                </div>
-                                <!-- 13 -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="customerName">جنوباً</label>
-                                    <input type="text" class="form-control" id="customerName" name="south" required>
-                                </div>
-                                <!-- 14 -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="customerNumber">شرقاً</label>
-                                    <input type="text" class="form-control" id="customerNumber" name="east" required>
-                                </div>
-                                <!-- 15 -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="homePhone">غرباً</label>
-                                    <input type="text" class="form-control" id="homePhone" name="west" required>
-                                </div>
-                                <!-- 16 -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="workPhone">بطول</label>
-                                    <input type="text" class="form-control" id="workPhone" name="as_tall_as" required>
-                                </div>
                                 <!-- 17 -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="customerName">عنوانه</label>
@@ -318,6 +299,57 @@
                                     <input type="text" class="form-control" id="customerNumber" name="city" required>
                                 </div>
                             </div>
+                            <br>
+                            <hr><br>
+                            <div class="form-row">
+                                <!-- 12 - north -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <div class="shadow shadow-sm rounded rounded-sm p-4 mx-2">
+                                        <label for="estateOffice">يحد الأرض شمالاً</label>
+                                        <input type="text" class="form-control" id="estateOffice" name="north" required>
+                                        <br />
+                                        <label for="workPhone">بطول</label>
+                                        <input type="text" class="form-control" id="workPhone" name="north_as_tall_as"
+                                            required>
+                                    </div>
+                                </div>
+                                <!-- 13 - south -->
+                                <div class="form-group col-md-6 col-lg-3 col-12 ">
+                                    <div class="shadow shadow-sm rounded rounded-sm p-4 ">
+                                        <label for="customerName">يحد الأرض جنوباً</label>
+                                        <input type="text" class="form-control" id="customerName" name="south" required>
+                                        <br />
+                                        <label for="workPhone">بطول</label>
+                                        <input type="text" class="form-control" id="workPhone" name="south_as_tall_as"
+                                            required>
+                                    </div>
+                                </div>
+                                <!-- 14 - east -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <div class="shadow shadow-sm rounded rounded-sm p-4 mx-2">
+                                        <label for="customerNumber">يحد الأرض شرقاً</label>
+                                        <input type="text" class="form-control" id="customerNumber" name="east"
+                                            required>
+                                        <br />
+                                        <label for="workPhone">بطول</label>
+                                        <input type="text" class="form-control" id="workPhone" name="east_as_tall_as"
+                                            required>
+                                    </div>
+                                </div>
+                                <!-- 15 - west -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <div class="shadow shadow-sm rounded rounded-sm p-4 mx-2">
+
+                                        <label for="homePhone">يحد الأرض غرباً</label>
+                                        <input type="text" class="form-control" id="homePhone" name="west" required>
+                                        <br />
+                                        <label for="workPhone">بطول</label>
+                                        <input type="text" class="form-control" id="workPhone" name="west_as_tall_as"
+                                            required>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
 
@@ -329,25 +361,15 @@
                             <h4 class="panel-title px-md-4 px-2">
                                 <a role="button" data-toggle="collapse" data-parent="#accordionThree"
                                     href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
-                                    class="title-link py-4">القيم والنسب المالية<span class="title-icon ml-3"></span>
+                                    class="title-link py-4">القيم والنسب
+                                    المالية<span class="title-icon ml-3"></span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse in py-3 px-4" role="tabpanel"
                             aria-labelledby="headingThree">
                             <div class="form-row">
-                                <!-- 24 -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="customerName">قيمة السعي</label>
-                                    <input type="text" class="form-control" id="customerName" name="quest_value"
-                                        required>
-                                </div>
-                                <!-- 25 -->
-                                <div class="form-group col-md-6 col-lg-2 col-12">
-                                    <label for="customerNumber">نسبة السعي</label>
-                                    <input type="text" class="form-control" id="customerNumber" name="quest_ratio"
-                                        required>
-                                </div>
+
                                 <!-- 38 -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="homePhone">إجمالي العقار بدون ضريبة القيمة المضافة</label>
@@ -469,7 +491,8 @@
                             <h4 class="panel-title px-md-4 px-2">
                                 <a role="button" data-toggle="collapse" data-parent="#accordionFour"
                                     href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"
-                                    class="title-link py-4">الفعل والشهادات<span class="title-icon ml-3"></span>
+                                    class="title-link py-4">الفعل
+                                    والشهادات<span class="title-icon ml-3"></span>
                                 </a>
                             </h4>
                         </div>
@@ -497,7 +520,7 @@
 
                                 <!-- 39 -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="workPhone"> المدة</label>
+                                    <label for="workPhone">مدة خيار الشرط</label>
                                     <input type="text" class="form-control" id="workPhone" name="duration" required>
                                 </div>
 
@@ -525,7 +548,7 @@
                             <div class="form-row">
                                 <!-- 60 -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="estateOffice">رقم الفاتورة</label>
+                                    <label for="estateOffice">رقم فاتورة البيع</label>
                                     <input type="text" class="form-control" id="estateOffice" name="invoice_number"
                                         required>
                                 </div>
@@ -541,13 +564,6 @@
                                     <input type="text" class="form-control" id="customerNumber" name="quantity"
                                         required>
                                 </div>
-                                <!-- 63 -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="homePhone">رقم عقد التمويل</label>
-                                    <input type="text" class="form-control" id="homePhone"
-                                        name="financing_contact_number" required>
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -655,7 +671,8 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-12">
+
+                    <div class="col-12">
                         <div class="form-group">
                             <!-- Relationship -->
                             <div class="form-check">
@@ -666,16 +683,24 @@
                             </div>
                         </div>
 
-                        <!-- <div class="form-group">
-                             
+                        <div class="form-group">
+                            <!-- Previous ownership of the property # -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="completed" name="completed">
-                                <label class="form-check-label" for="completed">
-                                    مكتملة
+                                <input class="form-check-input" type="checkbox" id="prevOwner" name="prevowner">
+                                <label class="form-check-label" for="prevOwner">
+                                    تملك سابق للعقار#
                                 </label>
                             </div>
-                        </div> -->
-
+                        </div>
+                        <div class="form-group">
+                            <!-- Discrepancy between the evaluation price and the selling price of the property by more than (20%) # -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="discrepancy" name="discrepancy">
+                                <label class="form-check-label" for="discrepancy">
+                                    تفاوت بين سعر التقييم و سعر البيع في العقار بأكثر من (20%)#
+                                </label>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <!-- Other# -->
                             <div class="form-check">
@@ -685,6 +710,9 @@
                                 </label>
                             </div>
                         </div>
+                    </div>
+                    <hr class="primary" />
+                    <div class="col-12 col-md-6 mt-3">
                         <div class="form-group">
                             <!-- Include the following notes -->
                             <div class="form-check">
@@ -721,26 +749,6 @@
                                 </label>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                        <div class="form-group">
-                            <!-- Previous ownership of the property # -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="prevOwner" name="prevowner">
-                                <label class="form-check-label" for="prevOwner">
-                                    تملك سابق للعقار#
-                                </label>
-                            </div>
-                        </div>
-                        <!-- <div class="form-group">
-                             
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="notComplete" name="notComplete">
-                                <label class="form-check-label" for="notComplete">
-                                    غير مكتملة
-                                </label>
-                            </div>
-                        </div> -->
                         <div class="form-group">
                             <!-- Others: -->
                             <div class="form-check">
@@ -750,6 +758,9 @@
                                 </label>
                             </div>
                         </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 mt-3">
                         <div class="form-group">
                             <!-- That the finishes are not completed from: -->
                             <div class="form-check">
@@ -788,6 +799,9 @@
                         </div>
                     </div>
                 </div>
+
+
+
                 <div class="form-group">
                     <!-- Fully finished with paint, electrical and plumbing fixtures and others -->
                     <div class="form-check">
@@ -797,15 +811,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="form-group">
-                    <!-- Discrepancy between the evaluation price and the selling price of the property by more than (20%) # -->
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="discrepancy" name="discrepancy">
-                        <label class="form-check-label" for="discrepancy">
-                            تفاوت بين سعر التقييم و سعر البيع في العقار بأكثر من (20%)#
-                        </label>
-                    </div>
-                </div>
+
 
                 <div class="form-group">
                     <!-- The difference between the building and the license, such as not building the driver’s room or the annex, or the different building areas -->
@@ -846,7 +852,7 @@
                                 <div class="form-group">
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
-                                            value="real_will_buy">
+                                            value="ارادة الشراء الحقيقي">
                                         <label class="form-check-label" for="gridCheck">
                                             ارادة الشراء الحقيقي
                                         </label>
@@ -858,7 +864,7 @@
                                 <div class="form-group">
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
-                                            value="acknowledgment_rentable_property">
+                                            value="أقرار معاينة عقار قابل للتأجير">
                                         <label class="form-check-label" for="gridCheck">
                                             أقرار معاينة عقار قابل للتأجير
                                         </label>
@@ -870,7 +876,7 @@
                                 <div class="form-group">
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
-                                            value="acknowledgment_preview">
+                                            value="إقرار معاينة">
                                         <label class="form-check-label" for="gridCheck">
                                             إقرار معاينة
                                         </label>
@@ -881,7 +887,7 @@
                                 <!-- Template - 4 - Owner's Tax Return -->
                                 <div class="form-group">
                                     <div class="form-check template">
-                                        <input class="form-check-input" type="checkbox" value="owners_tax_return">
+                                        <input class="form-check-input" type="checkbox" value="الإقرار الضريبي للمالك">
                                         <label class="form-check-label" for="gridCheck">
                                             الإقرار الضريبي للمالك
                                         </label>
@@ -892,7 +898,7 @@
                                 <!-- Template - 5 - The Undertaking -->
                                 <div class="form-group">
                                     <div class="form-check template">
-                                        <input class="form-check-input" type="checkbox" value="undertaking">
+                                        <input class="form-check-input" type="checkbox" value="التعهد">
                                         <label class="form-check-label" for="gridCheck">
                                             التعهد
                                         </label>
@@ -904,7 +910,7 @@
                                 <div class="form-group">
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
-                                            value="commitment_to_the_construction_stages">
+                                            value="تعهد والتزام بمراحل البناء">
                                         <label class="form-check-label" for="gridCheck">
                                             تعهد والتزام بمراحل البناء
                                         </label>
@@ -916,7 +922,7 @@
                                 <div class="form-group">
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
-                                            value="condition_option">
+                                            value="خيار الشرط">
                                         <label class="form-check-label" for="gridCheck">
                                             خيار الشرط
                                         </label>
@@ -928,21 +934,22 @@
                                 <div class="form-group">
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
-                                            value="invoice_for_selling_a_property">
+                                            value="فاتورة بيع عقار">
                                         <label class="form-check-label" for="gridCheck">
                                             فاتورة بيع عقار
                                         </label>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Template - 9 - A Purchase Order Form -->
                             <div class="col-md-4 col-12">
-                                <!-- Template - 9 - A Purchase Order Form -->
+
                                 <div class="form-group">
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="gridCheck"
-                                            value="purchase_order_form">
+                                            value="نموذج الشراء للعميل">
                                         <label class="form-check-label" for="gridCheck">
-                                            نموذج إرادة شراء
+                                            نموذج الشراء للعميل
                                         </label>
                                     </div>
                                 </div>
@@ -951,7 +958,7 @@
                                 <!-- Template - 10 - Quotation Form -->
                                 <div class="form-group">
                                     <div class="form-check template">
-                                        <input class="form-check-input" type="checkbox" value="quotation_form">
+                                        <input class="form-check-input" type="checkbox" value="نموذج عرض السعر">
                                         <label class="form-check-label" for="gridCheck">
                                             نموذج عرض السعر
                                         </label>
@@ -1016,6 +1023,19 @@
             }
         })
 
+        // select dropdown
+        var persuit = document.getElementById('persuit').addEventListener('change', function () {
+            var realEstateInfo = document.getElementById('realEstateInfo');
+            // console.log(this.options[this.selectedIndex].value);
+            var selectedValue = this.options[this.selectedIndex].value;
+            if (selectedValue === 'show') {
+                realEstateInfo.classList.remove('d-none');
+            }
+            if (selectedValue === 'hide') {
+                realEstateInfo.classList.add('d-none');
+            }
+
+        })
         // toggle payment checkboxes
         var firstPay = document.getElementById('firstPay');
         var firstPayNot = document.getElementById('firstPayNot');
@@ -1102,6 +1122,9 @@
                 fourthPay: '☐',
                 fourthPayNot: '☐',
             }
+            let owner = {
+                asTheOwner: 'موكل شخص آخر',
+            }
             var templateDocumentsArray = []
             var templateDocumentCheckboxes = document.querySelectorAll('.template input[type=checkbox]:checked')
 
@@ -1115,17 +1138,28 @@
             Object.entries(obj).forEach(entry => {
                 let key = entry[0];
                 let value = entry[1];
-                console.log(key, value);
+                // console.log(key, value);
                 if (checkBoxes[key]) {
                     checkBoxes[key] = '☑';
+                }
+                if (owner[key]) {
+                    console.log(owner[key]);
+                    console.log(key, value);
+                    // if (owner[key] === '1') {
+                    //     console.log('this is 2')
+                    //     owner[key] = "موكل شخص آخر"
+                    // }
+                    // if (owner[key] === '2') {
+                    //     console.log('this is 2')
+                    //     owner[key] = "نفسه"
+                    // }
                 }
                 //use key and value here
             });
             var payload = { ...obj, ...checkBoxes }
-            console.log(payload);
             // TODO - update server path for production
-            // fetch('http://localhost:8080/generate_documents', {
-            fetch('https://al-rajhi.herokuapp.com/generate_documents', {
+            fetch('http://localhost:8080/generate_documents', {
+                // fetch('https://al-rajhi.herokuapp.com/generate_documents', {
                 method: 'post',
                 body: JSON.stringify({ templates: templateDocumentsArray, data: payload }),
                 headers: {
@@ -1138,8 +1172,8 @@
                     outputDocuments.files && outputDocuments.files.map(file => {
                         let link = document.createElement('a');
                         // TODO - update server path for production
-                        // link.href = `http://localhost:8080/Reports/${file}.docx`;
-                        link.href = `https://al-rajhi.herokuapp.com/Reports/${file}.docx`;
+                        link.href = `http://localhost:8080/Reports/${file}.docx`;
+                        // link.href = `https://al-rajhi.herokuapp.com/Reports/${file}.docx`;
                         link.setAttribute('download', file);
                         document.body.appendChild(link);
                         link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
