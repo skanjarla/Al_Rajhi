@@ -82,6 +82,11 @@ function deleteDocument(docs) {
     });
   });
 }
+
+app.get("/generate_documents_test", (req, res) => {
+  res.send(" Test Successful");
+});
+
 // Test path for the download file
 app.post("/generate_documents", (req, res) => {
   let docsArr = [];
