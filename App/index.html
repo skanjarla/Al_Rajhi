@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -35,9 +35,9 @@
                             <div class="form-row">
                                 <!-- 2 - Customer Name-->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="customerName">إسم العميل</label>
-                                    <input type="text" class="form-control" id="customerName" name="name_customer"
-                                        required>
+                                    <label for="customerName" dir="rtl" lang="ar">إسم العميل</label>
+                                    <input lang="ar" dir="rtl" type="text" class="form-control" id="customerName"
+                                        name="name_customer" required>
                                 </div>
                                 <!-- 3 - Customer Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
@@ -1132,22 +1132,23 @@
             var payload = { ...obj, ...checkBoxes }
             // console.log(payload)
             // TODO - update server path for production
-            // fetch('http://localhost:8080/generate_documents', {
-            fetch('https://al-rajhi.herokuapp.com/generate_documents', {
+            fetch('http://localhost/generate_documents', {
+                // fetch('https://al-rajhi.herokuapp.com/generate_documents', {
                 method: 'post',
                 body: JSON.stringify({ templates: templateDocumentsArray, data: payload }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
             }).then((res) => {
+                console.log(res);
                 return res.json();
             })
                 .then((outputDocuments) => {
                     outputDocuments.files && outputDocuments.files.map(file => {
                         let link = document.createElement('a');
                         // TODO - update server path for production
-                        // link.href = `http://localhost:8080/Reports/${file}.docx`;
-                        link.href = `https://al-rajhi.herokuapp.com/Reports/${file}.docx`;
+                        link.href = `http://localhost:8080/Reports/${file}.docx`;
+                        //link.href = `https://al-rajhi.herokuapp.com/Reports/${file}.docx`;
                         link.setAttribute('download', file);
                         document.body.appendChild(link);
                         link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
