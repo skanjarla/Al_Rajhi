@@ -7,6 +7,16 @@
     <title>Al Rajhi</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/datepicker.css">
+    <style>
+        .required {
+            color: #d33a27;
+        }
+
+        body {
+            text-align: unset !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,7 +28,7 @@
 
     <div class="d-flex justify-content-center px-md-4 px-1 pb-5">
         <div class="container-fluid px-md-4 mx-md-5 form-wrapper mt-5 py-md-4">
-            <form class="py-4 px-md-3" id="appForm">
+            <form class="py-4 px-md-3" id="appForm" novalidate>
                 <!-- PERSONAL INFORMATION -->
                 <div class="panel-group my-4" id="accordionOne" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
@@ -26,7 +36,7 @@
                             <h4 class="panel-title px-md-4 px-2">
                                 <a role="button" data-toggle="collapse" data-parent="#accordionOne" href="#collapseOne"
                                     aria-expanded="true" aria-controls="collapseOne" class="title-link py-4">
-                                    معلومات شخصية <span class="title-icon ml-3"></span>
+                                    معلومات شخصية <span class="title-icon mr-3"></span>
                                 </a>
                             </h4>
                         </div>
@@ -35,48 +45,56 @@
                             <div class="form-row">
                                 <!-- 2 - Customer Name-->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="customerName" dir="rtl" lang="ar">إسم العميل</label>
-                                    <input lang="ar" dir="rtl" type="text" class="form-control" id="customerName"
-                                        name="name_customer" required>
+                                    <label for="customerName">إسم العميل</label> <span class="required mx-1">*</span>
+                                    <input type="text" class="form-control" id="customerName" name="name_customer"
+                                        required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 3 - Customer Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="customerNumber">رقم العميل</label>
+                                    <label for="customerNumber">رقم العميل</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="customerNumber" name="customer_number"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 19 - Home Phone -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="homePhone">هاتف المنزل</label>
+                                    <label for="homePhone">هاتف المنزل</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="homePhone" name="home_phone" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 20 - Work Phone -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="workPhone">هاتف العمل</label>
+                                    <label for="workPhone">هاتف العمل</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="workPhone" name="work_phone" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 21 - Converted -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="converted">تحويلة</label>
+                                    <label for="converted">تحويلة</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="converted" name="converted" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 22 - Mobile -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="mobile">جوال</label>
+                                    <label for="mobile">جوال</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="mobile" name="mobile" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 23 - Email -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="email">بريد إلكتروني</label>
+                                    <label for="email">بريد إلكتروني</label> <span class="required mx-1">*</span>
                                     <input type="email" class="form-control" id="email" name="email" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 52 - Customer Identification Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="customerID">رقم هوية العميل</label>
+                                    <label for="customerID">رقم هوية العميل</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="customerID" name="national_id_number"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
                             <br>
@@ -130,8 +148,10 @@
                             <div class="form-row">
                                 <!-- 33 - Owner / seller name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="sellerName">اسم المالك/البائع</label>
+                                    <label for="sellerName">اسم المالك/البائع</label> <span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="sellerName" name="owner_name" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 34 - Owner Capacity select dropdown -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
@@ -143,87 +163,87 @@
                                 </div>
                                 <!-- 35 - Employee Capacity -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="asTheEmployee">صفة الموظف</label>
+                                    <label for="asTheEmployee">صفة الموظف</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="asTheEmployee" name="as_the_employee"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 40 - First party (seller) name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="firstPartyName">الطرف الأول (البائع) الاسم</label>
+                                    <label for="firstPartyName">اسم الطرف الاول (البائع)</label> <span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="firstPartyName" name="seller_name"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
-                                <!-- 41 - The first party (seller) sign -->
-                                <!-- <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="firstPartySign">الطرف الأول (البائع) التوقيع</label>
-                                    <input type="text" class="form-control" id="firstPartySign" name="seller_sign"
-                                        required>
-                                </div> -->
+
                                 <!-- 42 - The second party (buyer) name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="secondPartyName">الطرف الثاني (المشتري) الاسم</label>
+                                    <label for="secondPartyName">اسم الطرف الثاني (المشتري)</label> <span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="secondPartyName" name="buyer_name"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
-                                <!-- 43 - The second party (buyer) sign -->
-                                <!-- <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="secondPartySign">الطرف الثاني (المشتري) التوقيع</label>
-                                    <input type="text" class="form-control" id="secondPartySign" name="buyer_sign"
-                                        required>
-                                </div> -->
+
                                 <!-- 44 - Witnesses 1 name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="witnessOneName">الشهود 1 الاسم</label>
+                                    <label for="witnessOneName">اسم الشاهد الأول</label> <span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="witnessOneName" name="witness_one_name"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 45 - Witness 1 ID -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="witnessOneID">الشهود 1 الهوية</label>
+                                    <label for="witnessOneID">هوية الشاهد الأول</label> <span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="witnessOneID" name="witness_one_id"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
-                                <!-- 46 - Witness 1 sign -->
-                                <!-- <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="witnessOneSign">الشهود 1 التوقيع</label>
-                                    <input type="text" class="form-control" id="witnessOneSign" name="witness_one_sign"
-                                        required>
-                                </div> -->
+
                                 <!-- 47 - Witness 1 address -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="witnessOneAddress">الشهود 1 العنوان</label>
+                                    <label for="witnessOneAddress">عنوان الشاهد الأول</label> <span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="witnessOneAddress"
                                         name="witness_one_address" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
+
                                 <!-- 48 - Witnesses 2 name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="witnessTwoName">الشهود 2 الاسم</label>
+                                    <label for="witnessTwoName">اسم الشاهد الثاني</label> <span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="witnessTwoName" name="witness_two_name"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 49 - Witness 2 ID -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="witnessTwoID">الشهود 2 الهوية</label>
+                                    <label for="witnessTwoID">هوية الشاهد الثاني</label> <span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="witnessTwoID" name="witness_two_id"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
-                                <!-- 50 - Witness 2 sign -->
-                                <!-- <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="witnessTwoSign">الشهود 2 التوقيع</label>
-                                    <input type="text" class="form-control" id="witnessTwoSign" name="witness_two_sign"
-                                        required>
-                                </div> -->
+
                                 <!-- 51 - Witness 2 address -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="witnessTwoAddress">الشهود 2 العنوان</label>
+                                    <label for="witnessTwoAddress">عنوان الشاهد الثاني</label> <span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="witnessTwoAddress"
                                         name="witness_two_address" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 73 - Name of the employee / employee -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="employeeName">إسم الموطف/الموظفة</label>
+                                    <label for="employeeName">إسم الموطف/الموظفة</label> <span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="employeeName" name="employee_name"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
                         </div>
@@ -237,7 +257,7 @@
                             <h4 class="panel-title px-md-4 px-2">
                                 <a role="button" data-toggle="collapse" data-parent="#accordionTwo" href="#collapseTwo"
                                     aria-expanded="false" aria-controls="collapseTwo" class="title-link py-4">
-                                    معلومات الرهن العقاري <span class="title-icon ml-3"></span>
+                                    معلومات عقارية <span class="title-icon mr-3"></span>
                                 </a>
                             </h4>
                         </div>
@@ -246,53 +266,63 @@
                             <div class="form-row">
                                 <!-- 4 - Type of property -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="typeOfProperty">نوع العقار</label>
+                                    <label for="typeOfProperty">نوع العقار</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="typeOfProperty" name="property_type"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 5 - Plot No -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="plotNo">قطعة رقم</label>
+                                    <label for="plotNo">قطعة رقم</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="plotNo" name="land_number" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 6 - Total Land Area -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="landArea">مساحة الأرض الإجمالية</label>
+                                    <label for="landArea">مساحة الأرض الإجمالية</label> <span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="landArea" name="total_area" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 7 - scheme number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="schemeNumber">مخطط رقم</label>
+                                    <label for="schemeNumber">مخطط رقم</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="schemeNumber" name="scheme_number"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 8 - clear building no -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="buildingNo">فسح بناء رقم</label>
+                                    <label for="buildingNo">فسح بناء رقم</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="buildingNo" name="building_no" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 9 - district -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="district"> الحي</label>
+                                    <label for="district"> الحي</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="district" name="district" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 11 - the age of the building -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="buildingAge">عمر المبنى</label>
+                                    <label for="buildingAge">عمر المبنى</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="buildingAge" name="building_age"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 17 - His Address -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="hisAddress">عنوانه</label>
+                                    <label for="hisAddress">عنوانه</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="hisAddress" name="his_address" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 18 - City -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="city">المدينة</label>
+                                    <label for="city">المدينة</label> <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="city" name="city" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
                             <br>
@@ -301,46 +331,54 @@
                                 <!-- 12 - north -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <div class="shadow shadow-sm rounded rounded-sm p-4 mx-2">
-                                        <label for="north">يحد الأرض شمالاً</label>
+                                        <label for="north">يحد الأرض شمالاً</label> <span class="required mx-1">*</span>
                                         <input type="text" class="form-control" id="north" name="north" required>
+                                        <span class="error" aria-live="polite"></span>
                                         <br />
-                                        <label for="northValue">بطول</label>
+                                        <label for="northValue">بطول</label> <span class="required mx-1">*</span>
                                         <input type="text" class="form-control" id="northValue" name="north_as_tall_as"
                                             required>
+                                        <span class="error" aria-live="polite"></span>
                                     </div>
                                 </div>
                                 <!-- 13 - south -->
                                 <div class="form-group col-md-6 col-lg-3 col-12 ">
                                     <div class="shadow shadow-sm rounded rounded-sm p-4 ">
-                                        <label for="south">يحد الأرض جنوباً</label>
+                                        <label for="south">يحد الأرض جنوباً</label> <span class="required mx-1">*</span>
                                         <input type="text" class="form-control" id="south" name="south" required>
+                                        <span class="error" aria-live="polite"></span>
                                         <br />
-                                        <label for="southValue">بطول</label>
+                                        <label for="southValue">بطول</label> <span class="required mx-1">*</span>
                                         <input type="text" class="form-control" id="southValue" name="south_as_tall_as"
                                             required>
+                                        <span class="error" aria-live="polite"></span>
                                     </div>
                                 </div>
                                 <!-- 14 - east -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <div class="shadow shadow-sm rounded rounded-sm p-4 mx-2">
-                                        <label for="east">يحد الأرض شرقاً</label>
+                                        <label for="east">يحد الأرض شرقاً</label> <span class="required mx-1">*</span>
                                         <input type="text" class="form-control" id="east" name="east" required>
+                                        <span class="error" aria-live="polite"></span>
                                         <br />
-                                        <label for="eastValue">بطول</label>
+                                        <label for="eastValue">بطول</label> <span class="required mx-1">*</span>
                                         <input type="text" class="form-control" id="eastValue" name="east_as_tall_as"
                                             required>
+                                        <span class="error" aria-live="polite"></span>
                                     </div>
                                 </div>
                                 <!-- 15 - west -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <div class="shadow shadow-sm rounded rounded-sm p-4 mx-2">
 
-                                        <label for="west">يحد الأرض غرباً</label>
+                                        <label for="west">يحد الأرض غرباً</label> <span class="required mx-1">*</span>
                                         <input type="text" class="form-control" id="west" name="west" required>
+                                        <span class="error" aria-live="polite"></span>
                                         <br />
-                                        <label for="westValue">بطول</label>
+                                        <label for="westValue">بطول</label> <span class="required mx-1">*</span>
                                         <input type="text" class="form-control" id="westValue" name="west_as_tall_as"
                                             required>
+                                        <span class="error" aria-live="polite"></span>
                                     </div>
                                 </div>
 
@@ -356,8 +394,7 @@
                             <h4 class="panel-title px-md-4 px-2">
                                 <a role="button" data-toggle="collapse" data-parent="#accordionThree"
                                     href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
-                                    class="title-link py-4">القيم والنسب
-                                    المالية<span class="title-icon ml-3"></span>
+                                    class="title-link py-4">قيمة وتكلفة العقار<span class="title-icon mr-3"></span>
                                 </a>
                             </h4>
                         </div>
@@ -367,35 +404,44 @@
 
                                 <!-- 38 - Total Amount Excluding VAT -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="totalNoVat">إجمالي العقار بدون ضريبة القيمة المضافة</label>
+                                    <label for="totalNoVat">إجمالي العقار بدون ضريبة القيمة المضافة</label><span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="totalNoVat" name="total_excluding_vat"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 57 - total_amount_of_sale_riyals -->
                                 <div class="form-group col-md-6 col-lg-4 col-12">
-                                    <label for="totalInRiyals">مجموع مبلغ بيع العقار بالريال السعودي</label>
+                                    <label for="totalInRiyals">مجموع مبلغ بيع العقار بالريال السعودي</label><span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="totalInRiyals"
                                         name="amount_of_sale_riyals" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 58 - Amount of VAT in riyals -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="vatRiyals"> مبلغ ضريبة القيمة المضافة بالريال السعودي</label>
+                                    <label for="vatRiyals"> مبلغ ضريبة القيمة المضافة بالريال السعودي</label><span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="vatRiyals" name="amount_of_vat_riyals"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 64 - percentage of vat-->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="vatPercent">النسبة المئوية لضريبة القيمة المضافة</label>
+                                    <label for="vatPercent">النسبة المئوية لضريبة القيمة المضافة</label><span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="vatPercent" name="percentage_of_vat"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 74 - total Amount of funding -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="amountFunding">مبلغ التمويل</label>
+                                    <label for="amountFunding">مبلغ التمويل</label><span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="amountFunding" name="amount_of_funding"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
 
@@ -405,14 +451,14 @@
                                     <p>الدفعة الأولى (35% نسبة الدفعة)</p>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="firstPay" name="firstPay">
-                                        <label class="form-check-label" for="firstPay">
+                                        <label class="form-check-label mr-4" for="firstPay">
                                             مكتملة
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="firstPayNot"
                                             name="fistPayNot">
-                                        <label class="form-check-label" for="firstPayNot">
+                                        <label class="form-check-label mr-4" for="firstPayNot">
                                             غير مكتملة
                                         </label>
                                     </div>
@@ -423,14 +469,14 @@
                                     <p>الدفعة الثانية (35% نسبة الدفعة)</p>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="secondPay" name="secondPay">
-                                        <label class="form-check-label" for="secondPay">
+                                        <label class="form-check-label mr-4" for="secondPay">
                                             مكتملة
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="secondPayNot"
                                             name="secondPayNot">
-                                        <label class="form-check-label" for="secondPayNot">
+                                        <label class="form-check-label mr-4" for="secondPayNot">
                                             غير مكتملة
                                         </label>
                                     </div>
@@ -440,14 +486,14 @@
                                     <p>الدفعة الثالثة (20% نسبة الدفعة)</p>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="thirdPay" name="thirdPay">
-                                        <label class="form-check-label" for="thirdPay">
+                                        <label class="form-check-label mr-4" for="thirdPay">
                                             مكتملة
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="thirdPayNot"
                                             name="thirdPayNot">
-                                        <label class="form-check-label" for="thirdPayNot">
+                                        <label class="form-check-label mr-4" for="thirdPayNot">
                                             غير مكتملة
                                         </label>
                                     </div>
@@ -457,14 +503,14 @@
                                     <p>الدفعة الرابعة (10% نسبة الدفعة)</p>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="fourthPay" name="fourthPay">
-                                        <label class="form-check-label" for="fourthPay">
+                                        <label class="form-check-label mr-4" for="fourthPay">
                                             مكتملة
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="fourthPayNot"
                                             name="fourthPayNot">
-                                        <label class="form-check-label" for="fourthPayNot">
+                                        <label class="form-check-label mr-4" for="fourthPayNot">
                                             غير مكتملة
                                         </label>
                                     </div>
@@ -482,7 +528,7 @@
                                 <a role="button" data-toggle="collapse" data-parent="#accordionFour"
                                     href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"
                                     class="title-link py-4">الفعل
-                                    والشهادات<span class="title-icon ml-3"></span>
+                                    والشهادات<span class="title-icon mr-3"></span>
                                 </a>
                             </h4>
                         </div>
@@ -491,47 +537,57 @@
                             <div class="form-row">
                                 <!-- 31 Contract / Order Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="orderNumber">رقم العقد/رقم الطلب</label>
+                                    <label for="orderNumber">رقم العقد/رقم الطلب</label><span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="orderNumber" name="order_number"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 36 - Instrument Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="instrumentNumber">رقم الصك</label>
+                                    <label for="instrumentNumber">رقم الصك</label><span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="instrumentNumber"
                                         name="instrument_number" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 37 - Instrument Issuing City -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="instrumentCity">مدينة إصدار الصك</label>
+                                    <label for="instrumentCity">مدينة إصدار الصك</label><span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="instrumentCity"
                                         name="instrument_issuing_city" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 39 - Duration Option Condition-->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="duration">مدة خيار الشرط</label>
+                                    <label for="duration">مدة خيار الشرط</label><span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="duration" name="duration" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 53 - Bank Name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="bankName">إسم البنك</label>
+                                    <label for="bankName">إسم البنك</label><span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="bankName" name="bank_name" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 55 - certificate of entitlement -->
                                 <div class="form-group col-md-6 col-lg-6 col-12">
                                     <label for="entitlement">رقم شهادة إستحقاق تحمل الدولة ضريبة القيمة المضافة من
                                         المسكن
-                                        الأول</label>
+                                        الأول</label><span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="entitlement"
                                         name="certificate_of_entitlement" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 56 VAT Registration number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="regNumberVat">رقم التسجيل لضريبة القيمة المضافة</label>
+                                    <label for="regNumberVat">رقم التسجيل لضريبة القيمة المضافة</label><span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="regNumberVat" name="reg_number_for_vat"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
 
                             </div>
@@ -539,20 +595,24 @@
                             <div class="form-row">
                                 <!-- 60 Invoice Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="invoiceNumber">رقم فاتورة البيع</label>
+                                    <label for="invoiceNumber">رقم فاتورة البيع</label><span
+                                        class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="invoiceNumber" name="invoice_number"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 61 description Item -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="descriptionItem">وصف البند</label>
+                                    <label for="descriptionItem">وصف البند</label><span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="descriptionItem" name="description_item"
                                         required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 62 -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="quantity">الكمية</label>
+                                    <label for="quantity">الكمية</label><span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="quantity" name="quantity" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
                         </div>
@@ -566,7 +626,7 @@
                             <h4 class="panel-title px-md-4 px-2">
                                 <a role="button" data-toggle="collapse" data-parent="#accordionFive"
                                     href="#collapseFive" aria-expanded="false" aria-controls="collapseFive"
-                                    class="title-link py-4">تواريخ<span class="title-icon ml-3"></span>
+                                    class="title-link py-4">تواريخ<span class="title-icon mr-3"></span>
                                 </a>
                             </h4>
                         </div>
@@ -575,34 +635,43 @@
                             <div class="form-row">
                                 <!-- 1 - Today's Date -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="todayDate">تاريخ اليوم</label>
-                                    <input type="date" class="form-control" id="todayDate" name="today_date" required>
+                                    <label for="todayDate">تاريخ اليوم</label><span class="required mx-1">*</span>
+                                    <input type="text" placeholder="DD-MM-YYYY" data-toggle="datepicker"
+                                        class="form-control" id="todayDate" name="today_date" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 10 - Instrument History -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="instrumentHistory">تاريخ الصك</label>
-                                    <input type="date" class="form-control" id="instrumentHistory"
-                                        name="history_instrument" required>
+                                    <label for="instrumentHistory">تاريخ الصك</label><span
+                                        class="required mx-1">*</span>
+                                    <input type="text" placeholder="DD-MM-YYYY" data-toggle="datepicker"
+                                        class="form-control" id="instrumentHistory" name="history_instrument" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 32 - Contract Date -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="contractDate">تاريخ العقد</label>
-                                    <input type="date" class="form-control" id="contractDate" name="date_of_contract"
-                                        required>
+                                    <label for="contractDate">تاريخ العقد</label><span class="required mx-1">*</span>
+                                    <input type="text" placeholder="DD-MM-YYYY" data-toggle="datepicker"
+                                        class="form-control" id="contractDate" name="date_of_contract" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 54 - Agreement Date -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="agreementDate">تاريخ الإتفاقية</label>
-                                    <input type="date" class="form-control" id="agreementDate" name="date_of_agreement"
-                                        required>
+                                    <label for="agreementDate">تاريخ الإتفاقية</label><span
+                                        class="required mx-1">*</span>
+                                    <input type="text" placeholder="DD-MM-YYYY" data-toggle="datepicker"
+                                        class="form-control" id="agreementDate" name="date_of_agreement" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 59 - Invoice issued date -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="invoiceDate">تاريخ إصدار الفاتورة</label>
-                                    <input type="date" class="form-control" id="invoiceDate" name="invoice_issued_date"
-                                        required>
+                                    <label for="invoiceDate">تاريخ إصدار الفاتورة</label><span
+                                        class="required mx-1">*</span>
+                                    <input type="text" placeholder="DD-MM-YYYY" data-toggle="datepicker"
+                                        class="form-control" id="invoiceDate" name="invoice_issued_date" required>
+                                    <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
 
@@ -618,7 +687,7 @@
                             <h4 class="panel-title px-md-4 px-2">
                                 <a role="button" data-toggle="collapse" data-parent="#accordionSix" href="#collapseSix"
                                     aria-expanded="false" aria-controls="collapseSix" class="title-link py-4">تفاصيل
-                                    أخرى<span class="title-icon ml-3"></span>
+                                    أخرى<span class="title-icon mr-3"></span>
                                 </a>
                             </h4>
                         </div>
@@ -635,7 +704,7 @@
                                     <!-- It Did not appear -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="notAppear" name="notAppear">
-                                        <label class="form-check-label" for="notAppear">
+                                        <label class="form-check-label mr-4" for="notAppear">
                                             لم يتبين لي من المعاملة ومن الوثائق المرفقة بها وجود رغبة من أي طرف بالتحايل
                                             للحصول على التمويل النقدي, بل يظهر لي أن غرض التعاقد على العقار حقيقة, من
                                             المالك, و العميل
@@ -646,7 +715,7 @@
                                     <!-- I found out -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="foundOut" name="foundOut">
-                                        <label class="form-check-label" for="foundOut">
+                                        <label class="form-check-label mr-4" for="foundOut">
                                             تبين لي من المعاملة و من الوثائق المرفقة بها وجود رغبة بالتحايل للحصول على
                                             التمويل النقدي , و أن الغرض ليس التعاقد على العقار حقيقة.
                                         </label>
@@ -658,13 +727,12 @@
 
                 </div>
                 <div class="row">
-
                     <div class="col-12">
                         <div class="form-group">
                             <!-- Relationship -->
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="relation" name="relation">
-                                <label class="form-check-label" for="relation">
+                                <label class="form-check-label mr-4" for="relation">
                                     صلة قرابة بيني و بين مالك العقار#
                                 </label>
                             </div>
@@ -674,7 +742,7 @@
                             <!-- Previous ownership of the property # -->
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="prevOwner" name="prevowner">
-                                <label class="form-check-label" for="prevOwner">
+                                <label class="form-check-label mr-4" for="prevOwner">
                                     تملك سابق للعقار#
                                 </label>
                             </div>
@@ -683,7 +751,7 @@
                             <!-- Discrepancy between the evaluation price and the selling price of the property by more than (20%) # -->
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="discrepancy" name="discrepancy">
-                                <label class="form-check-label" for="discrepancy">
+                                <label class="form-check-label mr-4" for="discrepancy">
                                     تفاوت بين سعر التقييم و سعر البيع في العقار بأكثر من (20%)#
                                 </label>
                             </div>
@@ -692,7 +760,7 @@
                             <!-- Other# -->
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="other" name="other">
-                                <label class="form-check-label" for="other">
+                                <label class="form-check-label mr-4" for="other">
                                     أخرى#
                                 </label>
                             </div>
@@ -704,7 +772,7 @@
                             <!-- Include the following notes -->
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="notes" name="notes">
-                                <label class="form-check-label" for="notes">
+                                <label class="form-check-label mr-4" for="notes">
                                     مشتمل عالملحوظات الآتية
                                 </label>
                             </div>
@@ -713,7 +781,7 @@
                             <!-- External paints or gypsum works -->
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="paints" name="paints">
-                                <label class="form-check-label" for="paints">
+                                <label class="form-check-label mr-4" for="paints">
                                     بويات خارجية أو أعمال الجبس
                                 </label>
                             </div>
@@ -722,7 +790,7 @@
                             <!-- Surface tiles or roof seals -->
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="tiles" name="tiles">
-                                <label class="form-check-label" for="tiles">
+                                <label class="form-check-label mr-4" for="tiles">
                                     بلاط السطح أو عوازا السطح
                                 </label>
                             </div>
@@ -731,7 +799,7 @@
                             <!-- Sanitary ware -->
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="sanitary" name="sanitary">
-                                <label class="form-check-label" for="sanitary">
+                                <label class="form-check-label mr-4" for="sanitary">
                                     الأدوات الصحية
                                 </label>
                             </div>
@@ -740,7 +808,7 @@
                             <!-- Others: -->
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="others" name="others">
-                                <label class="form-check-label" for="others">
+                                <label class="form-check-label mr-4" for="others">
                                     أخرى:
                                 </label>
                             </div>
@@ -752,7 +820,7 @@
                             <!-- That the finishes are not completed from: -->
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="finishes" name="finishes">
-                                <label class="form-check-label" for="finishes">
+                                <label class="form-check-label mr-4" for="finishes">
                                     أن التشطيبات لم تكتمل من :
                                 </label>
                             </div>
@@ -761,7 +829,7 @@
                             <!-- Installations for electrical, plumbing, or others -->
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="electrical" name="electrical">
-                                <label class="form-check-label" for="electrical">
+                                <label class="form-check-label mr-4" for="electrical">
                                     تركيبات خاصة بالكهرباء أو السباكة أو غيرها
                                 </label>
                             </div>
@@ -770,7 +838,7 @@
                             <!-- Interior property doors (wood) -->
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="wood" name="wood">
-                                <label class="form-check-label" for="wood">
+                                <label class="form-check-label mr-4" for="wood">
                                     أبواب العقار الداخلية(الخشب)
                                 </label>
                             </div>
@@ -779,7 +847,7 @@
                             <!-- Water is not connected to the meter -->
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="water" name="water">
-                                <label class="form-check-label" for="water">
+                                <label class="form-check-label mr-4" for="water">
                                     عدم توصيل المياه إلى العداد
                                 </label>
                             </div>
@@ -793,7 +861,7 @@
                     <!-- Fully finished with paint, electrical and plumbing fixtures and others -->
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="fullyFinished" name="fullyFinished">
-                        <label class="form-check-label" for="fullyFinished">
+                        <label class="form-check-label mr-4" for="fullyFinished">
                             مكتمل التشطيبات من بويا و تركيبات خاصة بالكهرباء و السباكة و غيرها
                         </label>
                     </div>
@@ -804,7 +872,7 @@
                     <!-- The difference between the building and the license, such as not building the driver’s room or the annex, or the different building areas -->
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="difference" name="difference">
-                        <label class="form-check-label" for="difference">
+                        <label class="form-check-label mr-4" for="difference">
                             إختلاف البناء عن الرخصة كعدم بناء غرفة السائق أو الملحق أو إختلاف مسطحات البناء
                         </label>
                     </div>
@@ -813,7 +881,7 @@
                     <!-- The age of the drug is more than twenty years, and I learned that some defects may appear in it due to the long life of the drug -->
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="age" name="age">
-                        <label class="form-check-label" for="age">
+                        <label class="form-check-label mr-4" for="age">
                             عمر العقار أكثر من عشرين سنة , و قد علمت أنه قد تظهر فيه بعض العيوب نتيجة لطول عمر العقار
                         </label>
                     </div>
@@ -823,7 +891,7 @@
                              Electricity service reaches him, and it will remain so for a period not exceeding (60) days starting from the date of the contract -->
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="fees" name="fees">
-                        <label class="form-check-label" for="fees">
+                        <label class="form-check-label mr-4" for="fees">
                             تم سداد رسوم إيصال خدمة المهرباء للعقار , ولكن لم يتم تركيب عداد الكهرباء حتى الآنو/أو لم
                             تصل إليه خدمة الكهرباء , و سيظل كذلك لمدة لا تزيد عن (60) يوم تبدأ من تاريخ العقد
                         </label>
@@ -840,7 +908,7 @@
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="template1"
                                             value="ارادة الشراء الحقيقي">
-                                        <label class="form-check-label" for="template1">
+                                        <label class="form-check-label mr-4" for="template1">
                                             ارادة الشراء الحقيقي
                                         </label>
                                     </div>
@@ -852,7 +920,7 @@
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="template2"
                                             value="أقرار معاينة عقار قابل للتأجير">
-                                        <label class="form-check-label" for="template2">
+                                        <label class="form-check-label mr-4" for="template2">
                                             أقرار معاينة عقار قابل للتأجير
                                         </label>
                                     </div>
@@ -864,7 +932,7 @@
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="template3"
                                             value="إقرار معاينة">
-                                        <label class="form-check-label" for="template3">
+                                        <label class="form-check-label mr-4" for="template3">
                                             إقرار معاينة
                                         </label>
                                     </div>
@@ -876,7 +944,7 @@
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="template4"
                                             value="الإقرار الضريبي للمالك">
-                                        <label class="form-check-label" for="template4">
+                                        <label class="form-check-label mr-4" for="template4">
                                             الإقرار الضريبي للمالك
                                         </label>
                                     </div>
@@ -887,7 +955,7 @@
                                 <div class="form-group">
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="template5" value="التعهد">
-                                        <label class="form-check-label" for="template5">
+                                        <label class="form-check-label mr-4" for="template5">
                                             التعهد
                                         </label>
                                     </div>
@@ -899,7 +967,7 @@
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="template6"
                                             value="تعهد والتزام بمراحل البناء">
-                                        <label class="form-check-label" for="template6">
+                                        <label class="form-check-label mr-4" for="template6">
                                             تعهد والتزام بمراحل البناء
                                         </label>
                                     </div>
@@ -911,7 +979,7 @@
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="template7"
                                             value="خيار الشرط">
-                                        <label class="form-check-label" for="template7">
+                                        <label class="form-check-label mr-4" for="template7">
                                             خيار الشرط
                                         </label>
                                     </div>
@@ -923,7 +991,7 @@
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="template8"
                                             value="فاتورة بيع عقار">
-                                        <label class="form-check-label" for="template8">
+                                        <label class="form-check-label mr-4" for="template8">
                                             فاتورة بيع عقار
                                         </label>
                                     </div>
@@ -936,7 +1004,7 @@
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="template9"
                                             value="نموذج الشراء للعميل">
-                                        <label class="form-check-label" for="template9">
+                                        <label class="form-check-label mr-4" for="template9">
                                             نموذج الشراء للعميل
                                         </label>
                                     </div>
@@ -948,7 +1016,7 @@
                                     <div class="form-check template">
                                         <input class="form-check-input" type="checkbox" id="template10"
                                             value="نموذج عرض السعر">
-                                        <label class="form-check-label" for="template10">
+                                        <label class="form-check-label mr-4" for="template10">
                                             نموذج عرض السعر
                                         </label>
                                     </div>
@@ -959,7 +1027,7 @@
                                 <div class="form-group">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="checkAll">
-                                        <label class="form-check-label" for="checkAll">
+                                        <label class="form-check-label mr-4" for="checkAll">
                                             كل المستندات
                                         </label>
                                     </div>
@@ -976,10 +1044,58 @@
                 </div>
             </form>
         </div>
+        <!-- Thank you message -->
+        <!-- Modal -->
+        <div class="modal fade" id="thankModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="thankModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="thankModalLabel">Thank You</h5>
+                        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button> -->
+                    </div>
+                    <div class="modal-body py-4">
+                        <p>Form submitted successfully</p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-start">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/datepicker.js"></script>
     <script>
+        const inputFields = document.querySelectorAll('input[required]');
+
+        function showError(input, inputError) {
+            if (input.validity.valueMissing) {
+                inputError.textContent = 'يرجى ملء هذا الحقل';
+            } else if (input.validity.typeMismatch) {
+                inputError.textContent = 'قيمة إدخال غير صالحة';
+            }
+            inputError.className = 'error active';
+        }
+
+        inputFields.forEach(function (input) {
+            input.addEventListener('input', function (event) {
+                var error = document.querySelector("#" + this.getAttribute('id') + " + " + "span.error")
+                if (input.validity.valid) {
+                    error.innerHTML = '';
+                    error.className = 'error';
+                } else {
+                    showError(input, error);
+                }
+            });
+        })
+        $('[data-toggle="datepicker"]').datepicker({
+            language: 'ar-AE',
+            format: 'dd-mm-yyyy'
+        });
         // ☑
         // ☐
         // select all template document checkboxes
@@ -997,18 +1113,14 @@
             }
         })
         // Toggle check boxes for The opinion of the direct employee to contract 
-        var notAppearCheckBox = document.getElementById('notAppear');
-        var foundOutCheckBox = document.getElementById('foundOut');
-
-
-        notAppearCheckBox.addEventListener('change', function () {
-            if (foundOutCheckBox.checked === true) {
-                foundOutCheckBox.checked = false;
+        $('#notAppear').change(function () {
+            if ($('#foundOut').is(":checked")) {
+                $('#foundOut').prop("checked", false)
             }
         })
-        foundOutCheckBox.addEventListener('change', function () {
-            if (notAppearCheckBox.checked === true) {
-                notAppearCheckBox.checked = false;
+        $('#foundOut').change(function () {
+            if ($('#notAppear').is(":checked")) {
+                $('#notAppear').prop("checked", false)
             }
         })
 
@@ -1077,84 +1189,156 @@
         })
 
         // Submit form data
-        document.getElementById("appForm").addEventListener("submit", function (event) {
+        var form = document.getElementsByTagName('form')[0];
+        // document.getElementById("appForm").addEventListener("submit", function (event) {
+        form.addEventListener("submit", function (event) {
             event.preventDefault();
-            // All check boxes default value
-            var checkBoxes = {
-                relation: '☐',
-                completed: '☐',
-                other: '☐',
-                notes: '☐',
-                paints: '☐',
-                tiles: '☐',
-                sanitary: '☐',
-                prevowner: '☐',
-                notComplete: '☐',
-                others: '☐',
-                finishes: '☐',
-                electrical: '☐',
-                wood: '☐',
-                water: '☐',
-                fullyFinished: '☐',
-                discrepancy: '☐',
-                difference: '☐',
-                age: '☐',
-                fees: '☐',
-                foundOut: '☐',
-                notAppear: '☐',
-                firstPay: '☐',
-                firstPayNot: '☐',
-                secondPay: '☐',
-                secondPayNot: '☐',
-                thirdPay: '☐',
-                thirdPayNot: '☐',
-                fourthPay: '☐',
-                fourthPayNot: '☐',
-            }
+            // Expand panels 
+            document.querySelectorAll('.collapse').forEach(function (panel) {
 
-            var templateDocumentsArray = []
-            var templateDocumentCheckboxes = document.querySelectorAll('.template input[type=checkbox]:checked')
-
-            for (var i = 0; i < templateDocumentCheckboxes.length; i++) {
-                templateDocumentsArray.push(templateDocumentCheckboxes[i].value)
-            }
-
-            var formData = new FormData(document.forms[0])
-            let obj = Object.fromEntries(formData);
-
-            Object.entries(obj).forEach(entry => {
-                let key = entry[0];
-                let value = entry[1];
-                if (checkBoxes[key]) {
-                    checkBoxes[key] = '☑';
-                }
-            });
-            var payload = { ...obj, ...checkBoxes }
-            // console.log(payload)
-            // TODO - update server path for production
-            fetch('http://localhost/generate_documents', {
-                // fetch('https://al-rajhi.herokuapp.com/generate_documents', {
-                method: 'post',
-                body: JSON.stringify({ templates: templateDocumentsArray, data: payload }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then((res) => {
-                console.log(res);
-                return res.json();
+                $("#" + panel.getAttribute('id')).collapse('show');
             })
-                .then((outputDocuments) => {
-                    outputDocuments.files && outputDocuments.files.map(file => {
-                        let link = document.createElement('a');
-                        // TODO - update server path for production
-                        link.href = `http://localhost:8080/Reports/${file}.docx`;
-                        //link.href = `https://al-rajhi.herokuapp.com/Reports/${file}.docx`;
-                        link.setAttribute('download', file);
-                        document.body.appendChild(link);
-                        link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
-                        link.remove();
-                    })
+
+            // check for input errors and show error messages
+            inputFields.forEach(function (input) {
+                var error = document.querySelector("#" + input.getAttribute('id') + " + " + "span.error")
+                if (!input.validity.valid) {
+                    showError(input, error);
+                }
+            })
+
+            if (form.checkValidity()) {
+                // All check boxes default value
+                var checkBoxes = {
+                    relation: '☐',
+                    completed: '☐',
+                    other: '☐',
+                    notes: '☐',
+                    paints: '☐',
+                    tiles: '☐',
+                    sanitary: '☐',
+                    prevowner: '☐',
+                    notComplete: '☐',
+                    others: '☐',
+                    finishes: '☐',
+                    electrical: '☐',
+                    wood: '☐',
+                    water: '☐',
+                    fullyFinished: '☐',
+                    discrepancy: '☐',
+                    difference: '☐',
+                    age: '☐',
+                    fees: '☐',
+                    foundOut: '☐',
+                    notAppear: '☐',
+                    firstPay: '☐',
+                    firstPayNot: '☐',
+                    secondPay: '☐',
+                    secondPayNot: '☐',
+                    thirdPay: '☐',
+                    thirdPayNot: '☐',
+                    fourthPay: '☐',
+                    fourthPayNot: '☐',
+                }
+
+                var templateDocumentsArray = []
+                var templateDocumentCheckboxes = document.querySelectorAll('.template input[type=checkbox]:checked')
+
+                for (var i = 0; i < templateDocumentCheckboxes.length; i++) {
+                    templateDocumentsArray.push(templateDocumentCheckboxes[i].value)
+                }
+
+                var formData = new FormData(document.forms[0])
+                var object = {};
+                formData.forEach(function (value, key) {
+                    object[key] = value;
+                });
+
+                for (key in object) {
+                    if (checkBoxes[key]) {
+                        checkBoxes[key] = '☑';
+                    }
+                }
+
+                // ===
+                function ownKeys(object, enumerableOnly) {
+                    var keys = Object.keys(object);
+                    if (Object.getOwnPropertySymbols) {
+                        var symbols = Object.getOwnPropertySymbols(object);
+                        if (enumerableOnly)
+                            symbols = symbols.filter(function (sym) {
+                                return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+                            });
+                        keys.push.apply(keys, symbols);
+                    }
+                    return keys;
+                }
+
+                function _objectSpread(target) {
+                    for (var i = 1; i < arguments.length; i++) {
+                        var source = arguments[i] != null ? arguments[i] : {};
+                        if (i % 2) {
+                            ownKeys(Object(source), true).forEach(function (key) {
+                                _defineProperty(target, key, source[key]);
+                            });
+                        } else if (Object.getOwnPropertyDescriptors) {
+                            Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+                        } else {
+                            ownKeys(Object(source)).forEach(function (key) {
+                                Object.defineProperty(
+                                    target,
+                                    key,
+                                    Object.getOwnPropertyDescriptor(source, key)
+                                );
+                            });
+                        }
+                    }
+                    return target;
+                }
+
+                function _defineProperty(obj, key, value) {
+                    if (key in obj) {
+                        Object.defineProperty(obj, key, {
+                            value: value,
+                            enumerable: true,
+                            configurable: true,
+                            writable: true
+                        });
+                    } else {
+                        obj[key] = value;
+                    }
+                    return obj;
+                }
+
+                var payload = _objectSpread(_objectSpread({}, object), checkBoxes);
+                // ===
+
+                // TODO - update server path for production
+                fetch('http://localhost:8080/generate_documents', {
+                    method: 'post',
+                    body: JSON.stringify({ templates: templateDocumentsArray, data: payload }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(function (res) {
+                    return res.json();
                 })
+                    .then(function (outputDocuments) {
+                        outputDocuments.files && outputDocuments.files.map(function (file) {
+                            var link = document.createElement('a');
+                            // TODO - update server path for production
+                            link.href = "http://localhost:8080/Reports/" + file + ".docx";
+                            link.setAttribute('download', file);
+                            document.body.appendChild(link);
+                            link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
+                            link.remove();
+                        })
+                    })
+                    .then(function () {
+                        $('#thankModal').modal();
+                        document.getElementById("appForm").reset();
+                    })
+            }
         })
     </script>
 </body>
