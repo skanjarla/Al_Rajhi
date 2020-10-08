@@ -1,14 +1,16 @@
 const express = require("express");
 const app = express();
 const fs = require("fs");
+const cors = require("cors");
 const path = require("path");
 const PizZip = require("pizzip");
 const Docxtemplater = require("docxtemplater");
-const port = process.env.PORT || 8080;
+const port = 8080;
+
 app.use(express.static("App"));
 
 app.use(express.json());
-
+app.use(cors());
 function replaceErrors(key, value) {
   if (value instanceof Error) {
     return Object.getOwnPropertyNames(value).reduce(function (error, key) {
@@ -74,7 +76,7 @@ function generateDocument(template, payload) {
 // Delete Documents
 function deleteDocument(docs) {
   docs.map((doc) => {
-    console.log(doc);
+    // console.log(doc);
     fs.unlink((__dirname, `App/Reports/${doc}.docx`), (err) => {
       if (err) {
         throw err;
@@ -90,14 +92,16 @@ app.get("/generate_documents_test", (req, res) => {
 // Test path for the download file
 app.post("/generate_documents", (req, res) => {
   let docsArr = [];
-
-  req.body.templates &&
+  console.log(req.body);
+  req.body &&
     req.body.templates.map((temp) => {
       docsArr.push(generateDocument(temp, req.body.data));
     });
+  // Delete generated documents after 30 seconds
   setTimeout(() => {
     deleteDocument(docsArr);
   }, 30000);
+  // send document files array response to client
   res.send({ files: docsArr });
 });
 
