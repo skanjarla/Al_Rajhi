@@ -1190,12 +1190,10 @@
 
         // Submit form data
         var form = document.getElementsByTagName('form')[0];
-        // document.getElementById("appForm").addEventListener("submit", function (event) {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
             // Expand panels 
             document.querySelectorAll('.collapse').forEach(function (panel) {
-
                 $("#" + panel.getAttribute('id')).collapse('show');
             })
 
@@ -1204,6 +1202,7 @@
                 var error = document.querySelector("#" + input.getAttribute('id') + " + " + "span.error")
                 if (!input.validity.valid) {
                     showError(input, error);
+                    //document.querySelector("#" + input.getAttribute('id')
                 }
             })
 
@@ -1314,7 +1313,9 @@
                 // ===
 
                 // TODO - update server path for production
-                fetch('http://localhost:8080/generate_documents', {
+                // https://al-rajhi.herokuapp.com/
+                // fetch('http://localhost:8080/generate_documents', {
+                fetch('https://al-rajhi.herokuapp.com/generate_documents', {
                     method: 'post',
                     body: JSON.stringify({ templates: templateDocumentsArray, data: payload }),
                     headers: {
@@ -1327,7 +1328,8 @@
                         outputDocuments.files && outputDocuments.files.map(function (file) {
                             var link = document.createElement('a');
                             // TODO - update server path for production
-                            link.href = "http://localhost:8080/Reports/" + file + ".docx";
+                            //link.href = "http://localhost:8080/Reports/" + file + ".docx";
+                            link.href = "https://al-rajhi.herokuapp.com/" + file + ".docx";
                             link.setAttribute('download', file);
                             document.body.appendChild(link);
                             link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
