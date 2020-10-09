@@ -1215,20 +1215,8 @@
 
         var inputFields = document.querySelectorAll('input[required]');
 
-        for (var i = 0; i < inputFields.length; i++) {
-            var input = inputFields[i]
-            input.addEventListener('input', function (event) {
-                var error = document.querySelector("#" + this.getAttribute('id') + " + " + "span.error")
-                if (input.validity.valid) {
-                    error.innerHTML = '';
-                    error.className = 'error';
-                } else {
-                    showError(input, error);
-                }
-            });
-        }
-        // inputFields.forEach(function (input) {
-        //     console.log(input);
+        // for (var i = 0; i < inputFields.length; i++) {
+        //     var input = inputFields[i]
         //     input.addEventListener('input', function (event) {
         //         var error = document.querySelector("#" + this.getAttribute('id') + " + " + "span.error")
         //         if (input.validity.valid) {
@@ -1238,7 +1226,19 @@
         //             showError(input, error);
         //         }
         //     });
-        // })
+        // }
+        inputFields.forEach(function (input) {
+            console.log(input);
+            input.addEventListener('input', function (event) {
+                var error = document.querySelector("#" + this.getAttribute('id') + " + " + "span.error")
+                if (input.validity.valid) {
+                    error.innerHTML = '';
+                    error.className = 'error';
+                } else {
+                    showError(input, error);
+                }
+            });
+        })
         // Submit form data
         var form = document.getElementsByTagName('form')[0];
         form.addEventListener("submit", function (event) {
