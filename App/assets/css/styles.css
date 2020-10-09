@@ -139,15 +139,17 @@ fieldset {
   padding: 0;
 
   font-size: 80%;
-  color: white;
-  background-color: #d33a27;
+  color: #d33a27;
   border-radius: 0 0 5px 5px;
-
+  background-color: rgba(211, 58, 39, 0.05);
   box-sizing: border-box;
 }
 
 .error.active {
   padding: 0.3em;
+}
+.spinner-border {
+  display: none;
 }
 @media (max-width: 576px) {
   .panel-title {

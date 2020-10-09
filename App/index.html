@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/datepicker.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-datetimepicker.min.css">
     <style>
         .required {
             color: #d33a27;
@@ -450,14 +451,17 @@
                                 <div class="form-group col-md-6 col-12">
                                     <p>الدفعة الأولى (35% نسبة الدفعة)</p>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="firstPay" name="firstPay">
+                                        <input type="hidden" name="firstPay" value="☐">
+                                        <input class="form-check-input" type="checkbox" id="firstPay" name="firstPay"
+                                            value="☑">
                                         <label class="form-check-label mr-4" for="firstPay">
                                             مكتملة
                                         </label>
                                     </div>
                                     <div class="form-check">
+                                        <input type="hidden" name="firstPayNot" value="☐">
                                         <input class="form-check-input" type="checkbox" id="firstPayNot"
-                                            name="fistPayNot">
+                                            name="fistPayNot" value="☑">
                                         <label class="form-check-label mr-4" for="firstPayNot">
                                             غير مكتملة
                                         </label>
@@ -468,14 +472,17 @@
                                 <div class="form-group col-md-6 col-12">
                                     <p>الدفعة الثانية (35% نسبة الدفعة)</p>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="secondPay" name="secondPay">
+                                        <input type="hidden" name="secondPay" value="☐">
+                                        <input class="form-check-input" type="checkbox" id="secondPay" name="secondPay"
+                                            value="☑">
                                         <label class="form-check-label mr-4" for="secondPay">
                                             مكتملة
                                         </label>
                                     </div>
                                     <div class="form-check">
+                                        <input type="hidden" name="secondPayNot" value="☐">
                                         <input class="form-check-input" type="checkbox" id="secondPayNot"
-                                            name="secondPayNot">
+                                            name="secondPayNot" value="☑">
                                         <label class="form-check-label mr-4" for="secondPayNot">
                                             غير مكتملة
                                         </label>
@@ -485,14 +492,17 @@
                                 <div class="form-group col-md-6 col-12">
                                     <p>الدفعة الثالثة (20% نسبة الدفعة)</p>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="thirdPay" name="thirdPay">
+                                        <input type="hidden" name="thirdPay" value="☐">
+                                        <input class="form-check-input" type="checkbox" id="thirdPay" name="thirdPay"
+                                            value="☑">
                                         <label class="form-check-label mr-4" for="thirdPay">
                                             مكتملة
                                         </label>
                                     </div>
                                     <div class="form-check">
+                                        <input type="hidden" name="thirdPayNot" value="☐">
                                         <input class="form-check-input" type="checkbox" id="thirdPayNot"
-                                            name="thirdPayNot">
+                                            name="thirdPayNot" value="☑">
                                         <label class="form-check-label mr-4" for="thirdPayNot">
                                             غير مكتملة
                                         </label>
@@ -502,14 +512,17 @@
                                 <div class="form-group col-md-6 col-12">
                                     <p>الدفعة الرابعة (10% نسبة الدفعة)</p>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="fourthPay" name="fourthPay">
+                                        <input type="hidden" name="fourthPay" value="☐">
+                                        <input class="form-check-input" type="checkbox" id="fourthPay" name="fourthPay"
+                                            value="☑">
                                         <label class="form-check-label mr-4" for="fourthPay">
                                             مكتملة
                                         </label>
                                     </div>
                                     <div class="form-check">
+                                        <input type="hidden" name="fourthPayNot" value="☐">
                                         <input class="form-check-input" type="checkbox" id="fourthPayNot"
-                                            name="fourthPayNot">
+                                            name="fourthPayNot" value="☑">
                                         <label class="form-check-label mr-4" for="fourthPayNot">
                                             غير مكتملة
                                         </label>
@@ -703,7 +716,9 @@
                                 <div class="form-group">
                                     <!-- It Did not appear -->
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="notAppear" name="notAppear">
+                                        <input type="hidden" name="notAppear" value="☐">
+                                        <input class="form-check-input" type="checkbox" id="notAppear" name="notAppear"
+                                            value="☑">
                                         <label class="form-check-label mr-4" for="notAppear">
                                             لم يتبين لي من المعاملة ومن الوثائق المرفقة بها وجود رغبة من أي طرف بالتحايل
                                             للحصول على التمويل النقدي, بل يظهر لي أن غرض التعاقد على العقار حقيقة, من
@@ -714,7 +729,9 @@
                                 <div class="form-group">
                                     <!-- I found out -->
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="foundOut" name="foundOut">
+                                        <input type="hidden" name="foundOut" value="☐">
+                                        <input class="form-check-input" type="checkbox" id="foundOut" name="foundOut"
+                                            value="☑">
                                         <label class="form-check-label mr-4" for="foundOut">
                                             تبين لي من المعاملة و من الوثائق المرفقة بها وجود رغبة بالتحايل للحصول على
                                             التمويل النقدي , و أن الغرض ليس التعاقد على العقار حقيقة.
@@ -731,7 +748,8 @@
                         <div class="form-group">
                             <!-- Relationship -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="relation" name="relation">
+                                <input type="hidden" name="relation" value="☐">
+                                <input class="form-check-input" type="checkbox" id="relation" name="relation" value="☑">
                                 <label class="form-check-label mr-4" for="relation">
                                     صلة قرابة بيني و بين مالك العقار#
                                 </label>
@@ -741,7 +759,9 @@
                         <div class="form-group">
                             <!-- Previous ownership of the property # -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="prevOwner" name="prevowner">
+                                <input type="hidden" name="prevowner" value="☐">
+                                <input class="form-check-input" type="checkbox" id="prevOwner" name="prevowner"
+                                    value="☑">
                                 <label class="form-check-label mr-4" for="prevOwner">
                                     تملك سابق للعقار#
                                 </label>
@@ -750,7 +770,9 @@
                         <div class="form-group">
                             <!-- Discrepancy between the evaluation price and the selling price of the property by more than (20%) # -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="discrepancy" name="discrepancy">
+                                <input type="hidden" name="discrepancy" value="☐">
+                                <input class="form-check-input" type="checkbox" id="discrepancy" name="discrepancy"
+                                    value="☑">
                                 <label class="form-check-label mr-4" for="discrepancy">
                                     تفاوت بين سعر التقييم و سعر البيع في العقار بأكثر من (20%)#
                                 </label>
@@ -759,7 +781,8 @@
                         <div class="form-group">
                             <!-- Other# -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="other" name="other">
+                                <input type="hidden" name="other" value="☐">
+                                <input class="form-check-input" type="checkbox" id="other" name="other" value="☑">
                                 <label class="form-check-label mr-4" for="other">
                                     أخرى#
                                 </label>
@@ -771,7 +794,8 @@
                         <div class="form-group">
                             <!-- Include the following notes -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="notes" name="notes">
+                                <input type="hidden" name="notes" value="☐">
+                                <input class="form-check-input" type="checkbox" id="notes" name="notes" value="☑">
                                 <label class="form-check-label mr-4" for="notes">
                                     مشتمل عالملحوظات الآتية
                                 </label>
@@ -780,7 +804,8 @@
                         <div class="form-group">
                             <!-- External paints or gypsum works -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="paints" name="paints">
+                                <input type="hidden" name="paints" value="☐">
+                                <input class="form-check-input" type="checkbox" id="paints" name="paints" value="☑">
                                 <label class="form-check-label mr-4" for="paints">
                                     بويات خارجية أو أعمال الجبس
                                 </label>
@@ -789,7 +814,8 @@
                         <div class="form-group">
                             <!-- Surface tiles or roof seals -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="tiles" name="tiles">
+                                <input type="hidden" name="tiles" value="☐">
+                                <input class="form-check-input" type="checkbox" id="tiles" name="tiles" value="☑">
                                 <label class="form-check-label mr-4" for="tiles">
                                     بلاط السطح أو عوازا السطح
                                 </label>
@@ -798,7 +824,8 @@
                         <div class="form-group">
                             <!-- Sanitary ware -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="sanitary" name="sanitary">
+                                <input type="hidden" name="sanitary" value="☐">
+                                <input class="form-check-input" type="checkbox" id="sanitary" name="sanitary" value="☑">
                                 <label class="form-check-label mr-4" for="sanitary">
                                     الأدوات الصحية
                                 </label>
@@ -807,7 +834,8 @@
                         <div class="form-group">
                             <!-- Others: -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="others" name="others">
+                                <input type="hidden" name="others" value="☐">
+                                <input class="form-check-input" type="checkbox" id="others" name="others" value="☑">
                                 <label class="form-check-label mr-4" for="others">
                                     أخرى:
                                 </label>
@@ -819,7 +847,8 @@
                         <div class="form-group">
                             <!-- That the finishes are not completed from: -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="finishes" name="finishes">
+                                <input type="hidden" name="finishes" value="☐">
+                                <input class="form-check-input" type="checkbox" id="finishes" name="finishes" value="☑">
                                 <label class="form-check-label mr-4" for="finishes">
                                     أن التشطيبات لم تكتمل من :
                                 </label>
@@ -828,7 +857,9 @@
                         <div class="form-group">
                             <!-- Installations for electrical, plumbing, or others -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="electrical" name="electrical">
+                                <input type="hidden" name="electrical" value="☐">
+                                <input class="form-check-input" type="checkbox" id="electrical" name="electrical"
+                                    value="☑">
                                 <label class="form-check-label mr-4" for="electrical">
                                     تركيبات خاصة بالكهرباء أو السباكة أو غيرها
                                 </label>
@@ -837,7 +868,8 @@
                         <div class="form-group">
                             <!-- Interior property doors (wood) -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="wood" name="wood">
+                                <input type="hidden" name="wood" value="☐">
+                                <input class="form-check-input" type="checkbox" id="wood" name="wood" value="☑">
                                 <label class="form-check-label mr-4" for="wood">
                                     أبواب العقار الداخلية(الخشب)
                                 </label>
@@ -846,7 +878,8 @@
                         <div class="form-group">
                             <!-- Water is not connected to the meter -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="water" name="water">
+                                <input type="hidden" name="water" value="☐">
+                                <input class="form-check-input" type="checkbox" id="water" name="water" value="☑">
                                 <label class="form-check-label mr-4" for="water">
                                     عدم توصيل المياه إلى العداد
                                 </label>
@@ -860,7 +893,9 @@
                 <div class="form-group">
                     <!-- Fully finished with paint, electrical and plumbing fixtures and others -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="fullyFinished" name="fullyFinished">
+                        <input type="hidden" name="fullyFinished" value="☐">
+                        <input class="form-check-input" type="checkbox" id="fullyFinished" name="fullyFinished"
+                            value="☑">
                         <label class="form-check-label mr-4" for="fullyFinished">
                             مكتمل التشطيبات من بويا و تركيبات خاصة بالكهرباء و السباكة و غيرها
                         </label>
@@ -871,7 +906,8 @@
                 <div class="form-group">
                     <!-- The difference between the building and the license, such as not building the driver’s room or the annex, or the different building areas -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="difference" name="difference">
+                        <input type="hidden" name="difference" value="☐">
+                        <input class="form-check-input" type="checkbox" id="difference" name="difference" value="☑">
                         <label class="form-check-label mr-4" for="difference">
                             إختلاف البناء عن الرخصة كعدم بناء غرفة السائق أو الملحق أو إختلاف مسطحات البناء
                         </label>
@@ -880,7 +916,8 @@
                 <div class="form-group">
                     <!-- The age of the drug is more than twenty years, and I learned that some defects may appear in it due to the long life of the drug -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="age" name="age">
+                        <input type="hidden" name="age" value="☐">
+                        <input class="form-check-input" type="checkbox" id="age" name="age" value="☑">
                         <label class="form-check-label mr-4" for="age">
                             عمر العقار أكثر من عشرين سنة , و قد علمت أنه قد تظهر فيه بعض العيوب نتيجة لطول عمر العقار
                         </label>
@@ -890,7 +927,8 @@
                     <!-- Fees for the smugglers' service delivery to the property have been paid, but the electricity meter has not yet been installed and / or not
                              Electricity service reaches him, and it will remain so for a period not exceeding (60) days starting from the date of the contract -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="fees" name="fees">
+                        <input type="hidden" name="fees" value="☐">
+                        <input class="form-check-input" type="checkbox" id="fees" name="fees" value="☑">
                         <label class="form-check-label mr-4" for="fees">
                             تم سداد رسوم إيصال خدمة المهرباء للعقار , ولكن لم يتم تركيب عداد الكهرباء حتى الآنو/أو لم
                             تصل إليه خدمة الكهرباء , و سيظل كذلك لمدة لا تزيد عن (60) يوم تبدأ من تاريخ العقد
@@ -1039,7 +1077,8 @@
                 </div>
 
                 <div class="form-group d-flex justify-content-center my-4">
-                    <button type="submit" class="btn btn-primary app-btn px-5 py-3 my-3"> قدم
+                    <button type="submit" class="btn btn-primary app-btn px-5 py-3 my-3 d-flex align-items-center"><span
+                            class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span> قدم
                         الطلب</button>
                 </div>
             </form>
@@ -1051,16 +1090,16 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="thankModalLabel">Thank You</h5>
+                        <h5 class="modal-title" id="thankModalLabel">شكرا</h5>
                         <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button> -->
                     </div>
                     <div class="modal-body py-4">
-                        <p>Form submitted successfully</p>
+                        <p>في محطة للحافلات</p>
                     </div>
                     <div class="modal-footer d-flex justify-content-start">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">قريب</button>
                     </div>
                 </div>
             </div>
@@ -1069,36 +1108,19 @@
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/datepicker.js"></script>
+    <script src="./assets/js/moment.min.js"></script>
+    <script src="./assets/js/bootstrap-hijri-datetimepicker.min.js"></script>
     <script>
-        const inputFields = document.querySelectorAll('input[required]');
 
-        function showError(input, inputError) {
-            if (input.validity.valueMissing) {
-                inputError.textContent = 'يرجى ملء هذا الحقل';
-            } else if (input.validity.typeMismatch) {
-                inputError.textContent = 'قيمة إدخال غير صالحة';
-            }
-            inputError.className = 'error active';
-        }
-
-        inputFields.forEach(function (input) {
-            input.addEventListener('input', function (event) {
-                var error = document.querySelector("#" + this.getAttribute('id') + " + " + "span.error")
-                if (input.validity.valid) {
-                    error.innerHTML = '';
-                    error.className = 'error';
-                } else {
-                    showError(input, error);
-                }
-            });
-        })
-        $('[data-toggle="datepicker"]').datepicker({
-            language: 'ar-AE',
-            format: 'dd-mm-yyyy'
-        });
+        // Initialize Date Picker 
+        // $('[data-toggle="datepicker"]').datepicker({
+        //     language: 'ar-AE',
+        //     format: 'dd-mm-yyyy'
+        // });
+        $('[data-toggle="datepicker"]').hijriDatePicker({ hijri: true, });
         // ☑
         // ☐
-        // select all template document checkboxes
+        // toggle all template document checkboxes on selecting - All documents
         document.getElementById('checkAll').addEventListener('change', function (event) {
             var allDocumentCheckBoxes = document.querySelectorAll('.template input[type=checkbox]');
             for (var i = 0; i < allDocumentCheckBoxes.length; i++) {
@@ -1106,7 +1128,6 @@
                 if (this.checked === true) {
                     allDocumentCheckBoxes[i].checked = true;
                 }
-
                 if (this.checked === false) {
                     allDocumentCheckBoxes[i].checked = false;
                 }
@@ -1136,62 +1157,93 @@
             }
 
         })
-        // toggle payment info checkboxes - completed/not completed
-        var firstPay = document.getElementById('firstPay');
-        var firstPayNot = document.getElementById('firstPayNot');
-        var secondPay = document.getElementById('secondPay');
-        var secondPayNot = document.getElementById('secondPayNot');
-        var thirdPay = document.getElementById('thirdPay');
-        var thirdPayNot = document.getElementById('thirdPayNot');
-        var fourthPay = document.getElementById('fourthPay');
-        var fourthPayNot = document.getElementById('fourthPayNot');
 
-        firstPay.addEventListener('change', function () {
-            if (firstPayNot.checked === true) {
-                firstPayNot.checked = false;
+        // Toggle payment info checkboxes
+        $('#firstPay').change(function () {
+            if ($('#firstPayNot').is(":checked")) {
+                $('#firstPayNot').prop("checked", false)
             }
         })
-        firstPayNot.addEventListener('change', function () {
-            if (firstPay.checked === true) {
-                firstPay.checked = false;
+        $('#firstPayNot').change(function () {
+            if ($('#firstPay').is(":checked")) {
+                $('#firstPay').prop("checked", false)
             }
         })
 
-        secondPay.addEventListener('change', function () {
-            if (secondPayNot.checked === true) {
-                secondPayNot.checked = false;
+        $('#secondPay').change(function () {
+            if ($('#secondPayNot').is(":checked")) {
+                $('#secondPayNot').prop("checked", false)
             }
         })
-        secondPayNot.addEventListener('change', function () {
-            if (secondPay.checked === true) {
-                secondPay.checked = false;
-            }
-        })
-        thirdPay.addEventListener('change', function () {
-            if (thirdPayNot.checked === true) {
-                thirdPayNot.checked = false;
-            }
-        })
-        thirdPayNot.addEventListener('change', function () {
-            if (thirdPay.checked === true) {
-                thirdPay.checked = false;
-            }
-        })
-        fourthPay.addEventListener('change', function () {
-            if (fourthPayNot.checked === true) {
-                fourthPayNot.checked = false;
-            }
-        })
-        fourthPayNot.addEventListener('change', function () {
-            if (fourthPay.checked === true) {
-                fourthPay.checked = false;
+        $('#secondPayNot').change(function () {
+            if ($('#secondPay').is(":checked")) {
+                $('#secondPay').prop("checked", false)
             }
         })
 
+        $('#fourthPay').change(function () {
+            if ($('#fourthPayNot').is(":checked")) {
+                $('#fourthPayNot').prop("checked", false)
+            }
+        })
+        $('#fourthPayNot').change(function () {
+            if ($('#fourthPay').is(":checked")) {
+                $('#fourthPay').prop("checked", false)
+            }
+        })
+
+        $('#thirdPay').change(function () {
+            if ($('#thirdPayNot').is(":checked")) {
+                $('#thirdPayNot').prop("checked", false)
+            }
+        })
+        $('#thirdPayNot').change(function () {
+            if ($('#thirdPay').is(":checked")) {
+                $('#thirdPay').prop("checked", false)
+            }
+        })
+
+        // show input validation errors
+        function showError(input, inputError) {
+            if (input.validity.valueMissing) {
+                inputError.textContent = 'يرجى ملء هذا الحقل';
+            } else if (input.validity.typeMismatch) {
+                inputError.textContent = 'قيمة إدخال غير صالحة';
+            }
+            inputError.className = 'error active';
+        }
+
+        var inputFields = document.querySelectorAll('input[required]');
+
+        for (var i = 0; i < inputFields.length; i++) {
+            var input = inputFields[i]
+            input.addEventListener('input', function (event) {
+                var error = document.querySelector("#" + this.getAttribute('id') + " + " + "span.error")
+                if (input.validity.valid) {
+                    error.innerHTML = '';
+                    error.className = 'error';
+                } else {
+                    showError(input, error);
+                }
+            });
+        }
+        // inputFields.forEach(function (input) {
+        //     console.log(input);
+        //     input.addEventListener('input', function (event) {
+        //         var error = document.querySelector("#" + this.getAttribute('id') + " + " + "span.error")
+        //         if (input.validity.valid) {
+        //             error.innerHTML = '';
+        //             error.className = 'error';
+        //         } else {
+        //             showError(input, error);
+        //         }
+        //     });
+        // })
         // Submit form data
         var form = document.getElementsByTagName('form')[0];
         form.addEventListener("submit", function (event) {
             event.preventDefault();
+            $(".spinner-border").toggle();
             // Expand panels 
             document.querySelectorAll('.collapse').forEach(function (panel) {
                 $("#" + panel.getAttribute('id')).collapse('show');
@@ -1202,44 +1254,18 @@
                 var error = document.querySelector("#" + input.getAttribute('id') + " + " + "span.error")
                 if (!input.validity.valid) {
                     showError(input, error);
-                    //document.querySelector("#" + input.getAttribute('id')
                 }
             })
+            // on input errors scroll to the invalid input field and set focus to the input field
+            if (!form.checkValidity()) {
+                $(".error.active").siblings(".form-control")[0].focus();
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $('.error.active').offset().top - 120
+                }, 1000);
+                $(".spinner-border").toggle();
+            }
 
             if (form.checkValidity()) {
-                // All check boxes default value
-                var checkBoxes = {
-                    relation: '☐',
-                    completed: '☐',
-                    other: '☐',
-                    notes: '☐',
-                    paints: '☐',
-                    tiles: '☐',
-                    sanitary: '☐',
-                    prevowner: '☐',
-                    notComplete: '☐',
-                    others: '☐',
-                    finishes: '☐',
-                    electrical: '☐',
-                    wood: '☐',
-                    water: '☐',
-                    fullyFinished: '☐',
-                    discrepancy: '☐',
-                    difference: '☐',
-                    age: '☐',
-                    fees: '☐',
-                    foundOut: '☐',
-                    notAppear: '☐',
-                    firstPay: '☐',
-                    firstPayNot: '☐',
-                    secondPay: '☐',
-                    secondPayNot: '☐',
-                    thirdPay: '☐',
-                    thirdPayNot: '☐',
-                    fourthPay: '☐',
-                    fourthPayNot: '☐',
-                }
-
                 var templateDocumentsArray = []
                 var templateDocumentCheckboxes = document.querySelectorAll('.template input[type=checkbox]:checked')
 
@@ -1248,69 +1274,10 @@
                 }
 
                 var formData = new FormData(document.forms[0])
-                var object = {};
+                var payload = {};
                 formData.forEach(function (value, key) {
-                    object[key] = value;
+                    payload[key] = value;
                 });
-
-                for (key in object) {
-                    if (checkBoxes[key]) {
-                        checkBoxes[key] = '☑';
-                    }
-                }
-
-                // ===
-                function ownKeys(object, enumerableOnly) {
-                    var keys = Object.keys(object);
-                    if (Object.getOwnPropertySymbols) {
-                        var symbols = Object.getOwnPropertySymbols(object);
-                        if (enumerableOnly)
-                            symbols = symbols.filter(function (sym) {
-                                return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-                            });
-                        keys.push.apply(keys, symbols);
-                    }
-                    return keys;
-                }
-
-                function _objectSpread(target) {
-                    for (var i = 1; i < arguments.length; i++) {
-                        var source = arguments[i] != null ? arguments[i] : {};
-                        if (i % 2) {
-                            ownKeys(Object(source), true).forEach(function (key) {
-                                _defineProperty(target, key, source[key]);
-                            });
-                        } else if (Object.getOwnPropertyDescriptors) {
-                            Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-                        } else {
-                            ownKeys(Object(source)).forEach(function (key) {
-                                Object.defineProperty(
-                                    target,
-                                    key,
-                                    Object.getOwnPropertyDescriptor(source, key)
-                                );
-                            });
-                        }
-                    }
-                    return target;
-                }
-
-                function _defineProperty(obj, key, value) {
-                    if (key in obj) {
-                        Object.defineProperty(obj, key, {
-                            value: value,
-                            enumerable: true,
-                            configurable: true,
-                            writable: true
-                        });
-                    } else {
-                        obj[key] = value;
-                    }
-                    return obj;
-                }
-
-                var payload = _objectSpread(_objectSpread({}, object), checkBoxes);
-                // ===
 
                 // TODO - update server path for production
                 // https://al-rajhi.herokuapp.com/
@@ -1328,7 +1295,7 @@
                         outputDocuments.files && outputDocuments.files.map(function (file) {
                             var link = document.createElement('a');
                             // TODO - update server path for production
-                            //link.href = "http://localhost:8080/Reports/" + file + ".docx";
+                            // link.href = "http://localhost:8080/Reports/" + file + ".docx";
                             link.href = "https://al-rajhi.herokuapp.com/" + file + ".docx";
                             link.setAttribute('download', file);
                             document.body.appendChild(link);
@@ -1339,6 +1306,7 @@
                     .then(function () {
                         $('#thankModal').modal();
                         document.getElementById("appForm").reset();
+                        $(".spinner-border").toggle();
                     })
             }
         })
