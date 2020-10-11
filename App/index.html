@@ -1274,7 +1274,7 @@
                                 // TODO - update server path for production
                                 // https://al-rajhi.herokuapp.com/
                                 // link.href = "http://localhost:8080/Reports/" + outputDocuments.files[i] + ".docx";
-                                link.href = "https://al-rajhi.herokuapp.com/" + outputDocuments.files[i] + ".docx";
+                                link.href = "https://al-rajhi.herokuapp.com/Reports/" + outputDocuments.files[i] + ".docx";
                                 link.setAttribute('download', outputDocuments.files[i]);
                                 document.body.appendChild(link);
                                 link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
