@@ -652,21 +652,21 @@
                                 <!-- 1 - Today's Date -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="todayDate">تاريخ اليوم</label><span class="required mx-1">*</span>
-                                    <input type="date" class="form-control" id="todayDate" name="today_date" required>
+                                    <input type="text" class="form-control" id="todayDate" name="today_date" required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 10 - Instrument History -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="instrumentHistory">تاريخ الصك</label><span
                                         class="required mx-1">*</span>
-                                    <input type="date" class="form-control" id="instrumentHistory"
+                                    <input type="text" class="form-control" id="instrumentHistory"
                                         name="history_instrument" required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 32 - Contract Date -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="contractDate">تاريخ العقد</label><span class="required mx-1">*</span>
-                                    <input type="date" class="form-control" id="contractDate" name="date_of_contract"
+                                    <input type="text" class="form-control" id="contractDate" name="date_of_contract"
                                         required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -675,7 +675,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="agreementDate">تاريخ الإتفاقية</label><span
                                         class="required mx-1">*</span>
-                                    <input type="date" class="form-control" id="agreementDate" name="date_of_agreement"
+                                    <input type="text" class="form-control" id="agreementDate" name="date_of_agreement"
                                         required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -684,7 +684,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="invoiceDate">تاريخ إصدار الفاتورة</label><span
                                         class="required mx-1">*</span>
-                                    <input type="date" class="form-control" id="invoiceDate" name="invoice_issued_date"
+                                    <input type="text" class="form-control" id="invoiceDate" name="invoice_issued_date"
                                         required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -1110,14 +1110,6 @@
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script>
-        // Initialize Date Picker 
-        // $('[data-toggle="datepicker"]').datepicker({
-        //     language: 'ar-AE',
-        //     format: 'dd-mm-yyyy'
-        // });
-        // $('[data-toggle="datepicker"]').hijriDatePicker({ hijri: true, });
-        // ☑
-        // ☐
         // toggle all template document checkboxes on selecting - All documents
         document.getElementById('checkAll').addEventListener('change', function (event) {
             var allDocumentCheckBoxes = document.querySelectorAll('.template input[type=checkbox]');
@@ -1265,16 +1257,16 @@
                 }
                 $.ajax({
                     type: 'POST',
-                    url: 'https://al-rajhi.herokuapp.com/generate_documents',
+                    // TODO - update server path for production 
+                    url: 'http://https://al-rajhi.herokuapp.com/generate_documents',
                     data: JSON.stringify({ templates: templateDocumentsArray, data: payload }),
                     success: function (outputDocuments) {
                         if (outputDocuments.files.length !== 0) {
                             for (var i = 0; i < outputDocuments.files.length; i++) {
                                 var link = document.createElement('a');
-                                // TODO - update server path for production
-                                // https://al-rajhi.herokuapp.com/
+                                // TODO - update server path for production                                 
                                 // link.href = "http://localhost:8080/Reports/" + outputDocuments.files[i] + ".docx";
-                                link.href = "https://al-rajhi.herokuapp.com/Reports/" + outputDocuments.files[i] + ".docx";
+                                link.href = "https://al-rajhi.herokuapp.com/Reports" + outputDocuments.files[i] + ".docx";
                                 link.setAttribute('download', outputDocuments.files[i]);
                                 document.body.appendChild(link);
                                 link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
