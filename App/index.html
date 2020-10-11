@@ -1258,7 +1258,7 @@
                 $.ajax({
                     type: 'POST',
                     // TODO - update server path for production 
-                    url: 'http://https://al-rajhi.herokuapp.com/generate_documents',
+                    url: 'https://https://al-rajhi.herokuapp.com/generate_documents',
                     data: JSON.stringify({ templates: templateDocumentsArray, data: payload }),
                     success: function (outputDocuments) {
                         if (outputDocuments.files.length !== 0) {
