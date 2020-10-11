@@ -7,8 +7,6 @@
     <title>Al Rajhi</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="./assets/css/datepicker.css">
-    <link rel="stylesheet" href="./assets/css/bootstrap-datetimepicker.min.css">
     <style>
         .required {
             color: #d33a27;
@@ -17,7 +15,12 @@
         body {
             text-align: unset !important;
         }
+
+        .form-control {
+            height: calc(2.2em + .75rem + 2px);
+        }
     </style>
+
 </head>
 
 <body>
@@ -649,23 +652,22 @@
                                 <!-- 1 - Today's Date -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="todayDate">تاريخ اليوم</label><span class="required mx-1">*</span>
-                                    <input type="text" placeholder="DD-MM-YYYY" data-toggle="datepicker"
-                                        class="form-control" id="todayDate" name="today_date" required>
+                                    <input type="date" class="form-control" id="todayDate" name="today_date" required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 10 - Instrument History -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="instrumentHistory">تاريخ الصك</label><span
                                         class="required mx-1">*</span>
-                                    <input type="text" placeholder="DD-MM-YYYY" data-toggle="datepicker"
-                                        class="form-control" id="instrumentHistory" name="history_instrument" required>
+                                    <input type="date" class="form-control" id="instrumentHistory"
+                                        name="history_instrument" required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 32 - Contract Date -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="contractDate">تاريخ العقد</label><span class="required mx-1">*</span>
-                                    <input type="text" placeholder="DD-MM-YYYY" data-toggle="datepicker"
-                                        class="form-control" id="contractDate" name="date_of_contract" required>
+                                    <input type="date" class="form-control" id="contractDate" name="date_of_contract"
+                                        required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -673,8 +675,8 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="agreementDate">تاريخ الإتفاقية</label><span
                                         class="required mx-1">*</span>
-                                    <input type="text" placeholder="DD-MM-YYYY" data-toggle="datepicker"
-                                        class="form-control" id="agreementDate" name="date_of_agreement" required>
+                                    <input type="date" class="form-control" id="agreementDate" name="date_of_agreement"
+                                        required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -682,8 +684,8 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="invoiceDate">تاريخ إصدار الفاتورة</label><span
                                         class="required mx-1">*</span>
-                                    <input type="text" placeholder="DD-MM-YYYY" data-toggle="datepicker"
-                                        class="form-control" id="invoiceDate" name="invoice_issued_date" required>
+                                    <input type="date" class="form-control" id="invoiceDate" name="invoice_issued_date"
+                                        required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
@@ -1107,17 +1109,13 @@
     </div>
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="./assets/js/datepicker.js"></script>
-    <script src="./assets/js/moment.min.js"></script>
-    <script src="./assets/js/bootstrap-hijri-datetimepicker.min.js"></script>
     <script>
-
         // Initialize Date Picker 
         // $('[data-toggle="datepicker"]').datepicker({
         //     language: 'ar-AE',
         //     format: 'dd-mm-yyyy'
         // });
-        $('[data-toggle="datepicker"]').hijriDatePicker({ hijri: true, });
+        // $('[data-toggle="datepicker"]').hijriDatePicker({ hijri: true, });
         // ☑
         // ☐
         // toggle all template document checkboxes on selecting - All documents
@@ -1213,46 +1211,33 @@
             inputError.className = 'error active';
         }
 
-        var inputFields = document.querySelectorAll('input[required]');
-
-        // for (var i = 0; i < inputFields.length; i++) {
-        //     var input = inputFields[i]
-        //     input.addEventListener('input', function (event) {
-        //         var error = document.querySelector("#" + this.getAttribute('id') + " + " + "span.error")
-        //         if (input.validity.valid) {
-        //             error.innerHTML = '';
-        //             error.className = 'error';
-        //         } else {
-        //             showError(input, error);
-        //         }
-        //     });
-        // }
-        inputFields.forEach(function (input) {
-            input.addEventListener('input', function (event) {
-                var error = document.querySelector("#" + this.getAttribute('id') + " + " + "span.error")
-                if (input.validity.valid) {
+        $("input[required]").each(function (index) {
+            $(this).on('input', function (item) {
+                var error = document.querySelector("#" + item.target.getAttribute('id') + " + " + "span.error")
+                if (item.target.validity.valid) {
                     error.innerHTML = '';
                     error.className = 'error';
                 } else {
-                    showError(input, error);
+                    showError(item.target, error);
                 }
-            });
+            })
         })
+
         // Submit form data
         var form = document.getElementsByTagName('form')[0];
-        form.addEventListener("submit", function (event) {
+        //  form.addEventListener("submit", function (event) {
+        $("form").submit(function (event) {
             event.preventDefault();
             $(".spinner-border").toggle();
             // Expand panels 
-            document.querySelectorAll('.collapse').forEach(function (panel) {
-                $("#" + panel.getAttribute('id')).collapse('show');
+            $('.collapse').each(function (index) {
+                $("#" + this.getAttribute('id')).collapse('show');
             })
-
-            // check for input errors and show error messages
-            inputFields.forEach(function (input) {
-                var error = document.querySelector("#" + input.getAttribute('id') + " + " + "span.error")
-                if (!input.validity.valid) {
-                    showError(input, error);
+            // check for input errors and show error messages             
+            $("input[required]").each(function (index) {
+                var error = document.querySelector("#" + this.getAttribute('id') + " + " + "span.error")
+                if (!this.validity.valid) {
+                    showError(this, error);
                 }
             })
             // on input errors scroll to the invalid input field and set focus to the input field
@@ -1274,39 +1259,35 @@
 
                 var formData = new FormData(document.forms[0])
                 var payload = {};
-                formData.forEach(function (value, key) {
-                    payload[key] = value;
+                let arr = $(this).serializeArray();
+                for (var i = 0; i < arr.length; i++) {
+                    payload[arr[i].name] = arr[i].value;
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://al-rajhi.herokuapp.com/generate_documents',
+                    data: JSON.stringify({ templates: templateDocumentsArray, data: payload }),
+                    success: function (outputDocuments) {
+                        if (outputDocuments.files.length !== 0) {
+                            for (var i = 0; i < outputDocuments.files.length; i++) {
+                                var link = document.createElement('a');
+                                // TODO - update server path for production
+                                // https://al-rajhi.herokuapp.com/
+                                // link.href = "http://localhost:8080/Reports/" + outputDocuments.files[i] + ".docx";
+                                link.href = "https://al-rajhi.herokuapp.com/" + outputDocuments.files[i] + ".docx";
+                                link.setAttribute('download', outputDocuments.files[i]);
+                                document.body.appendChild(link);
+                                link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
+                                link.remove();
+                            }
+                            $('#thankModal').modal();
+                            document.getElementById("appForm").reset();
+                            $(".spinner-border").toggle();
+                        }
+                    },
+                    contentType: "application/json",
+                    dataType: 'json'
                 });
-
-                // TODO - update server path for production
-                // https://al-rajhi.herokuapp.com/
-                // fetch('http://localhost:8080/generate_documents', {
-                fetch('https://al-rajhi.herokuapp.com/generate_documents', {
-                    method: 'post',
-                    body: JSON.stringify({ templates: templateDocumentsArray, data: payload }),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }).then(function (res) {
-                    return res.json();
-                })
-                    .then(function (outputDocuments) {
-                        outputDocuments.files && outputDocuments.files.map(function (file) {
-                            var link = document.createElement('a');
-                            // TODO - update server path for production
-                            // link.href = "http://localhost:8080/Reports/" + file + ".docx";
-                            link.href = "https://al-rajhi.herokuapp.com/Reports/" + file + ".docx";
-                            link.setAttribute('download', file);
-                            document.body.appendChild(link);
-                            link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
-                            link.remove();
-                        })
-                    })
-                    .then(function () {
-                        $('#thankModal').modal();
-                        document.getElementById("appForm").reset();
-                        $(".spinner-border").toggle();
-                    })
             }
         })
     </script>

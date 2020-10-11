@@ -105,6 +105,14 @@ app.post("/generate_documents", (req, res) => {
   res.send({ files: docsArr });
 });
 
+app.get("/download", (req, res) => {
+  res.download((__dirname, `App/Reports`), "test.txt", function (err) {
+    if (err) {
+      // if the file download fails, we throw an error
+      throw err;
+    }
+  });
+});
 app.listen(port, () => {
   console.log(`App running at http://localhost:${port}`);
 });
