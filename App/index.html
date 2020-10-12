@@ -2,11 +2,13 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Al Rajhi</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/jquery-ui.min.css">
     <style>
         .required {
             color: #d33a27;
@@ -29,7 +31,6 @@
             <img src="./assets/img/navbar.PNG" alt="navbar" class="navbar">
         </a>
     </div>
-
     <div class="d-flex justify-content-center px-md-4 px-1 pb-5">
         <div class="container-fluid px-md-4 mx-md-5 form-wrapper mt-5 py-md-4">
             <form class="py-4 px-md-3" id="appForm" novalidate>
@@ -652,22 +653,23 @@
                                 <!-- 1 - Today's Date -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="todayDate">تاريخ اليوم</label><span class="required mx-1">*</span>
-                                    <input type="date" class="form-control" id="todayDate" name="today_date" required>
+                                    <input type="text" class="form-control datepicker" id="todayDate" name="today_date"
+                                        required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 10 - Instrument History -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="instrumentHistory">تاريخ الصك</label><span
                                         class="required mx-1">*</span>
-                                    <input type="date" class="form-control" id="instrumentHistory"
+                                    <input type="text" class="form-control datepicker" id="instrumentHistory"
                                         name="history_instrument" required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 32 - Contract Date -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="contractDate">تاريخ العقد</label><span class="required mx-1">*</span>
-                                    <input type="date" class="form-control" id="contractDate" name="date_of_contract"
-                                        required>
+                                    <input type="text" class="form-control datepicker" id="contractDate"
+                                        name="date_of_contract" required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -675,8 +677,8 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="agreementDate">تاريخ الإتفاقية</label><span
                                         class="required mx-1">*</span>
-                                    <input type="date" class="form-control" id="agreementDate" name="date_of_agreement"
-                                        required>
+                                    <input type="text" class="form-control datepicker" id="agreementDate"
+                                        name="date_of_agreement" required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -684,8 +686,8 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="invoiceDate">تاريخ إصدار الفاتورة</label><span
                                         class="required mx-1">*</span>
-                                    <input type="date" class="form-control" id="invoiceDate" name="invoice_issued_date"
-                                        required>
+                                    <input type="text" class="form-control datepicker" id="invoiceDate"
+                                        name="invoice_issued_date" required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
@@ -701,7 +703,7 @@
                         <div class="panel-heading" role="tab" id="headingSix">
                             <h4 class="panel-title px-md-4 px-2">
                                 <a role="button" data-toggle="collapse" data-parent="#accordionSix" href="#collapseSix"
-                                    aria-expanded="false" aria-controls="collapseSix" class="title-link py-4">تفاصيل
+                                    aria-expanded="true" aria-controls="collapseSix" class="title-link py-4">تفاصيل
                                     أخرى<span class="title-icon mr-3"></span>
                                 </a>
                             </h4>
@@ -1109,7 +1111,10 @@
     </div>
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery-ui.min.js"></script>
     <script>
+        // date picker
+        $(".datepicker").datepicker();
         // toggle all template document checkboxes on selecting - All documents
         document.getElementById('checkAll').addEventListener('change', function (event) {
             var allDocumentCheckBoxes = document.querySelectorAll('.template input[type=checkbox]');
@@ -1217,7 +1222,6 @@
 
         // Submit form data
         var form = document.getElementsByTagName('form')[0];
-        //  form.addEventListener("submit", function (event) {
         $("form").submit(function (event) {
             event.preventDefault();
             $(".spinner-border").toggle();
@@ -1255,6 +1259,32 @@
                 for (var i = 0; i < arr.length; i++) {
                     payload[arr[i].name] = arr[i].value;
                 }
+
+                var event;
+                if (typeof (Event) === 'function') {
+                    event = new Event('click');
+                } else {
+                    event = document.createEvent('Event');
+                    event.initEvent('click', true, true);
+                }
+
+                // Download documents on IE
+                function downloadDocumentIE(file_url, file_name) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', file_url, true);
+                    xhr.responseType = 'blob';
+                    xhr.onload = function (e) {
+                        if (this.status == 200) {
+                            var blob = this.response;
+                            navigator.msSaveBlob(blob, file_name);
+                        }
+                    }
+                    xhr.onerror = function (e) {
+                        alert("Error " + e.target.status + " occurred while receiving the document.");
+                    }
+
+                    xhr.send();
+                }
                 $.ajax({
                     type: 'POST',
                     // TODO - update server path for production 
@@ -1263,16 +1293,26 @@
                     success: function (outputDocuments) {
                         if (outputDocuments.files.length !== 0) {
                             for (var i = 0; i < outputDocuments.files.length; i++) {
-                                var link = document.createElement('a');
-                                // TODO - update server path for production                                 
-                                link.href = "http://localhost:8080/Reports/" + outputDocuments.files[i] + ".docx";
-                                link.setAttribute('download', outputDocuments.files[i]);
-                                document.body.appendChild(link);
-                                link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
-                                link.remove();
+                                // TODO - update server path for production
+                                var file_url = "http://localhost:8080/Reports/" + outputDocuments.files[i] + ".docx";
+                                var file_name = outputDocuments.files[i] + ".docx";
+                                // for IE broser
+                                if (navigator.msSaveBlob) {
+                                    downloadDocumentIE(file_url, file_name);
+                                }
+                                else {
+                                    var link = document.createElement('a');
+                                    // TODO - update server path for production 
+                                    link.href = "http://localhost:8080/Reports/" + outputDocuments.files[i] + ".docx";
+                                    link.setAttribute('download', outputDocuments.files[i]);
+                                    document.body.appendChild(link);
+                                    link.click();
+                                    // link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));                         
+                                }
+
                             }
                             $('#thankModal').modal();
-                            document.getElementById("appForm").reset();
+                            // document.getElementById("appForm").reset();
                             $(".spinner-border").toggle();
                         }
                     },
