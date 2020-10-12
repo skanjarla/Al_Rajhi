@@ -407,7 +407,7 @@
                             <div class="form-row">
 
                                 <!-- 38 - Total Amount Excluding VAT -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                <div class="form-group col-md-6 col-lg-4 col-12">
                                     <label for="totalNoVat">إجمالي العقار بدون ضريبة القيمة المضافة</label><span
                                         class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="totalNoVat" name="total_excluding_vat"
@@ -425,7 +425,7 @@
                                 </div>
 
                                 <!-- 58 - Amount of VAT in riyals -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                <div class="form-group col-md-6 col-lg-4 col-12">
                                     <label for="vatRiyals"> مبلغ ضريبة القيمة المضافة بالريال السعودي</label><span
                                         class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="vatRiyals" name="amount_of_vat_riyals"
@@ -433,7 +433,7 @@
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 64 - percentage of vat-->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                <div class="form-group col-md-6 col-lg-4 col-12">
                                     <label for="vatPercent">النسبة المئوية لضريبة القيمة المضافة</label><span
                                         class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="vatPercent" name="percentage_of_vat"
@@ -652,21 +652,21 @@
                                 <!-- 1 - Today's Date -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="todayDate">تاريخ اليوم</label><span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="todayDate" name="today_date" required>
+                                    <input type="date" class="form-control" id="todayDate" name="today_date" required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 10 - Instrument History -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="instrumentHistory">تاريخ الصك</label><span
                                         class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="instrumentHistory"
+                                    <input type="date" class="form-control" id="instrumentHistory"
                                         name="history_instrument" required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                                 <!-- 32 - Contract Date -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="contractDate">تاريخ العقد</label><span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="contractDate" name="date_of_contract"
+                                    <input type="date" class="form-control" id="contractDate" name="date_of_contract"
                                         required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -675,7 +675,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="agreementDate">تاريخ الإتفاقية</label><span
                                         class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="agreementDate" name="date_of_agreement"
+                                    <input type="date" class="form-control" id="agreementDate" name="date_of_agreement"
                                         required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -684,7 +684,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="invoiceDate">تاريخ إصدار الفاتورة</label><span
                                         class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="invoiceDate" name="invoice_issued_date"
+                                    <input type="date" class="form-control" id="invoiceDate" name="invoice_issued_date"
                                         required>
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -1258,7 +1258,7 @@
                 $.ajax({
                     type: 'POST',
                     // TODO - update server path for production 
-                    url: 'http://localhost:8080/Reports/generate_documents',
+                    url: 'http://localhost:8080/generate_documents',
                     data: JSON.stringify({ templates: templateDocumentsArray, data: payload }),
                     success: function (outputDocuments) {
                         if (outputDocuments.files.length !== 0) {
