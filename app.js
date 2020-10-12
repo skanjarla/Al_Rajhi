@@ -5,10 +5,10 @@ const cors = require("cors");
 const path = require("path");
 const PizZip = require("pizzip");
 const Docxtemplater = require("docxtemplater");
-const port = process.env.PORT || 8080;
+//const port = process.env.PORT || 8080;
+const port = 8080;
 
 app.use(express.static("App"));
-
 app.use(express.json());
 app.use(cors());
 function replaceErrors(key, value) {
@@ -23,7 +23,6 @@ function replaceErrors(key, value) {
 
 function errorHandler(error) {
   console.log(JSON.stringify({ error: error }, replaceErrors));
-
   if (error.properties && error.properties.errors instanceof Array) {
     const errorMessages = error.properties.errors
       .map(function (error) {
@@ -85,14 +84,9 @@ function deleteDocument(docs) {
   });
 }
 
-app.get("/generate_documents_test", (req, res) => {
-  res.send(" Test Successful");
-});
-
 // Test path for the download file
 app.post("/generate_documents", (req, res) => {
   let docsArr = [];
-  console.log(req.body);
   req.body &&
     req.body.templates.map((temp) => {
       docsArr.push(generateDocument(temp, req.body.data));
@@ -105,14 +99,6 @@ app.post("/generate_documents", (req, res) => {
   res.send({ files: docsArr });
 });
 
-app.get("/download", (req, res) => {
-  res.download((__dirname, `App/Reports`), "test.txt", function (err) {
-    if (err) {
-      // if the file download fails, we throw an error
-      throw err;
-    }
-  });
-});
 app.listen(port, () => {
   console.log(`App running at http://localhost:${port}`);
 });
