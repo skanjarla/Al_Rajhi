@@ -42,7 +42,7 @@
                                     <label for="customerName">إسم العميل</label>
                                     <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="customerName" name="name_customer"
-                                        maxlength="100" required />
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -72,8 +72,7 @@
                                 <!-- 21 - Converted -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="converted">تحويلة</label>
-                                    <input type="text" class="form-control number" id="converted" name="converted"
-                                        maxlength="100" />
+                                    <input type="text" class="form-control number" id="converted" name="converted" />
                                 </div>
 
                                 <!-- 22 - Mobile -->
@@ -110,7 +109,7 @@
                             <div class="form-group col-md-6 col-lg-3 col-12 mb-3">
                                 <!-- Pursuit - select dropdown -->
                                 <label for="persuit">السعي</label>
-                                <select class="custom-select form-control" id="persuit" name="persuit">
+                                <select class="custom-select" id="persuit" name="persuit">
                                     <option value="hide">لا يوجد سعي</option>
                                     <option value="show">يوجد سعي</option>
                                 </select>
@@ -121,8 +120,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="estateOffice">إسم المكتب العقاري</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="estateOffice" name="realestate_name"
-                                        maxlength="100" />
+                                    <input type="text" class="form-control" id="estateOffice" name="realestate_name" />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -131,8 +129,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="officeOwner">صاحب المكتب العقاري</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="officeOwner" name="realestate_owner"
-                                        maxlength="100" />
+                                    <input type="text" class="form-control" id="officeOwner" name="realestate_owner" />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -157,8 +154,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="questValue">قيمة السعي</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control number" id="questValue" name="quest_value"
-                                        maxlength="100" />
+                                    <input type="text" class="form-control number" id="questValue" name="quest_value" />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -167,7 +163,7 @@
                                     <label for="questRatio">نسبة السعي</label>
                                     <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="questRatio" name="quest_ratio"
-                                        oninput="maxLengthCheck_questratio(this)" max="2.50" value="2.50" />
+                                        value="2.50" />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
@@ -183,14 +179,14 @@
                                     <label for="sellerName">اسم المالك/البائع</label>
                                     <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="sellerName" name="owner_name"
-                                        maxlength="100" required />
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 34 - Owner Capacity select dropdown -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="asTheOwner">صفة المالك</label>
-                                    <select class="custom-select form-control" id="asTheOwner" name="as_the_owner">
+                                    <select class="custom-select" id="asTheOwner" name="as_the_owner">
                                         <option value="موكل شخص آخر" dir="rtl">
                                             موكل شخص آخر
                                         </option>
@@ -203,7 +199,7 @@
                                     <label for="asTheEmployee">صفة الموظف</label>
                                     <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="asTheEmployee" name="as_the_employee"
-                                        maxlength="100" required />
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -212,25 +208,25 @@
                                     <label for="firstPartyName">اسم الطرف الاول (البائع)</label>
                                     <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="firstPartyName" name="seller_name"
-                                        maxlength="100" required />
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 42 - The second party (buyer) name -->
-                                <!--<div class="form-group col-md-6 col-lg-3 col-12">
+                                <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="secondPartyName">اسم الطرف الثاني (المشتري)</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="secondPartyName" name="buyer_name" maxlength="100"
+                                    <input type="text" class="form-control" id="secondPartyName" name="buyer_name"
                                         required />
                                     <span class="error" aria-live="polite"></span>
-                                </div>-->
+                                </div>
 
                                 <!-- 44 - Witnesses 1 name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="witnessOneName">اسم الشاهد الأول</label>
                                     <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="witnessOneName" name="witness_one_name"
-                                        maxlength="100" required />
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -247,7 +243,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="witnessOneAddress">عنوان الشاهد الأول</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="witnessOneAddress" maxlength="100"
+                                    <input type="text" class="form-control" id="witnessOneAddress"
                                         name="witness_one_address" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -257,7 +253,7 @@
                                     <label for="witnessTwoName">اسم الشاهد الثاني</label>
                                     <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="witnessTwoName" name="witness_two_name"
-                                        maxlength="100" required />
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -274,7 +270,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="witnessTwoAddress">عنوان الشاهد الثاني</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="witnessTwoAddress" maxlength="100"
+                                    <input type="text" class="form-control" id="witnessTwoAddress"
                                         name="witness_two_address" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -284,7 +280,7 @@
                                     <label for="employeeName">إسم الموطف/الموظفة</label>
                                     <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="employeeName" name="employee_name"
-                                        maxlength="100" required />
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
@@ -312,16 +308,8 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="typeOfProperty">نوع العقار</label>
                                     <span class="required mx-1">*</span>
-                                    <!--<input type="text" class="form-control" id="typeOfProperty" name="property_type" maxlength="100"
-                                        required />-->
-                                    <select class="custom-select form-control" id="descriptionItem"
-                                        name="description_item">
-                                        <option value="شقة" dir="rtl">شقة</option>
-                                        <option value="فيلا" dir="rtl">فيلا</option>
-                                        <option value="مبنى" dir="rtl">مبنى</option>
-                                        <option value="أرض" dir="rtl">أرض</option>
-                                        <option value="مبنى آخر" dir="rtl">مبنى آخر</option>
-                                    </select>
+                                    <input type="text" class="form-control" id="typeOfProperty" name="property_type"
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -329,23 +317,17 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="plotNo">قطعة رقم</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="plotNo" name="land_number"
-                                        maxlength="100" required />
+                                    <input type="text" class="form-control number" id="plotNo" name="land_number"
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 6 - Total Land Area -->
-                                <!--<div class="form-group col-md-6 col-lg-3 col-12">
+                                <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="landArea">مساحة الأرض الإجمالية</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="number" class="form-control" id="landArea" name="total_area" maxlength="100" 
+                                    <input type="text" class="form-control number" id="landArea" name="total_area"
                                         required />
-                                    <span class="error" aria-live="polite"></span>
-                                </div>-->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="questRatio">مساحة الأرض الإجمالية</label>
-                                    <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="questRatio" name="quest_ratio" />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -353,7 +335,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="schemeNumber">مخطط رقم</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="schemeNumber" maxlength="100"
+                                    <input type="text" class="form-control number" id="schemeNumber"
                                         name="scheme_number" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -362,8 +344,8 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="buildingNo">فسح بناء رقم</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="buildingNo" name="building_no"
-                                        maxlength="100" required />
+                                    <input type="text" class="form-control number" id="buildingNo" name="building_no"
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -371,8 +353,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="district"> الحي</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="district" name="district" required
-                                        maxlength="100" />
+                                    <input type="text" class="form-control" id="district" name="district" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -381,7 +362,7 @@
                                     <label for="buildingAge">عمر المبنى</label>
                                     <span class="required mx-1">*</span>
                                     <input type="text" class="form-control number" id="buildingAge" name="building_age"
-                                        maxlength="100" required />
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -390,7 +371,7 @@
                                     <label for="hisAddress">عنوانه</label>
                                     <span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="hisAddress" name="his_address"
-                                        maxlength="100" required />
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -398,8 +379,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="city">المدينة</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="city" name="city" required
-                                        maxlength="100" />
+                                    <input type="text" class="form-control" id="city" name="city" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
@@ -415,15 +395,14 @@
                                     <div class="shadow shadow-sm rounded rounded-sm p-4 mx-2">
                                         <label for="north">يحد الأرض شمالاً</label>
                                         <span class="required mx-1">*</span>
-                                        <input type="text" class="form-control" id="north" name="north" required
-                                            maxlength="100" />
+                                        <input type="text" class="form-control" id="north" name="north" required />
                                         <span class="error" aria-live="polite"></span>
 
                                         <br />
 
                                         <label for="northValue">بطول</label>
                                         <span class="required mx-1">*</span>
-                                        <input type="text" class="form-control number" id="northValue" maxlength="100"
+                                        <input type="text" class="form-control number" id="northValue"
                                             name="north_as_tall_as" required />
                                         <span class="error" aria-live="polite"></span>
                                     </div>
@@ -434,15 +413,14 @@
                                     <div class="shadow shadow-sm rounded rounded-sm p-4">
                                         <label for="south">يحد الأرض جنوباً</label>
                                         <span class="required mx-1">*</span>
-                                        <input type="text" class="form-control" id="south" name="south" required
-                                            maxlength="100" />
+                                        <input type="text" class="form-control" id="south" name="south" required />
                                         <span class="error" aria-live="polite"></span>
 
                                         <br />
 
                                         <label for="southValue">بطول</label>
                                         <span class="required mx-1">*</span>
-                                        <input type="text" class="form-control number" id="southValue" maxlength="100"
+                                        <input type="text" class="form-control number" id="southValue"
                                             name="south_as_tall_as" required />
                                         <span class="error" aria-live="polite"></span>
                                     </div>
@@ -453,15 +431,14 @@
                                     <div class="shadow shadow-sm rounded rounded-sm p-4 mx-2">
                                         <label for="east">يحد الأرض شرقاً</label>
                                         <span class="required mx-1">*</span>
-                                        <input type="text" class="form-control" id="east" name="east" required
-                                            maxlength="100" />
+                                        <input type="text" class="form-control" id="east" name="east" required />
                                         <span class="error" aria-live="polite"></span>
 
                                         <br />
 
                                         <label for="eastValue">بطول</label>
                                         <span class="required mx-1">*</span>
-                                        <input type="text" class="form-control number" id="eastValue" maxlength="100"
+                                        <input type="text" class="form-control number" id="eastValue"
                                             name="east_as_tall_as" required />
                                         <span class="error" aria-live="polite"></span>
                                     </div>
@@ -472,15 +449,14 @@
                                     <div class="shadow shadow-sm rounded rounded-sm p-4 mx-2">
                                         <label for="west">يحد الأرض غرباً</label>
                                         <span class="required mx-1">*</span>
-                                        <input type="text" class="form-control" id="west" name="west" required
-                                            maxlength="100" />
+                                        <input type="text" class="form-control" id="west" name="west" required />
                                         <span class="error" aria-live="polite"></span>
 
                                         <br />
 
                                         <label for="westValue">بطول</label>
                                         <span class="required mx-1">*</span>
-                                        <input type="text" class="form-control number" id="westValue" maxlength="100"
+                                        <input type="text" class="form-control number" id="westValue"
                                             name="west_as_tall_as" required />
                                         <span class="error" aria-live="polite"></span>
                                     </div>
@@ -508,7 +484,7 @@
                                 <div class="form-group col-md-6 col-lg-4 col-12">
                                     <label for="totalNoVat">إجمالي العقار بدون ضريبة القيمة المضافة</label><span
                                         class="required mx-1">*</span>
-                                    <input type="text" class="form-control number" id="totalNoVat" maxlength="100"
+                                    <input type="text" class="form-control number" id="totalNoVat"
                                         name="total_excluding_vat" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -517,7 +493,7 @@
                                 <div class="form-group col-md-6 col-lg-4 col-12">
                                     <label for="totalInRiyals">مجموع مبلغ بيع العقار بالريال السعودي</label><span
                                         class="required mx-1">*</span>
-                                    <input type="text" class="form-control number" id="totalInRiyals" maxlength="100"
+                                    <input type="text" class="form-control number" id="totalInRiyals"
                                         name="amount_of_sale_riyals" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -527,7 +503,7 @@
                                     <label for="vatRiyals">
                                         مبلغ ضريبة القيمة المضافة بالريال السعودي</label><span
                                         class="required mx-1">*</span>
-                                    <input type="text" class="form-control number" id="vatRiyals" maxlength="100"
+                                    <input type="text" class="form-control number" id="vatRiyals"
                                         name="amount_of_vat_riyals" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -536,16 +512,16 @@
                                 <div class="form-group col-md-6 col-lg-4 col-12">
                                     <label for="vatPercent">النسبة المئوية لضريبة القيمة المضافة</label><span
                                         class="required mx-1">*</span>
-                                    <input type="text" class="form-control number" id="vatPercent" maxlength="100"
+                                    <input type="text" class="form-control number" id="vatPercent"
                                         name="percentage_of_vat" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 74 - total Amount of funding -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="amountFunding">مبلغ التمويل</label><span class="required mx-1"></span>
-                                    <input type="text" class="form-control number" id="amountFunding" maxlength="100"
-                                        name="amount_of_funding" />
+                                    <label for="amountFunding">مبلغ التمويل</label><span class="required mx-1">*</span>
+                                    <input type="text" class="form-control number" id="amountFunding"
+                                        name="amount_of_funding" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
@@ -665,14 +641,14 @@
                                     <label for="orderNumber">رقم العقد/رقم الطلب</label><span
                                         class="required mx-1">*</span>
                                     <input type="text" class="form-control number" id="orderNumber" name="order_number"
-                                        maxlength="100" required />
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 36 - Instrument Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="instrumentNumber">رقم الصك</label><span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="instrumentNumber" maxlength="100"
+                                    <input type="text" class="form-control number" id="instrumentNumber"
                                         name="instrument_number" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -681,7 +657,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="instrumentCity">مدينة إصدار الصك</label><span
                                         class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="instrumentCity" maxlength="100"
+                                    <input type="text" class="form-control" id="instrumentCity"
                                         name="instrument_issuing_city" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -690,15 +666,14 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="duration">مدة خيار الشرط</label><span class="required mx-1">*</span>
                                     <input type="text" class="form-control number" id="duration" name="duration"
-                                        maxlength="100" required />
+                                        required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 53 - Bank Name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="bankName">إسم البنك</label><span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="bankName" name="bank_name" required
-                                        maxlength="100" />
+                                    <input type="text" class="form-control" id="bankName" name="bank_name" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -706,7 +681,7 @@
                                 <div class="form-group col-md-6 col-lg-6 col-12">
                                     <label for="entitlement">رقم شهادة إستحقاق تحمل الدولة ضريبة القيمة المضافة من
                                         المسكن الأول</label><span class="required mx-1">*</span>
-                                    <input type="text" class="form-control number" id="entitlement" maxlength="100"
+                                    <input type="text" class="form-control number" id="entitlement"
                                         name="certificate_of_entitlement" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -714,9 +689,9 @@
                                 <!-- 56 VAT Registration number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="regNumberVat">رقم التسجيل لضريبة القيمة المضافة</label><span
-                                        class="required mx-1"></span>
-                                    <input type="text" class="form-control number" id="regNumberVat" maxlength="100"
-                                        name="reg_number_for_vat" />
+                                        class="required mx-1">*</span>
+                                    <input type="text" class="form-control number" id="regNumberVat"
+                                        name="reg_number_for_vat" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
                             </div>
@@ -726,20 +701,19 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="invoiceNumber">رقم فاتورة البيع</label><span
                                         class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="invoiceNumber" maxlength="100"
+                                    <input type="text" class="form-control number" id="invoiceNumber"
                                         name="invoice_number" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 61 description Item -->
-                                <!--<div class="form-group col-md-6 col-lg-3 col-12">
-                                   <!-- <label for="descriptionItem">وصف البند</label><span class="required mx-1">*</span>
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="descriptionItem">وصف البند</label><span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="descriptionItem" name="description_item"
                                         required />
-                                                                                                                                                                
 
                                     <span class="error" aria-live="polite"></span>
-                                </div>-->
+                                </div>
 
                                 <!-- 62 - qunantity -->
 
@@ -747,7 +721,7 @@
                                     <label for="quantity">الكمية</label><span class="required mx-1">*</span>
 
                                     <input type="text" class="form-control number" id="quantity" name="quantity"
-                                        maxlength="100" required />
+                                        required />
 
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -968,7 +942,7 @@
 
                                     <div>
                                         <input type="text" class="form-control check-text d-none" id="realOtherText"
-                                            maxlength="100" name="real_other_text" />
+                                            name="real_other_text" />
                                     </div>
                                 </div>
                             </div>
@@ -1435,14 +1409,8 @@
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/jquery-ui.min.js"></script>
     <script>
-        // var URL = 'http://drsitecoretst1v:8080';
-        var URL = "https://al-rajhi.herokuapp.com";
+        var URL = 'http://localhost:8080';
         // Restricts input for the number only input
-        function maxLengthCheck_questratio(object) {
-            if (object.value > object.max) {
-                object.value = object.max;
-            }
-        }
         (function ($) {
             $.fn.inputFilter = function (inputFilter) {
                 return this.on(
@@ -1875,7 +1843,7 @@
                             $(".app-btn").prop("disabled", true);
                             generateCaptcha();
                             document.getElementById("notesList").classList.add("d-none");
-                            document.getElementById("realOtherText").classList.add("d-none");
+                            document.getElementById("realOtherText").classList.add("d-none");                             
                         }
                     },
                     contentType: "application/json",
