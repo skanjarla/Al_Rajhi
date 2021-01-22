@@ -11,7 +11,7 @@ label {
 }
 label span {
   margin-left: 0.8rem;
-} 
+}
 .form-group {
   padding-left: 1rem !important;
   margin-bottom: 1.2rem;
@@ -177,6 +177,9 @@ button:disabled {
 
 .template-check-boxes fieldset {
   border: 1px solid #29419b !important;
+}
+.datepicker {
+  width: unset !important;
 }
 @media (max-width: 576px) {
   .panel-title {

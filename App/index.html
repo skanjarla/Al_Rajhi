@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="stylesheet" href="./assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap-datetimepicker.min.css" />
     <style>
         .check-text {
             min-width: 300px;
@@ -17,6 +18,9 @@
 </head>
 
 <body>
+    <div>
+        <button type="button" id="test_btn" title="Test Button">Test Button</button>
+    </div>
     <div class="d-flex justify-content-center px-md-4 px-1 pb-5">
         <div class="container-fluid px-md-4 mx-md-5 form-wrapper mt-5 py-md-4">
             <form class="py-4 px-md-3" id="appForm" novalidate>
@@ -215,15 +219,6 @@
                                         maxlength="100" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
-
-                                <!-- 42 - The second party (buyer) name -->
-                                <!--<div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="secondPartyName">اسم الطرف الثاني (المشتري)</label>
-                                    <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="secondPartyName" name="buyer_name" maxlength="100"
-                                        required />
-                                    <span class="error" aria-live="polite"></span>
-                                </div>-->
 
                                 <!-- 44 - Witnesses 1 name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
@@ -774,11 +769,11 @@
                             <div class="form-row">
                                 <!-- 1 - Today's Date -->
 
-                                <div class="form-group col-md-6 col-lg-3 col-12 d-none">
+                                <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="todayDate">تاريخ اليوم</label><span class="required mx-1">*</span>
 
-                                    <input type="text" autocomplete="off" class="form-control datepicker" id="todayDate"
-                                        name="today_date" placeholder="YYYY-MM-DD" required />
+                                    <input type="text" autocomplete="off" class="form-control datepicker notranslate"
+                                        id="todayDate" name="today_date" placeholder="YYYY-MM-DD" required />
 
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -789,11 +784,11 @@
                                     <label for="instrumentHistory">تاريخ الصك</label><span
                                         class="required mx-1">*</span>
 
-                                    <input type="text" autocomplete="off" class="form-control datepicker"
+                                    <input type="text" autocomplete="off" class="form-control datepicker notranslate"
                                         id="instrumentHistory" name="history_instrument" placeholder="YYYY-MM-DD"
                                         required />
-
                                     <span class="error" aria-live="polite"></span>
+
                                 </div>
 
                                 <!-- 32 - Contract Date -->
@@ -801,7 +796,7 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="contractDate">تاريخ العقد</label><span class="required mx-1">*</span>
 
-                                    <input type="text" autocomplete="off" class="form-control datepicker"
+                                    <input type="text" autocomplete="off" class="form-control datepicker notranslate"
                                         id="contractDate" name="date_of_contract" placeholder="YYYY-MM-DD" required />
 
                                     <span class="error" aria-live="polite"></span>
@@ -813,7 +808,7 @@
                                     <label for="agreementDate">تاريخ الإتفاقية</label><span
                                         class="required mx-1">*</span>
 
-                                    <input type="text" autocomplete="off" class="form-control datepicker"
+                                    <input type="text" autocomplete="off" class="form-control datepicker notranslate"
                                         id="agreementDate" name="date_of_agreement" placeholder="YYYY-MM-DD" required />
 
                                     <span class="error" aria-live="polite"></span>
@@ -825,7 +820,7 @@
                                     <label for="invoiceDate">تاريخ إصدار الفاتورة</label><span
                                         class="required mx-1">*</span>
 
-                                    <input type="text" autocomplete="off" class="form-control datepicker"
+                                    <input type="text" autocomplete="off" class="form-control datepicker notranslate"
                                         id="invoiceDate" name="invoice_issued_date" placeholder="YYYY-MM-DD" required />
 
                                     <span class="error" aria-live="polite"></span>
@@ -1434,15 +1429,45 @@
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/jquery-ui.min.js"></script>
+    <script src="./assets/js/bootstrap-hijri-datetimepicker.min.js"></script>
     <script>
         // var URL = 'http://drsitecoretst1v:8080';
-        var URL = "https://al-rajhi.herokuapp.com";
-        // Restricts input for the number only input
+        // var URL = "https://al-rajhi.herokuapp.com";
+
+        var URL = 'http://localhost:8080';
+
         function maxLengthCheck_questratio(object) {
             if (object.value > object.max) {
                 object.value = object.max;
             }
         }
+
+        // Datepicker
+        $(function () {
+            // date picker
+            // $(".datepicker").datepicker({
+            //     isRTL: true,
+            //     prevText: "",
+            //     nextText: "",
+            //     dateFormat: "yy-mm-dd",
+            // });
+            // Today's date by default
+            // $("#todayDate")
+            //     .datepicker({ dateFormat: "yy-mm-dd" })
+            //     .datepicker("setDate", new Date());
+
+            // $("#todayDate")
+            //     .hijriDatePicker({ defalut: new Date() })
+
+            $(".datepicker").hijriDatePicker({
+                hijri: true,
+                showSwitcher: true,
+            });
+            // instrument_date instrumentHistory
+            // Fix date format like NAN-NAN-NAN  on google translate to English
+            $('.ui-datepicker').addClass('notranslate');
+        });
+        // Restricts input for the number only input
         (function ($) {
             $.fn.inputFilter = function (inputFilter) {
                 return this.on(
@@ -1467,7 +1492,8 @@
         })(jQuery);
 
         $(".number").inputFilter(function (value) {
-            return /^\d*$/.test(value); // Allow digits only, using a RegExp
+            // return /^\d*.$/.test(value); // Allow digits only, using a RegExp - /^-?\d*[.,]?\d{0,2}$/
+            return /^-?\d*[.,]?\d{0,15}$/.test(value)
         });
 
         // Captcha token generartion
@@ -1530,17 +1556,6 @@
                 }
             });
         });
-        // date picker
-        $(".datepicker").datepicker({
-            isRTL: true,
-            prevText: "",
-            nextText: "",
-            dateFormat: "yy-mm-dd",
-        });
-        // Today's date by default
-        $("#todayDate")
-            .datepicker({ dateFormat: "yy-mm-dd" })
-            .datepicker("setDate", new Date());
 
         // toggle all template document checkboxes on selecting - All documents
         document
@@ -1883,6 +1898,17 @@
                 });
             }
         });
+
+        $("#test_btn").on('click',function(event){
+            event.preventDefault();
+            $.ajax({
+                    type: "GET", 
+                    url: "/test",                     
+                    success: function (response) {
+                        console.log(response);
+                    } 
+                })               
+        })
     </script>
 </body>
 
