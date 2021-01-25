@@ -4,11 +4,17 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@pdftron/pdfnet-node": "^8.1.0",
     "cors": "^2.8.5",
     "docxtemplater": "^3.19.3",
     "dotenv": "^8.2.0",
+    "edge-js": "^15.5.2",
     "express": "^4.17.1",
-    "pizzip": "^3.0.6"
+    "html-pdf-node": "^1.0.7",
+    "mammoth": "^1.4.16",
+    "node-msoffice-pdf": "0.0.7",
+    "pizzip": "^3.0.6",
+    "unoconv": "^0.1.2"
   },
   "devDependencies": {},
   "scripts": {

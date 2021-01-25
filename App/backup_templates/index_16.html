@@ -1437,10 +1437,7 @@
     <script src="./assets/js/jquery-ui.min.js"></script>
     <script src="./assets/js/bootstrap-hijri-datetimepicker.min.js"></script>
     <script>
-        // var URL = 'http://drsitecoretst1v:8080';
-        // var URL = "https://al-rajhi.herokuapp.com";
-
-        var URL = 'http://10.252.75.211:8081';
+ 
 
         function maxLengthCheck_questratio(object) {
             if (object.value > object.max) {
@@ -1859,7 +1856,7 @@
                 $.ajax({
                     type: "POST",
                     // TODO - update server path for production
-                    url: URL + "/generate_documents",
+                    url:"/generate_documents",
                     data: JSON.stringify({
                         templates: templateDocumentsArray,
                         data: payload,
@@ -1868,10 +1865,7 @@
                         if (outputDocuments.files.length !== 0) {
                             for (var i = 0; i < outputDocuments.files.length; i++) {
                                 // TODO - update server path for production
-                                var file_url =
-                                    URL + "/MortgageReports/" +
-                                    outputDocuments.files[i] +
-                                    ".docx";
+                                var file_url ="/MortgageReports/" + outputDocuments.files[i] + ".docx";
                                 var file_name = outputDocuments.files[i] + ".docx";
                                 // for IE broser
                                 if (navigator.msSaveBlob) {
@@ -1879,10 +1873,7 @@
                                 } else {
                                     var link = document.createElement("a");
                                     // TODO - update server path for production
-                                    link.href =
-                                        URL + "/MortgageReports/" +
-                                        outputDocuments.files[i] +
-                                        ".docx";
+                                    link.href ="/MortgageReports/" + outputDocuments.files[i] + ".docx";
                                     link.setAttribute("download", outputDocuments.files[i]);
                                     document.body.appendChild(link);
                                     link.click();

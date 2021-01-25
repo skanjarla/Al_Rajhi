@@ -17,10 +17,7 @@
     </style>
 </head>
 
-<body>
-    <div>
-        <button type="button" id="test_btn" title="Test Button">Test Button</button>
-    </div>
+<body> 
     <div class="d-flex justify-content-center px-md-4 px-1 pb-5">
         <div class="container-fluid px-md-4 mx-md-5 form-wrapper mt-5 py-md-4">
             <form class="py-4 px-md-3" id="appForm" novalidate>
@@ -62,7 +59,7 @@
                                 <!-- 19 - Home Phone -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="homePhone">هاتف المنزل</label>
-                                    <input type="text" class="form-control number" id="homePhone" name="home_phone"
+                                    <input type="text" class="form-control phonenumber" id="homePhone" name="home_phone"
                                         maxlength="10" />
                                 </div>
 
@@ -92,8 +89,8 @@
                                 <!-- 23 - Email -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="email">بريد إلكتروني</label>
-                                    <span class="required mx-1">*</span>
-                                    <input type="email" class="form-control" id="email" name="email" required />
+                                    <!-- <span class="requi mx-1">*</span> -->
+                                    <input type="email" class="form-control" id="email" name="email"  />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -198,7 +195,7 @@
                                         <option value="موكل شخص آخر" dir="rtl">
                                             موكل شخص آخر
                                         </option>
-                                        <option value="نفسه" dir="rtl">نفسه</option>
+                                        <option value="نفسه" dir="rtl" selected>نفسه</option>
                                     </select>
                                 </div>
 
@@ -728,7 +725,7 @@
 
                                 <!-- 61 description Item -->
                                 <!--<div class="form-group col-md-6 col-lg-3 col-12">
-                                   <!-- <label for="descriptionItem">وصف البند</label><span class="required mx-1">*</span>
+                                    <label for="descriptionItem">وصف البند</label><span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="descriptionItem" name="description_item"
                                         required />
                                                                                                                                                                 
@@ -1192,179 +1189,6 @@
                     </div>
                 </div>
 
-                <!-- TEMPLATES -->
-
-                <div class="container p-4 pb-5 my-4 bg-white shadow shadow-lg rounded">
-                    <fieldset class="p-3 px-5">
-                        <legend class="w-auto px-2">حدد المستندات لتنزيلها</legend>
-
-                        <div class="row" id="templates">
-                            <div class="col-md-4 col-12">
-                                <!-- Template - 1 - Real will buy -->
-
-                                <div class="form-group">
-                                    <div class="form-check template">
-                                        <input class="form-check-input" type="checkbox" id="template1"
-                                            value="ارادة الشراء الحقيقي" />
-
-                                        <label class="form-check-label mr-4" for="template1">
-                                            ارادة الشراء الحقيقي
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 col-12">
-                                <!-- Template - 2 - Approval Of Inspecting A Rentable Property -->
-
-                                <div class="form-group">
-                                    <div class="form-check template">
-                                        <input class="form-check-input" type="checkbox" id="template2"
-                                            value="أقرار معاينة عقار قابل للتأجير" />
-
-                                        <label class="form-check-label mr-4" for="template2">
-                                            أقرار معاينة عقار قابل للتأجير
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 col-12">
-                                <!-- Template - 3 - Acknowledgment Preview -->
-
-                                <div class="form-group">
-                                    <div class="form-check template">
-                                        <input class="form-check-input" type="checkbox" id="template3"
-                                            value="إقرار معاينة" />
-
-                                        <label class="form-check-label mr-4" for="template3">
-                                            إقرار معاينة
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 col-12">
-                                <!-- Template - 4 - Owner's Tax Return -->
-
-                                <div class="form-group">
-                                    <div class="form-check template">
-                                        <input class="form-check-input" type="checkbox" id="template4"
-                                            value="الإقرار الضريبي للمالك" />
-
-                                        <label class="form-check-label mr-4" for="template4">
-                                            الإقرار الضريبي للمالك
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 col-12">
-                                <!-- Template - 5 - The Undertaking -->
-
-                                <div class="form-group">
-                                    <div class="form-check template">
-                                        <input class="form-check-input" type="checkbox" id="template5" value="التعهد" />
-
-                                        <label class="form-check-label mr-4" for="template5">
-                                            التعهد
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 col-12">
-                                <!-- Template - 6 - Pledge And Commitment To The Construction Stages -->
-
-                                <div class="form-group">
-                                    <div class="form-check template">
-                                        <input class="form-check-input" type="checkbox" id="template6"
-                                            value="تعهد والتزام بمراحل البناء" />
-
-                                        <label class="form-check-label mr-4" for="template6">
-                                            تعهد والتزام بمراحل البناء
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 col-12">
-                                <!-- Template - 7 - Condition Option -->
-
-                                <div class="form-group">
-                                    <div class="form-check template">
-                                        <input class="form-check-input" type="checkbox" id="template7"
-                                            value="خيار الشرط" />
-
-                                        <label class="form-check-label mr-4" for="template7">
-                                            خيار الشرط
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 col-12">
-                                <!-- Template - 8 - Invoice For Selling A Property -->
-
-                                <div class="form-group">
-                                    <div class="form-check template">
-                                        <input class="form-check-input" type="checkbox" id="template8"
-                                            value="فاتورة بيع عقار" />
-
-                                        <label class="form-check-label mr-4" for="template8">
-                                            فاتورة بيع عقار
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Template - 9 - A Purchase Order Form -->
-
-                            <div class="col-md-4 col-12">
-                                <div class="form-group">
-                                    <div class="form-check template">
-                                        <input class="form-check-input" type="checkbox" id="template9"
-                                            value="نموذج الشراء للعميل" />
-
-                                        <label class="form-check-label mr-4" for="template9">
-                                            نموذج الشراء للعميل
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 col-12">
-                                <!-- Template - 10 - Quotation Form -->
-
-                                <div class="form-group">
-                                    <div class="form-check template">
-                                        <input class="form-check-input" type="checkbox" id="template10"
-                                            value="نموذج عرض السعر" />
-
-                                        <label class="form-check-label mr-4" for="template10">
-                                            نموذج عرض السعر
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 col-12">
-                                <!-- Template - 11 - All Documents -->
-
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="checkAll" />
-
-                                        <label class="form-check-label mr-4" for="checkAll">
-                                            كل المستندات
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-
                 <div class="form-group d-flex flex-column justify-content-center my-2 captcha-box">
                     <div class="d-flex">
                         <p id="captcha-token" class="mb-0"></p>
@@ -1431,11 +1255,7 @@
     <script src="./assets/js/jquery-ui.min.js"></script>
     <script src="./assets/js/bootstrap-hijri-datetimepicker.min.js"></script>
     <script>
-        // var URL = 'http://drsitecoretst1v:8080';
-        // var URL = "https://al-rajhi.herokuapp.com";
-
-        var URL = 'http://localhost:8080';
-
+ 
         function maxLengthCheck_questratio(object) {
             if (object.value > object.max) {
                 object.value = object.max;
@@ -1467,33 +1287,24 @@
             // Fix date format like NAN-NAN-NAN  on google translate to English
             $('.ui-datepicker').addClass('notranslate');
         });
-        // Restricts input for the number only input
-        (function ($) {
-            $.fn.inputFilter = function (inputFilter) {
-                return this.on(
-                    "input keydown keyup mousedown mouseup select contextmenu drop",
-                    function () {
-                        if (inputFilter(this.value)) {
-                            this.oldValue = this.value;
-                            this.oldSelectionStart = this.selectionStart;
-                            this.oldSelectionEnd = this.selectionEnd;
-                        } else if (this.hasOwnProperty("oldValue")) {
-                            this.value = this.oldValue;
-                            this.setSelectionRange(
-                                this.oldSelectionStart,
-                                this.oldSelectionEnd
-                            );
-                        } else {
-                            this.value = "";
-                        }
-                    }
-                );
-            };
-        })(jQuery);
 
-        $(".number").inputFilter(function (value) {
-            // return /^\d*.$/.test(value); // Allow digits only, using a RegExp - /^-?\d*[.,]?\d{0,2}$/
-            return /^-?\d*[.,]?\d{0,15}$/.test(value)
+        // Input decimal numbers only
+        $('.number').on("input keydown keyup mousedown mouseup select contextmenu drop",function () {             
+            this.value === '.'?this.value = '0.' : this.value;
+            this.value = this.value.replace(/[^0-9\.]/g,'');
+        });
+
+        // Phone number validation
+        //$(".phonenumber").val('05');
+        $('.phonenumber').on("input keydown keyup mousedown mouseup select contextmenu drop",function () { 
+            if(this.value[0] && this.value[0] !== '0'){                 
+                this.value='05';
+                alert("Phone number should start with 05");                                                  
+            }
+            else if(this.value[1] && this.value[1] !== '5'){                 
+                this.value='05';
+                alert("Phone number should start with 05");                 
+            }
         });
 
         // Captcha token generartion
@@ -1556,30 +1367,14 @@
                 }
             });
         });
-
-        // toggle all template document checkboxes on selecting - All documents
-        document
-            .getElementById("checkAll")
-            .addEventListener("change", function (event) {
-                var allDocumentCheckBoxes = document.querySelectorAll(
-                    ".template input[type=checkbox]"
-                );
-                for (var i = 0; i < allDocumentCheckBoxes.length; i++) {
-                    allDocumentCheckBoxes[i].checked === false;
-                    if (this.checked === true) {
-                        allDocumentCheckBoxes[i].checked = true;
-                    }
-                    if (this.checked === false) {
-                        allDocumentCheckBoxes[i].checked = false;
-                    }
-                }
-            });
+ 
         // Toggle check boxes for The opinion of the direct employee to contract
         $("#notAppear").change(function () {
             if ($("#foundOut").is(":checked")) {
                 $("#foundOut").prop("checked", false);
             }
         });
+
         $("#foundOut").change(function () {
             if ($("#notAppear").is(":checked")) {
                 $("#notAppear").prop("checked", false);
@@ -1592,11 +1387,13 @@
                 $("#notes").prop("checked", false);
             }
         });
+
         $("#notes").change(function () {
             if ($("#fullyFinished").is(":checked")) {
                 $("#fullyFinished").prop("checked", false);
             }
         });
+
         // select dropdown - show/hide real estate information
         var persuit = document
             .getElementById("persuit")
@@ -1635,6 +1432,7 @@
                     $("#fax").prop("required", false);
                     $("#questValue").prop("required", false);
                     $("#questRatio").prop("required", false);
+
                     $("#estateOffice").val('');
                     $("#officeOwner").val('');
                     $("#officePhone").val('');
@@ -1814,23 +1612,13 @@
                 generateCaptcha();
             }
 
-            if (form.checkValidity() && token === captchaValue) {
-                var templateDocumentsArray = [];
-                var templateDocumentCheckboxes = document.querySelectorAll(
-                    ".template input[type=checkbox]:checked"
-                );
-
-                for (var i = 0; i < templateDocumentCheckboxes.length; i++) {
-                    templateDocumentsArray.push(templateDocumentCheckboxes[i].value);
-                }
-
-                var formData = new FormData(document.forms[0]);
+            if (form.checkValidity() && token === captchaValue) {         
+                var formData = new FormData(document.forms[0]);        
                 var payload = {};
                 let arr = $(this).serializeArray();
                 for (var i = 0; i < arr.length; i++) {
                     payload[arr[i].name] = arr[i].value;
                 }
-                // Download documents on IE
                 function downloadDocumentIE(file_url, file_name) {
                     var xhr = new XMLHttpRequest();
                     xhr.open("GET", file_url, true);
@@ -1848,40 +1636,28 @@
                             " occurred while receiving the document."
                         );
                     };
-
                     xhr.send();
                 }
                 $.ajax({
-                    type: "POST",
-                    // TODO - update server path for production
-                    url: URL + "/generate_documents",
-                    data: JSON.stringify({
-                        templates: templateDocumentsArray,
-                        data: payload,
-                    }),
+                    type: "POST",                     
+                    url:"/generate_documents",
+                    data: JSON.stringify({data: payload,}),
                     success: function (outputDocuments) {
-                        if (outputDocuments.files.length !== 0) {
-                            for (var i = 0; i < outputDocuments.files.length; i++) {
-                                // TODO - update server path for production
-                                var file_url =
-                                    URL + "/Reports/" +
-                                    outputDocuments.files[i] +
-                                    ".docx";
-                                var file_name = outputDocuments.files[i] + ".docx";
+                        
+                        if (outputDocuments.filenames.length !== 0) {
+                            for (var i = 0; i < outputDocuments.filenames.length; i++) {  
+                                console.log(outputDocuments.filenames[i]);                              
+                                var file_url =window.location.href+"/MortgageReports/" + outputDocuments.filenames[i] + ".docx";
+                                 var file_name = outputDocuments.filenames[i] + ".docx";
                                 // for IE broser
                                 if (navigator.msSaveBlob) {
                                     downloadDocumentIE(file_url, file_name);
                                 } else {
-                                    var link = document.createElement("a");
-                                    // TODO - update server path for production
-                                    link.href =
-                                        URL + "/Reports/" +
-                                        outputDocuments.files[i] +
-                                        ".docx";
-                                    link.setAttribute("download", outputDocuments.files[i]);
+                                    var link = document.createElement("a");                                     
+                                    link.href =window.location.href+"/MortgageReports/" + outputDocuments.filenames[i] + ".docx";
+                                     link.setAttribute("download", outputDocuments.filenames[i]);
                                     document.body.appendChild(link);
-                                    link.click();
-                                    // link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
+                                    link.click();                                     
                                 }
                             }
                             $("#thankModal").modal();
@@ -1897,18 +1673,7 @@
                     dataType: "json",
                 });
             }
-        });
-
-        $("#test_btn").on('click',function(event){
-            event.preventDefault();
-            $.ajax({
-                    type: "GET", 
-                    url: "/test",                     
-                    success: function (response) {
-                        console.log(response);
-                    } 
-                })               
-        })
+        }); 
     </script>
 </body>
 
