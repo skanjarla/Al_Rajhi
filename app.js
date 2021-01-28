@@ -16,10 +16,7 @@ app.use(cors());
 // const TemplateFileName = 'mortgageTemplateDocument';
 const inputTemplateFile = path.resolve(__dirname, 'App/MortgageTemplates/mortgageTemplateDocument.docx');
 const outputFileName = "mortgageForms_"+Date.now();
- 
- 
-// let outputFile = './docxtopdfoutput.pdf';
- 
+    
 function replaceErrors(key, value) {
   if (value instanceof Error) {
     return Object.getOwnPropertyNames(value).reduce(function (error, key) {
@@ -44,16 +41,6 @@ function errorHandler(error) {
   }
   throw error;
 }
- 
-// function convertDocxToPdf(){
-//   docxConverter(inputTemplateFile,"./mortgageForms.pdf",function(err,result){
-//     if(err){
-//       console.log(err);
-//     }    
-//   });
-// }
- 
-// convertDocxToPdf();
 
 // Generate document from template using form data
 
@@ -91,34 +78,6 @@ function deleteDocument(tempOutputDocument) {
     }); 
 }
 
-// app.get("/convertToPDF",(req,res)=>{
-//   let inputFilePath = path.resolve(__dirname, 'App/MortgageTemplates/mortgageTemplateDocument.docx');
-//   let outputFilePath = path.resolve(__dirname, 'App/MortgageReports/mortgageTemplateDocument.pdf');
-//   const convertToPDF = async()=>{
-//     const pdfdoc = await PDFNet.PDFDoc.create();
-//     await pdfdoc.initSecurityHandler();
-//     await PDFNet.Convert.toPdf(pdfdoc,inputFilePath);
-//     pdfdoc.save(outputFilePath,PDFNet.SDFDoc.SaveOptions.e_linearized);    
-//   }
-//   PDFNet.runWithCleanup(convertToPDF).then(()=>{
-//     fs.readFile(outputFilePath,(err,data)=>{
-//       if(err){
-//         res.statusCode = 500;
-//         res.end(err);
-//       }
-//       else{
-//         res.setHeader("ContentType","application/pdf");
-//         res.end(data);
-//       }
-//     })
-//     .catch(err=>{
-//       res.statusCode = 500;
-//       res.end(err);
-//     })
-//   })
-// })
- 
-
 // Test path for the download file
 app.post("/generate_documents", (req, res) => {   
   if(req.body && req.body.data){     
@@ -129,8 +88,7 @@ app.post("/generate_documents", (req, res) => {
   }, 40000);
 
   res.status(200).send({filenames:[outputDocument]}); 
-  }
-    
+  }    
 }); 
 app.listen(port, () => {
   console.log(`application running at port : ${port}`);
