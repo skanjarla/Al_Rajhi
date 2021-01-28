@@ -55,7 +55,7 @@
                                         name="customer_number" maxlength="10" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
-                                <!-- 31 Contract / Order Number -->
+                                <!-- 3 Contract / Order Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="orderNumber">رقم العقد/رقم الطلب</label><span
                                         class="required mx-1">*</span>
@@ -64,7 +64,7 @@
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
-                                <!-- 8 - Customer Identification Number -->
+                                <!-- 4 - Customer Identification Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="customerID">رقم هوية العميل</label>
                                     <span class="required mx-1">*</span>
@@ -72,7 +72,7 @@
                                         name="national_id_number" maxlength="10" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
-                                <!-- 3 - Home Phone -->
+                                <!-- 5 - Home Phone -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="homePhone">هاتف المنزل</label>
                                     <input type="text" class="form-control" id="homePhone" name="home_phone"
@@ -80,7 +80,7 @@
                                     <span class="text-danger error" aria-live="polite"></span>
                                 </div>
 
-                                <!-- 4 - Work Phone -->
+                                <!-- 6 - Work Phone -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="workPhone">هاتف العمل</label>
                                     <input type="text" class="form-control" id="workPhone" name="work_phone"
@@ -88,7 +88,7 @@
                                     <span class="text-danger error" aria-live="polite"></span>
                                 </div>
 
-                                <!-- 6 - Mobile -->
+                                <!-- 7 - Mobile -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="mobile">جوال</label>
                                     <span class="required mx-1">*</span>
@@ -97,7 +97,7 @@
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
-                                <!-- 5 - Converted -->
+                                <!-- 8 - Converted -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="converted">تحويلة</label>
                                     <input type="text" class="form-control number" id="converted" name="converted"
@@ -105,15 +105,13 @@
                                 </div>
 
 
-                                <!-- 7 - Email -->
+                                <!-- 9 - Email -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="email">بريد إلكتروني</label>
                                     <!-- <span class="requi mx-1">*</span> -->
                                     <input type="text" class="form-control" id="email" name="email" />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
-
-
                             </div>
 
                             <br />
@@ -130,7 +128,7 @@
                             </div>
 
                             <div class="form-row d-none" id="realEstateInfo">
-                                <!-- 26 - The name of the real estate office -->
+                                <!-- 10 - The name of the real estate office -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="estateOffice">إسم المكتب العقاري</label>
                                     <span class="required mx-1">*</span>
@@ -139,8 +137,7 @@
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
-                                <!-- 27 - Real estate office owner -->
-
+                                <!-- 11 - Real estate office owner -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="officeOwner">صاحب المكتب العقاري</label>
                                     <span class="required mx-1">*</span>
@@ -149,7 +146,7 @@
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
-                                <!-- 28 - Office Phone -->
+                                <!-- 12 - Office Phone -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="officePhone">هاتف المكتب</label>
                                     <span class="required mx-1">*</span>
@@ -158,7 +155,7 @@
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
-                                <!-- 29 - Fax -->
+                                <!-- 13 - Fax -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="fax">فاكس</label>
                                     <span class="required mx-1">*</span>
@@ -166,7 +163,7 @@
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
-                                <!-- 24 - Quest value -->
+                                <!-- 14 - Quest value -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="questValue">قيمة السعي</label>
                                     <span class="required mx-1">*</span>
@@ -316,9 +313,7 @@
                                 <!-- 4 - Type of property -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="typeOfProperty">نوع العقار</label>
-                                    <span class="required mx-1">*</span>
-                                    <!--<input type="text" class="form-control" id="typeOfProperty" name="property_type" maxlength="100"
-                                        required />-->
+                                    <span class="required mx-1">*</span> 
                                     <select class="custom-select form-control" id="descriptionItem"
                                         name="description_item">
                                         <option value="شقة" dir="rtl">شقة</option>
@@ -338,15 +333,7 @@
                                         maxlength="100" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
-
-                                <!-- 6 - Total Land Area -->
-                                <!--<div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="landArea">مساحة الأرض الإجمالية</label>
-                                    <span class="required mx-1">*</span>
-                                    <input type="number" class="form-control" id="landArea" name="total_area" maxlength="100" 
-                                        required />
-                                    <span class="error" aria-live="polite"></span>
-                                </div>-->
+     
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="landArea">مساحة الأرض الإجمالية</label>
                                     <span class="required mx-1">*</span>
