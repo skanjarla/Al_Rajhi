@@ -17,7 +17,7 @@
     </style>
 </head>
 
-<body> 
+<body>
     <div class="d-flex justify-content-center px-md-4 px-1 pb-5">
         <div class="container-fluid px-md-4 mx-md-5 form-wrapper mt-5 py-md-4">
             <form class="py-4 px-md-3" id="appForm" novalidate>
@@ -38,7 +38,7 @@
                         <div id="collapseOne" class="panel-collapse collapse in py-3 px-4 show" role="tabpanel"
                             aria-labelledby="headingOne">
                             <div class="form-row">
-                                <!-- 2 - Customer Name-->
+                                <!-- 1 - Customer Name-->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="customerName">إسم العميل</label>
                                     <span class="required mx-1">*</span>
@@ -47,7 +47,7 @@
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
-                                <!-- 3 - Customer Number -->
+                                <!-- 2 - Customer Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="customerNumber">رقم العميل</label>
                                     <span class="required mx-1">*</span>
@@ -55,46 +55,16 @@
                                         name="customer_number" maxlength="10" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
-
-                                <!-- 19 - Home Phone -->
+                                <!-- 31 Contract / Order Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="homePhone">هاتف المنزل</label>
-                                    <input type="text" class="form-control phonenumber" id="homePhone" name="home_phone"
-                                        maxlength="10" />
-                                </div>
-
-                                <!-- 20 - Work Phone -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="workPhone">هاتف العمل</label>
-                                    <input type="text" class="form-control number" id="workPhone" name="work_phone"
-                                        maxlength="10" />
-                                </div>
-
-                                <!-- 21 - Converted -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="converted">تحويلة</label>
-                                    <input type="text" class="form-control number" id="converted" name="converted"
-                                        maxlength="100" />
-                                </div>
-
-                                <!-- 22 - Mobile -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="mobile">جوال</label>
-                                    <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control number" id="mobile" name="mobile"
-                                        maxlength="10" required />
+                                    <label for="orderNumber">رقم العقد/رقم الطلب</label><span
+                                        class="required mx-1">*</span>
+                                    <input type="text" class="form-control number" id="orderNumber" name="order_number"
+                                        maxlength="100" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
-                                <!-- 23 - Email -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="email">بريد إلكتروني</label>
-                                    <!-- <span class="requi mx-1">*</span> -->
-                                    <input type="email" class="form-control" id="email" name="email"  />
-                                    <span class="error" aria-live="polite"></span>
-                                </div>
-
-                                <!-- 52 - Customer Identification Number -->
+                                <!-- 8 - Customer Identification Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="customerID">رقم هوية العميل</label>
                                     <span class="required mx-1">*</span>
@@ -102,6 +72,48 @@
                                         name="national_id_number" maxlength="10" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
+                                <!-- 3 - Home Phone -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="homePhone">هاتف المنزل</label>
+                                    <input type="text" class="form-control" id="homePhone" name="home_phone"
+                                        maxlength="10" />
+                                    <span class="text-danger error" aria-live="polite"></span>
+                                </div>
+
+                                <!-- 4 - Work Phone -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="workPhone">هاتف العمل</label>
+                                    <input type="text" class="form-control" id="workPhone" name="work_phone"
+                                        maxlength="10" />
+                                    <span class="text-danger error" aria-live="polite"></span>
+                                </div>
+
+                                <!-- 6 - Mobile -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="mobile">جوال</label>
+                                    <span class="required mx-1">*</span>
+                                    <input type="text" class="form-control phonenumber" id="mobile" name="mobile"
+                                        maxlength="10" required />
+                                    <span class="error" aria-live="polite"></span>
+                                </div>
+
+                                <!-- 5 - Converted -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="converted">تحويلة</label>
+                                    <input type="text" class="form-control number" id="converted" name="converted"
+                                        maxlength="100" />
+                                </div>
+
+
+                                <!-- 7 - Email -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="email">بريد إلكتروني</label>
+                                    <!-- <span class="requi mx-1">*</span> -->
+                                    <input type="text" class="form-control" id="email" name="email" />
+                                    <span class="error" aria-live="polite"></span>
+                                </div>
+
+
                             </div>
 
                             <br />
@@ -141,8 +153,8 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="officePhone">هاتف المكتب</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control number" id="officePhone" name="office_phone"
-                                        maxlength="10" />
+                                    <input type="text" class="form-control phonenumber" id="officePhone"
+                                        name="office_phone" maxlength="10" />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -197,15 +209,6 @@
                                         </option>
                                         <option value="نفسه" dir="rtl" selected>نفسه</option>
                                     </select>
-                                </div>
-
-                                <!-- 35 - Employee Capacity -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="asTheEmployee">صفة الموظف</label>
-                                    <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="asTheEmployee" name="as_the_employee"
-                                        maxlength="100" required />
-                                    <span class="error" aria-live="polite"></span>
                                 </div>
 
                                 <!-- 40 - First party (seller) name -->
@@ -279,6 +282,16 @@
                                         maxlength="100" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
+
+                                <!-- 35 - Employee Capacity -->
+                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                    <label for="asTheEmployee">صفة الموظف</label>
+                                    <span class="required mx-1">*</span>
+                                    <input type="text" class="form-control" id="asTheEmployee" name="as_the_employee"
+                                        maxlength="100" required />
+                                    <span class="error" aria-live="polite"></span>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -335,9 +348,9 @@
                                     <span class="error" aria-live="polite"></span>
                                 </div>-->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="questRatio">مساحة الأرض الإجمالية</label>
+                                    <label for="landArea">مساحة الأرض الإجمالية</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="questRatio" name="quest_ratio" />
+                                    <input type="text" class="form-control" id="landArea" name="total_area" />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -498,19 +511,10 @@
                             <div class="form-row">
                                 <!-- 38 - Total Amount Excluding VAT -->
                                 <div class="form-group col-md-6 col-lg-4 col-12">
-                                    <label for="totalNoVat">إجمالي العقار بدون ضريبة القيمة المضافة</label><span
+                                    <label for="totalNoVat"> مبلغ العقار بدون ضريبة القيمة المضافة بالريال السعودي</label><span
                                         class="required mx-1">*</span>
                                     <input type="text" class="form-control number" id="totalNoVat" maxlength="100"
                                         name="total_excluding_vat" required />
-                                    <span class="error" aria-live="polite"></span>
-                                </div>
-
-                                <!-- 57 - total_amount_of_sale_riyals -->
-                                <div class="form-group col-md-6 col-lg-4 col-12">
-                                    <label for="totalInRiyals">مجموع مبلغ بيع العقار بالريال السعودي</label><span
-                                        class="required mx-1">*</span>
-                                    <input type="text" class="form-control number" id="totalInRiyals" maxlength="100"
-                                        name="amount_of_sale_riyals" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -523,6 +527,17 @@
                                         name="amount_of_vat_riyals" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
+
+                                <!-- 57 - total_amount_of_sale_riyals -->
+                                <div class="form-group col-md-6 col-lg-4 col-12">
+                                    <label for="totalInRiyals">إجمالي مبلغ بيع العقار بالريال السعودي</label><span
+                                        class="required mx-1">*</span>
+                                    <input type="text" class="form-control number" id="totalInRiyals" maxlength="100"
+                                        name="amount_of_sale_riyals" required />
+                                    <span class="error" aria-live="polite"></span>
+                                </div>
+
+
 
                                 <!-- 64 - percentage of vat-->
                                 <div class="form-group col-md-6 col-lg-4 col-12">
@@ -637,7 +652,6 @@
                 </div>
 
                 <!-- DEED AND CERTIFICATES -->
-
                 <div class="panel-group my-4" id="accordionFour" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingFour">
@@ -652,15 +666,6 @@
                         <div id="collapseFour" class="panel-collapse collapse in py-3 px-4" role="tabpanel"
                             aria-labelledby="headingThree">
                             <div class="form-row">
-                                <!-- 31 Contract / Order Number -->
-                                <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="orderNumber">رقم العقد/رقم الطلب</label><span
-                                        class="required mx-1">*</span>
-                                    <input type="text" class="form-control number" id="orderNumber" name="order_number"
-                                        maxlength="100" required />
-                                    <span class="error" aria-live="polite"></span>
-                                </div>
-
                                 <!-- 36 - Instrument Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="instrumentNumber">رقم الصك</label><span class="required mx-1">*</span>
@@ -688,7 +693,7 @@
 
                                 <!-- 53 - Bank Name -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="bankName">إسم البنك</label><span class="required mx-1">*</span>
+                                    <label for="bankName">إسم البنك المفوض</label><span class="required mx-1">*</span>
                                     <input type="text" class="form-control" id="bankName" name="bank_name" required
                                         maxlength="100" />
                                     <span class="error" aria-live="polite"></span>
@@ -711,9 +716,6 @@
                                         name="reg_number_for_vat" />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
-                            </div>
-
-                            <div class="form-row">
                                 <!-- 60 Invoice Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="invoiceNumber">رقم فاتورة البيع</label><span
@@ -724,14 +726,6 @@
                                 </div>
 
                                 <!-- 61 description Item -->
-                                <!--<div class="form-group col-md-6 col-lg-3 col-12">
-                                    <label for="descriptionItem">وصف البند</label><span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="descriptionItem" name="description_item"
-                                        required />
-                                                                                                                                                                
-
-                                    <span class="error" aria-live="polite"></span>
-                                </div>-->
 
                                 <!-- 62 - qunantity -->
 
@@ -743,7 +737,7 @@
 
                                     <span class="error" aria-live="polite"></span>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -770,7 +764,7 @@
                                     <label for="todayDate">تاريخ اليوم</label><span class="required mx-1">*</span>
 
                                     <input type="text" autocomplete="off" class="form-control datepicker notranslate"
-                                        id="todayDate" name="today_date" placeholder="YYYY-MM-DD" required />
+                                        id="todayDate" name="today_date" placeholder="" />
 
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -782,8 +776,7 @@
                                         class="required mx-1">*</span>
 
                                     <input type="text" autocomplete="off" class="form-control datepicker notranslate"
-                                        id="instrumentHistory" name="history_instrument" placeholder="YYYY-MM-DD"
-                                        required />
+                                        id="instrumentHistory" name="history_instrument" placeholder="" />
                                     <span class="error" aria-live="polite"></span>
 
                                 </div>
@@ -794,7 +787,7 @@
                                     <label for="contractDate">تاريخ العقد</label><span class="required mx-1">*</span>
 
                                     <input type="text" autocomplete="off" class="form-control datepicker notranslate"
-                                        id="contractDate" name="date_of_contract" placeholder="YYYY-MM-DD" required />
+                                        id="contractDate" name="date_of_contract" placeholder="" />
 
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -806,7 +799,7 @@
                                         class="required mx-1">*</span>
 
                                     <input type="text" autocomplete="off" class="form-control datepicker notranslate"
-                                        id="agreementDate" name="date_of_agreement" placeholder="YYYY-MM-DD" required />
+                                        id="agreementDate" name="date_of_agreement" placeholder="" />
 
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -818,7 +811,7 @@
                                         class="required mx-1">*</span>
 
                                     <input type="text" autocomplete="off" class="form-control datepicker notranslate"
-                                        id="invoiceDate" name="invoice_issued_date" placeholder="YYYY-MM-DD" required />
+                                        id="invoiceDate" name="invoice_issued_date" placeholder="" />
 
                                     <span class="error" aria-live="polite"></span>
                                 </div>
@@ -826,69 +819,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- OTHER DETAILS -->
-
-                <div class="panel-group my-4" id="accordionSix" role="tablist" aria-multiselectable="true">
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingSix">
-                            <h4 class="panel-title px-md-4 px-2">
-                                <a role="button" data-toggle="collapse" data-parent="#accordionSix" href="#collapseSix"
-                                    aria-expanded="true" aria-controls="collapseSix" class="title-link py-4"><span
-                                        class="title-icon mx-3"></span>رأي الموظف
-                                </a>
-                            </h4>
-                        </div>
-
-                        <div id="collapseSix" class="panel-collapse collapse in py-3 px-4 show" role="tabpanel"
-                            aria-labelledby="headingSix">
-                            <div class="form-row">
-                                <!-- 69 -->
-
-                                <!--<div class="form-group  col-12">
-
-                                    <p>رأي الموظف المباشر للتعاقد</p>
-
-                                </div>-->
-
-                                <div class="form-group">
-                                    <!-- It Did not appear -->
-
-                                    <div class="form-check">
-                                        <input type="hidden" name="notAppear" value="☐" />
-                                        <input class="form-check-input" type="checkbox" id="notAppear" name="notAppear"
-                                            value="☑" />
-                                        <label class="form-check-label mr-4" for="notAppear">
-                                            لم يتبين لي من المعاملة ومن الوثائق المرفقة بها وجود
-                                            رغبة من أي طرف بالتحايل للحصول على التمويل النقدي, بل
-                                            يظهر لي أن غرض التعاقد على العقار حقيقة, من المالك, و
-                                            العميل
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <!-- I found out -->
-
-                                    <div class="form-check">
-                                        <input type="hidden" name="foundOut" value="☐" />
-
-                                        <input class="form-check-input" type="checkbox" id="foundOut" name="foundOut"
-                                            value="☑" />
-
-                                        <label class="form-check-label mr-4" for="foundOut">
-                                            تبين لي من المعاملة و من الوثائق المرفقة بها وجود رغبة
-                                            بالتحايل للحصول على التمويل النقدي , و أن الغرض ليس
-                                            التعاقد على العقار حقيقة.
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- check boxes -->
 
                 <div class="row">
                     <!-- ارادة الشراء الحقيقي -->
@@ -1229,12 +1159,6 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="thankModalLabel">شكرا</h5>
-
-                        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-
-                            <span aria-hidden="true">&times;</span>
-
-                        </button> -->
                     </div>
 
                     <div class="modal-body py-4">
@@ -1255,7 +1179,7 @@
     <script src="./assets/js/jquery-ui.min.js"></script>
     <script src="./assets/js/bootstrap-hijri-datetimepicker.min.js"></script>
     <script>
- 
+
         function maxLengthCheck_questratio(object) {
             if (object.value > object.max) {
                 object.value = object.max;
@@ -1271,94 +1195,107 @@
             //     nextText: "",
             //     dateFormat: "yy-mm-dd",
             // });
-            // Today's date by default
+            // // Today's date by default
             // $("#todayDate")
             //     .datepicker({ dateFormat: "yy-mm-dd" })
             //     .datepicker("setDate", new Date());
 
-            // $("#todayDate")
-            //     .hijriDatePicker({ defalut: new Date() })
+            $("#todayDate")
+                .hijriDatePicker({ defalut: new Date() })
 
             $(".datepicker").hijriDatePicker({
                 hijri: true,
                 showSwitcher: true,
             });
             // instrument_date instrumentHistory
-            // Fix date format like NAN-NAN-NAN  on google translate to English
+            // Fix date format issue NAN-NAN-NAN  on google translate from Arabic to  English
             $('.ui-datepicker').addClass('notranslate');
         });
 
         // Input decimal numbers only
-        $('.number').on("input keydown keyup mousedown mouseup select contextmenu drop",function () {             
-            this.value === '.'?this.value = '0.' : this.value;
-            this.value = this.value.replace(/[^0-9\.]/g,'');
-        });
+        $('.number').each(function () {
+            $(this).on("input keydown keyup mousedown mouseup select contextmenu drop", function () {
+                this.value === '.' ? this.value = '0.' : this.value;
+                this.value = this.value.replace(/[^0-9\.]/g, '');
+            })
+        })
 
         // Phone number validation
-        //$(".phonenumber").val('05');
-        $('.phonenumber').on("input keydown keyup mousedown mouseup select contextmenu drop",function () { 
-            if(this.value[0] && this.value[0] !== '0'){                 
-                this.value='05';
-                alert("Phone number should start with 05");                                                  
-            }
-            else if(this.value[1] && this.value[1] !== '5'){                 
-                this.value='05';
-                alert("Phone number should start with 05");                 
-            }
-        });
+        $(".phonenumber").each(function () {
+            $(this).on("input keydown keyup mousedown mouseup select contextmenu drop", function () {
+                if (this.value[0] && this.value[0] !== '0') {
+                    this.value = '';
+                    $(this).next().text('Phone number should start with 05');
+                }
+                else if (this.value[1] && this.value[1] !== '5') {
+                    this.value = '0';
+                    $(this).next().text('Phone number should start with 05');
+                }
+                else if (this.value.length >= 1 && this.value[0] === '0' && this.value[1] === '5') {
+                    $(this).next().text('');
+                }
+                // Replace any character other than numbers with empty string.
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        })
+
+        // email validation
 
         // Captcha token generartion
         var token = "";
         function generateCaptcha() {
             token = Math.floor(Math.random() * 90000) + 10000;
-            document.getElementById("captcha-token").textContent = token;
-            document.getElementById("captcha").value = "";
+            $("#captcha-token").text(token);
+            $("#captcha").val('');
             $(".app-btn").prop("disabled", true);
-            document.querySelector(".c-status").classList.remove("valid");
-            document.querySelector(".c-status").classList.remove("invalid");
+            $(".c-status").removeClass('valid');
+            $(".c-status").removeClass('invalid');
         }
         generateCaptcha();
 
-        // refresh captha code
-        document
-            .getElementById("captcha-refresh")
-            .addEventListener("click", generateCaptcha);
+        // refresh captha code         
+        $("#captcha-refresh").on("click", generateCaptcha);
         // validate captcha code on input;
-        document
-            .getElementById("captcha")
-            .addEventListener("input", function (event) {
-
-                if (event.target.value.length === 5 && parseInt(event.target.value) === token) {
-                    $(".app-btn").prop("disabled", false);
-                    document.querySelector(".c-status").classList.remove("invalid");
-                    document.querySelector(".c-status").classList.add("valid");
-                }
-                else if (event.target.value.length === 5 && parseInt(event.target.value) !== token) {
-                    document.querySelector(".c-status").classList.remove("valid");
-                    document.querySelector(".c-status").classList.add("invalid");
-                }
-                else {
-                    $(".app-btn").prop("disabled", true);
-                    document.querySelector(".c-status").classList.remove("valid");
-                    document.querySelector(".c-status").classList.remove("invalid");
-                }
-            });
+        $("#captcha").on("input", function (event) {
+            if (event.target.value.length === 5 && parseInt(event.target.value) === token) {
+                $(".app-btn").prop("disabled", false);
+                $(".c-status").removeClass('invalid');
+                $(".c-status").addClass('valid');
+            }
+            else if (event.target.value.length === 5 && parseInt(event.target.value) !== token) {
+                $(".c-status").removeClass('valid');
+                $(".c-status").addClass('invalid');
+            }
+            else {
+                $(".app-btn").prop("disabled", true);
+                $(".c-status").removeClass('invalid');
+                $(".c-status").removeClass('valid');
+            }
+        });
 
         // show input validation errors
         function showError(input, inputError) {
             if (input.validity.valueMissing) {
-                inputError.textContent = "يرجى ملء هذا الحقل";
+                if ($(input).hasClass('phonenumber')) {
+                    inputError.textContent = "Phone number should start with 05"
+                } else {
+                    inputError.textContent = "يرجى ملء هذا الحقل";
+                }
+
             } else if (input.validity.typeMismatch) {
+                // // ======
+                // if ($(input).hasClass('email')) {                    
+                //     inputError.textContent = "Please Enter Valid Email"
+                // }
+                // // ========
                 inputError.textContent = "قيمة إدخال غير صالحة";
             }
             inputError.className = "error active";
         }
 
-        $("input[required]").each(function (index) {
+        $("input[required]").not('.phonenumber').each(function (index) {
             $(this).on("input", function (item) {
-                var error = document.querySelector(
-                    "#" + item.target.getAttribute("id") + " + " + "span.error"
-                );
+                var error = document.querySelector("#" + item.target.getAttribute("id") + " + " + "span.error");
                 if (item.target.validity.valid) {
                     error.innerHTML = "";
                     error.className = "error";
@@ -1367,7 +1304,17 @@
                 }
             });
         });
- 
+
+        // $("#email").on("input keydown keyup mousedown mouseup select contextmenu drop", function (email){
+        //     console.log(email.target);
+        //     if(!email.target.validity.valid){
+        //         showError(email.target, error)    
+        //     }else{
+        //         error.innerHTML = "";
+        //         error.className = "error";
+        //     }
+
+        // })
         // Toggle check boxes for The opinion of the direct employee to contract
         $("#notAppear").change(function () {
             if ($("#foundOut").is(":checked")) {
@@ -1426,19 +1373,12 @@
                 }
                 if (selectedValue === "hide") {
                     realEstateInfo.classList.add("d-none");
-                    $("#estateOffice").prop("required", false);
-                    $("#officeOwner").prop("required", false);
-                    $("#officePhone").prop("required", false);
-                    $("#fax").prop("required", false);
-                    $("#questValue").prop("required", false);
-                    $("#questRatio").prop("required", false);
-
-                    $("#estateOffice").val('');
-                    $("#officeOwner").val('');
-                    $("#officePhone").val('');
-                    $("#fax").val('');
-                    $("#questValue").val('');
-                    $("#questRatio").val('');
+                    $("#estateOffice").prop("required", false).val('');
+                    $("#officeOwner").prop("required", false).val('');
+                    $("#officePhone").prop("required", false).val('');
+                    $("#fax").prop("required", false).val('');
+                    $("#questValue").prop("required", false).val('');
+                    $("#questRatio").prop("required", false).val('');
                 }
             });
 
@@ -1450,8 +1390,7 @@
             $("#age").prop("checked", false);
             $("#others").prop("checked", false);
             $("#fees").prop("checked", false);
-            document.getElementById("rentOtherText").classList.add("d-none");
-            $("#rentOtherText").val('');
+            $('#rentOtherText').addClass("d-none").val('');
         }
 
         // uncheck fully furnished list checkboxes
@@ -1467,14 +1406,25 @@
             unCheckNotesList();
             unCheckFurnishedList();
             if (this.checked === true) {
-                document.getElementById("notesList").classList.remove("d-none");
-                document.getElementById("finishesList").classList.add("d-none");
+                $("#notesList").removeClass("d-none");
+                $("#finishesList").addClass("d-none");
             }
             if (this.checked === false) {
-                document.getElementById("notesList").classList.add("d-none");
-                // reset check boxes to uncheck
+                $("#notesList").addClass("d-none");
             }
         });
+
+        $("#notes").on("change", function () {
+            unCheckNotesList();
+            unCheckFurnishedList();
+            if (this.checked === true) {
+                $("#notesList").removeClass("d-none");
+                $("#finishesList").addClass("d-none");
+            }
+            if (this.checked === false) {
+                $("#notesList").addClass("d-none");
+            }
+        })
         // fullyFinished - hide notes list checkboxes
         document
             .getElementById("fullyFinished")
@@ -1482,41 +1432,37 @@
                 unCheckNotesList();
                 unCheckFurnishedList();
                 if (this.checked === true) {
-                    document.getElementById("notesList").classList.add("d-none");
-                    document.getElementById("finishesList").classList.add("d-none");
+                    $("#notesList").addClass("d-none");
+                    $("#finishesList").addClass("d-none");
                 }
             });
         // hide show finishesList checkboxes
-        document
-            .getElementById("finishes")
-            .addEventListener("change", function () {
-                unCheckFurnishedList();
-                if (this.checked === true) {
-                    document.getElementById("finishesList").classList.remove("d-none");
-                }
-                if (this.checked === false) {
-                    document.getElementById("finishesList").classList.add("d-none");
-                }
-            });
 
+        $("#finishes").on("change", function () {
+            unCheckFurnishedList();
+            if (this.checked === true) {
+                $("#finishesList").removeClass("d-none");
+            }
+            if (this.checked === false) {
+                $("#finishesList").addClass("d-none");
+            }
+        })
         // hide show other checkboxes text field
         $("#others").change(function () {
             if (this.checked === true) {
-                document.getElementById("rentOtherText").classList.remove("d-none");
+                $('#rentOtherText').removeClass("d-none");
             }
             if (this.checked === false) {
-                document.getElementById("rentOtherText").classList.add("d-none");
-                $("#rentOtherText").val('');
+                $('#rentOtherText').addClass("d-none").val('');
             }
         })
 
         $("#other").change(function () {
             if (this.checked === true) {
-                document.getElementById("realOtherText").classList.remove("d-none");
+                $("#realOtherText").removeClass("d-none");
             }
             if (this.checked === false) {
-                document.getElementById("realOtherText").classList.add("d-none");
-                $("#realOtherText").val('');
+                $("#realOtherText").addClass("d-none").val('');
             }
         })
         // Toggle payment info checkboxes
@@ -1562,7 +1508,7 @@
             }
         });
 
-        //date picker validation
+        // date picker validation
         $(".datepicker").each(function (index) {
             $(this).on("change", function (item) {
                 var error = document.querySelector(
@@ -1589,7 +1535,8 @@
                 $("#" + this.getAttribute("id")).collapse("show");
             });
             // check for input errors and show error messages
-            $("input[required]").each(function (index) {
+            // $("input[required]").each(function (index) {
+            $("input").each(function (index) {
                 var error = document.querySelector(
                     "#" + this.getAttribute("id") + " + " + "span.error"
                 );
@@ -1612,8 +1559,8 @@
                 generateCaptcha();
             }
 
-            if (form.checkValidity() && token === captchaValue) {         
-                var formData = new FormData(document.forms[0]);        
+            if (form.checkValidity() && token === captchaValue) {
+                var formData = new FormData(document.forms[0]);
                 var payload = {};
                 let arr = $(this).serializeArray();
                 for (var i = 0; i < arr.length; i++) {
@@ -1639,25 +1586,25 @@
                     xhr.send();
                 }
                 $.ajax({
-                    type: "POST",                     
-                    url:"/generate_documents",
-                    data: JSON.stringify({data: payload,}),
+                    type: "POST",
+                    url: "/generate_documents",
+                    data: JSON.stringify({ data: payload, }),
                     success: function (outputDocuments) {
-                        
+
                         if (outputDocuments.filenames.length !== 0) {
-                            for (var i = 0; i < outputDocuments.filenames.length; i++) {  
-                                console.log(outputDocuments.filenames[i]);                              
-                                var file_url =window.location.href+"/MortgageReports/" + outputDocuments.filenames[i] + ".docx";
-                                 var file_name = outputDocuments.filenames[i] + ".docx";
+                            for (var i = 0; i < outputDocuments.filenames.length; i++) {
+                                console.log(outputDocuments.filenames[i]);
+                                var file_url = window.location.href + "/MortgageReports/" + outputDocuments.filenames[i] + ".docx";
+                                var file_name = outputDocuments.filenames[i] + ".docx";
                                 // for IE broser
                                 if (navigator.msSaveBlob) {
                                     downloadDocumentIE(file_url, file_name);
                                 } else {
-                                    var link = document.createElement("a");                                     
-                                    link.href =window.location.href+"/MortgageReports/" + outputDocuments.filenames[i] + ".docx";
-                                     link.setAttribute("download", outputDocuments.filenames[i]);
+                                    var link = document.createElement("a");
+                                    link.href = window.location.href + "/MortgageReports/" + outputDocuments.filenames[i] + ".docx";
+                                    link.setAttribute("download", outputDocuments.filenames[i]);
                                     document.body.appendChild(link);
-                                    link.click();                                     
+                                    link.click();
                                 }
                             }
                             $("#thankModal").modal();
