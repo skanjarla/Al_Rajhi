@@ -3,8 +3,7 @@ const app = express();
 const fs = require("fs");
 const path = require("path");
 const PizZip = require("pizzip");
-const Docxtemplater = require("docxtemplater");
-const docxConverter = require('docx-pdf');
+const Docxtemplater = require("docxtemplater"); 
 const cors = require("cors"); 
 
 const port = 8080;
