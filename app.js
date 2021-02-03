@@ -13,9 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 // const TemplateFileName = 'mortgageTemplateDocument';
-const inputTemplateFile = path.resolve(__dirname, 'App/MortgageTemplates/mortgageTemplateDocument.docx');
-const outputFileName = "mortgageForms_"+Date.now();
-    
+const inputTemplateFile = path.resolve(__dirname, 'App/MortgageTemplates/mortgageTemplateDocument.docx');    
 function replaceErrors(key, value) {
   if (value instanceof Error) {
     return Object.getOwnPropertyNames(value).reduce(function (error, key) {
@@ -43,6 +41,7 @@ function errorHandler(error) {
 
 // Generate document from template using form data
 function generateDocument(inputTemplateFile, payload) {
+  const outputFileName = "mortgageForms_"+(Math.floor(Math.random() * 9000) + 1000)+"_"+Date.now();
   //Load the docx file as a binary  
   var content = fs.readFileSync(inputTemplateFile,"binary");
   var zip = new PizZip(content);
@@ -83,8 +82,7 @@ app.post("/generate_documents", (req, res) => {
     //Delete generated documents after 40 seconds
   setTimeout(() => {
     deleteDocument(path.resolve(__dirname, `App/MortgageReports/${outputDocument}.docx`));
-  }, 40000);
-
+  }, 40000);   
   res.status(200).send({filenames:[outputDocument]}); 
   }    
 }); 
