@@ -42,7 +42,6 @@ function errorHandler(error) {
 }
 
 // Generate document from template using form data
-
 function generateDocument(inputTemplateFile, payload) {
   //Load the docx file as a binary  
   var content = fs.readFileSync(inputTemplateFile,"binary");
