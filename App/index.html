@@ -315,7 +315,7 @@
                                     <label for="typeOfProperty">نوع العقار</label>
                                     <span class="required mx-1">*</span> 
                                     <select class="custom-select form-control" id="descriptionItem"
-                                        name="description_item">
+                                        name="property_type">
                                         <option value="شقة" dir="rtl">شقة</option>
                                         <option value="فيلا" dir="rtl">فيلا</option>
                                         <option value="مبنى" dir="rtl">مبنى</option>
@@ -747,10 +747,10 @@
                             <div class="form-row">
                                 <!-- 1 - Today's Date -->
 
-                                <div class="form-group col-md-6 col-lg-3 col-12">
+                                <div class="form-group col-md-6 col-lg-3 col-12 d-none">
                                     <label for="todayDate">تاريخ اليوم</label><span class="required mx-1">*</span>
 
-                                    <input type="text" autocomplete="off" class="form-control datepicker notranslate"
+                                    <input type="text" autocomplete="off" class="form-control notranslate"
                                         id="todayDate" name="today_date" placeholder="" />
 
                                     <span class="error" aria-live="polite"></span>
@@ -1176,19 +1176,19 @@
         // Datepicker
         $(function () {
             // date picker
-            // $(".datepicker").datepicker({
-            //     isRTL: true,
-            //     prevText: "",
-            //     nextText: "",
-            //     dateFormat: "yy-mm-dd",
-            // });
+             $("#todayDate").datepicker({
+                 isRTL: true,
+                 prevText: "",
+                 nextText: "",
+                 dateFormat: "yy-mm-dd",
+             });
             // // Today's date by default
-            // $("#todayDate")
-            //     .datepicker({ dateFormat: "yy-mm-dd" })
-            //     .datepicker("setDate", new Date());
+             $("#todayDate")
+                 .datepicker({ dateFormat: "yy-mm-dd" })
+                 .datepicker("setDate", new Date());
 
-            $("#todayDate")
-                .hijriDatePicker({ defalut: new Date() })
+            /* $("#todayDate")
+                .hijriDatePicker({ defalut: new Date() }) */
 
             $(".datepicker").hijriDatePicker({
                 hijri: true,
@@ -1269,12 +1269,7 @@
                     inputError.textContent = "يرجى ملء هذا الحقل";
                 }
 
-            } else if (input.validity.typeMismatch) {
-                // // ======
-                // if ($(input).hasClass('email')) {                    
-                //     inputError.textContent = "Please Enter Valid Email"
-                // }
-                // // ========
+            } else if (input.validity.typeMismatch) { 
                 inputError.textContent = "قيمة إدخال غير صالحة";
             }
             inputError.className = "error active";
@@ -1291,17 +1286,7 @@
                 }
             });
         });
-
-        // $("#email").on("input keydown keyup mousedown mouseup select contextmenu drop", function (email){
-        //     console.log(email.target);
-        //     if(!email.target.validity.valid){
-        //         showError(email.target, error)    
-        //     }else{
-        //         error.innerHTML = "";
-        //         error.className = "error";
-        //     }
-
-        // })
+ 
         // Toggle check boxes for The opinion of the direct employee to contract
         $("#notAppear").change(function () {
             if ($("#foundOut").is(":checked")) {
