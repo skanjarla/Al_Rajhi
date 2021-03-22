@@ -6,14 +6,11 @@ const PizZip = require("pizzip");
 const Docxtemplater = require("docxtemplater"); 
 const cors = require("cors"); 
 
-const port = 8080;
-//const port = process.env.PORT || 8080; // process.env.PORT for heroku hosting
+const port = 8080; 
 app.use(express.static("App"));
 app.use(express.json());
 app.use(cors());
 
-// const TemplateFileName = 'mortgageTemplateDocument';
-const inputTemplateFile = path.resolve(__dirname, 'App/MortgageTemplates/mortgageTemplateDocument.docx');    
 function replaceErrors(key, value) {
   if (value instanceof Error) {
     return Object.getOwnPropertyNames(value).reduce(function (error, key) {
@@ -33,17 +30,16 @@ function errorHandler(error) {
       })
       .join("\n");
     console.log("errorMessages", errorMessages);
-    // errorMessages is a humanly readable message looking like this :
-    // 'The tag beginning with "foobar" is unopened'
+    // errorMessages is a humanly readable message looking like this : 'The tag beginning with "foobar" is unopened'
   }
   throw error;
 }
 
 // Generate document from template using form data
-function generateDocument(inputTemplateFile, payload) {
-  const outputFileName = "mortgageForms_"+(Math.floor(Math.random() * 9000) + 1000)+"_"+Date.now();
+function generateDocument(inputTemplateFilename, payload) {
+  const outputFileName = inputTemplateFilename+"_"+(Math.floor(Math.random() * 9000) + 1000)+"_"+Date.now();
   //Load the docx file as a binary  
-  var content = fs.readFileSync(inputTemplateFile,"binary");
+  var content = fs.readFileSync(path.resolve(__dirname, 'App/MortgageTemplates/'+inputTemplateFilename+'.docx'),"binary");
   var zip = new PizZip(content);
   var doc;
   try {
@@ -67,23 +63,36 @@ function generateDocument(inputTemplateFile, payload) {
 }
 
 // Delete Documents
-function deleteDocument(tempOutputDocument) {        
-    fs.unlink(tempOutputDocument, (err) => {
-      if (err) {
-        throw err;
-      }
-    }); 
+function deleteDocument(docs) {         
+    docs.map((doc) => {
+      // console.log(doc);
+      fs.unlink((__dirname, `App/MortgageReports/${doc}.docx`), (err) => {
+        if (err) {
+          throw err;
+        }
+      });
+    });
 }
 
 // Test path for the download file
 app.post("/generate_documents", (req, res) => {   
   if(req.body && req.body.data){     
-    let outputDocument  = generateDocument(inputTemplateFile, req.body.data);    
-    //Delete generated documents after 40 seconds
+    // let outputDocument  = generateDocument(inputTemplateFile, req.body.data);    
+  
+    let templatesArray = ["ارادة الشراء الحقيقي","أقرار معاينة عقار قابل للتأجير","إقرار معاينة","الإقرار الضريبي للمالك", "التعهد","تعهد والتزام بمراحل البناء","خيار الشرط","فاتورة بيع عقار","نموذج إرادة شراء","نموذج عرض السعر","تعهد بتوفير مستند رخصة البناء في منتج البناء الذاتي"] ;
+    let docsArr = [];
+    
+    templatesArray.map((template) => {
+        docsArr.push(generateDocument(template, req.body.data));
+      });
+ 
+  //Delete generated documents after 50 seconds
   setTimeout(() => {
-    deleteDocument(path.resolve(__dirname, `App/MortgageReports/${outputDocument}.docx`));
-  }, 40000);   
-  res.status(200).send({filenames:[outputDocument]}); 
+    deleteDocument(docsArr);
+  }, 50000);
+
+  console.log(docsArr);
+  res.status(200).send({filenames:docsArr}); 
   }    
 }); 
 app.listen(port, () => {
