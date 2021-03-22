@@ -315,7 +315,7 @@
                                     <label for="typeOfProperty">نوع العقار</label>
                                     <span class="required mx-1">*</span> 
                                     <select class="custom-select form-control" id="descriptionItem"
-                                        name="property_type">
+                                        name="description_item">
                                         <option value="شقة" dir="rtl">شقة</option>
                                         <option value="فيلا" dir="rtl">فيلا</option>
                                         <option value="مبنى" dir="rtl">مبنى</option>
@@ -1538,6 +1538,15 @@
                 for (var i = 0; i < arr.length; i++) {
                     payload[arr[i].name] = arr[i].value;
                 }
+
+                function pause(msec) {
+                    return new Promise(
+                    function(resolve, reject) {
+                    setTimeout(resolve, msec || 1000);
+                     }
+                    );
+                }
+                 
                 function downloadDocumentIE(file_url, file_name) {
                     var xhr = new XMLHttpRequest();
                     xhr.open("GET", file_url, true);
@@ -1561,22 +1570,25 @@
                     type: "POST",
                     url: "/generate_documents",
                     data: JSON.stringify({ data: payload, }),
-                    success: function (outputDocuments) {
-
+                    success: function (outputDocuments) {                     
                         if (outputDocuments.filenames.length !== 0) {
-                            for (var i = 0; i < outputDocuments.filenames.length; i++) {
-                                console.log(outputDocuments.filenames[i]);
+                            for (var i = 0; i < outputDocuments.filenames.length; i++) {                                
                                 var file_url = window.location.href + "/MortgageReports/" + outputDocuments.filenames[i] + ".docx";
                                 var file_name = outputDocuments.filenames[i] + ".docx";
                                 // for IE broser
                                 if (navigator.msSaveBlob) {
                                     downloadDocumentIE(file_url, file_name);
                                 } else {
+                                    var count =0;                                
                                     var link = document.createElement("a");
                                     link.href = window.location.href + "/MortgageReports/" + outputDocuments.filenames[i] + ".docx";
                                     link.setAttribute("download", outputDocuments.filenames[i]);
                                     document.body.appendChild(link);
-                                    link.click();
+                                    link.click();                                      
+                                     if (++count >= 9) {
+                                        pause(1000);
+                                        count = 0;                                                                        
+                                    }                                                                                                            
                                 }
                             }
                             $("#thankModal").modal();
