@@ -40,6 +40,7 @@ function generateDocument(inputTemplateFilename, payload) {
   const outputFileName = inputTemplateFilename+"_"+(Math.floor(Math.random() * 9000) + 1000)+"_"+Date.now();
   //Load the docx file as a binary  
   var content = fs.readFileSync(path.resolve(__dirname, 'App/MortgageTemplates/'+inputTemplateFilename+'.docx'),"binary");
+  // var content = fs.readFileSync(path.resolve(__dirname, 'App/MortgageTemplates/'+inputTemplateFilename),"binary");
   var zip = new PizZip(content);
   var doc;
   try {
@@ -76,12 +77,10 @@ function deleteDocument(docs) {
 
 // Test path for the download file
 app.post("/generate_documents", (req, res) => {   
-  if(req.body && req.body.data){     
-    // let outputDocument  = generateDocument(inputTemplateFile, req.body.data);    
-  
+  if(req.body && req.body.data){             
     let templatesArray = ["ارادة الشراء الحقيقي","أقرار معاينة عقار قابل للتأجير","إقرار معاينة","الإقرار الضريبي للمالك", "التعهد","تعهد والتزام بمراحل البناء","خيار الشرط","فاتورة بيع عقار","نموذج إرادة شراء","نموذج عرض السعر","تعهد بتوفير مستند رخصة البناء في منتج البناء الذاتي"] ;
     let docsArr = [];
-    
+     
     templatesArray.map((template) => {
         docsArr.push(generateDocument(template, req.body.data));
       });
@@ -90,8 +89,7 @@ app.post("/generate_documents", (req, res) => {
   setTimeout(() => {
     deleteDocument(docsArr);
   }, 50000);
-
-  console.log(docsArr);
+   
   res.status(200).send({filenames:docsArr}); 
   }    
 }); 
