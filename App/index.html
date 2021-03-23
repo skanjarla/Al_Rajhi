@@ -759,14 +759,14 @@
                                 </div>
 
                                 <!-- Today's Date Hijri -->
-                                <div class="form-group col-md-6 col-lg-3 col-12 d-none">
+                                <!-- <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="todayDateHijri">تاريخ اليوم</label><span class="required mx-1">*</span>
 
-                                    <input type="text" autocomplete="off" class="form-control notranslate"
+                                    <input type="text" dir="ltr" autocomplete="off" class="form-control notranslate"
                                         id="todayDateHijri" name="today_date_hijri" placeholder="" />
 
                                     <span class="error" aria-live="polite"></span>
-                                </div>
+                                </div> -->
                                 <!-- 10 - Instrument History -->
 
                                 <div class="form-group col-md-6 col-lg-3 col-12">
@@ -1197,16 +1197,11 @@
             $("#todayDate")
                 .datepicker({ dateFormat: "yy-mm-dd" })
                 .datepicker("setDate", new Date());
-
-            $("#todayDateHijri").hijriDatePicker({ 
-                hijri: true,                                                                   
-            })
-            var h_day = new Intl.DateTimeFormat('ar-TN-u-ca-islamic',{day:'2-digit'}).format(Date.now());
-            var h_month = new Intl.DateTimeFormat('ar-TN-u-ca-islamic',{month:'2-digit'}).format(Date.now());
-            var h_year = new Intl.DateTimeFormat('ar-TN-u-ca-islamic',{year:'numeric'}).format(Date.now());
-            console.log(h_year+"-"+h_month+"-"+h_day)
+ 
             // const localeDateString = new Date().toLocaleDateString('ar-TN-u-ca-islamic', { day: '2-digit', month: '2-digit', year: 'numeric' })
-            $("#todayDateHijri").val(h_day+"-"+h_month+"-"+h_year);
+          
+            
+            // $("#todayDateHijri").val(h_year.replace(/[^0-9]/g,'').trim()+"-"+h_month.trim()+"-"+h_day.trim());
 
             $(".datepicker").hijriDatePicker({
                 hijri: true,
@@ -1550,12 +1545,22 @@
             }
 
             if (form.checkValidity() && token === captchaValue) {
+                // Todays date in Hijri format
+                var h_day = (new Intl.DateTimeFormat('ar-TN-u-ca-islamic',{day:'2-digit'}).format(Date.now())).replace(/[^0-9]/g,'');
+                var h_month = (new Intl.DateTimeFormat('ar-TN-u-ca-islamic',{month:'2-digit'}).format(Date.now())).replace(/[^0-9]/g,'');
+                var h_year = (new Intl.DateTimeFormat('ar-TN-u-ca-islamic',{year:'numeric'}).format(Date.now())).replace(/[^0-9]/g,'');                                            
+                 
                 var formData = new FormData(document.forms[0]);
                 var payload = {};
                 let arr = $(this).serializeArray();
+
                 for (var i = 0; i < arr.length; i++) {
                     payload[arr[i].name] = arr[i].value;
                 }
+
+                payload.h_day=h_day.trim();
+                payload.h_month=h_month.trim();
+                payload.h_year=h_year.trim();
 
                 function downloadDocumentIE(file_url, file_name) {
                     var xhr = new XMLHttpRequest();

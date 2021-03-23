@@ -75,14 +75,15 @@ function deleteDocument(docs) {
     });
 }
 
+                                             
 // Test path for the download file
-app.post("/generate_documents", (req, res) => {   
+app.post("/generate_documents", (req, res) => {
+  var h_date = req.body.data.h_year+"-"+req.body.data.h_month+"-"+req.body.data.h_day;   
   if(req.body && req.body.data){             
     let templatesArray = ["ارادة الشراء الحقيقي","أقرار معاينة عقار قابل للتأجير","إقرار معاينة","الإقرار الضريبي للمالك", "التعهد","تعهد والتزام بمراحل البناء","خيار الشرط","فاتورة بيع عقار","نموذج إرادة شراء","نموذج عرض السعر","التعهد بتوفير مستند رخصة البناء"] ;
-    let docsArr = [];
-     
+    let docsArr = [];     
     templatesArray.map((template) => {
-        docsArr.push(generateDocument(template, req.body.data));
+        docsArr.push(generateDocument(template,{...req.body.data,...{today_date_hijri:h_date}}));
       });
  
   //Delete generated documents after 50 seconds
