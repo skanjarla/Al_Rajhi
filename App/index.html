@@ -758,6 +758,15 @@
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
+                                <!-- Today's Date Hijri -->
+                                <div class="form-group col-md-6 col-lg-3 col-12 d-none">
+                                    <label for="todayDateHijri">تاريخ اليوم</label><span class="required mx-1">*</span>
+
+                                    <input type="text" autocomplete="off" class="form-control notranslate"
+                                        id="todayDateHijri" name="today_date_hijri" placeholder="" />
+
+                                    <span class="error" aria-live="polite"></span>
+                                </div>
                                 <!-- 10 - Instrument History -->
 
                                 <div class="form-group col-md-6 col-lg-3 col-12">
@@ -1189,8 +1198,15 @@
                 .datepicker({ dateFormat: "yy-mm-dd" })
                 .datepicker("setDate", new Date());
 
-            /* $("#todayDate")
-                .hijriDatePicker({ defalut: new Date() }) */
+            $("#todayDateHijri").hijriDatePicker({ 
+                hijri: true,                                                                   
+            })
+            var h_day = new Intl.DateTimeFormat('ar-TN-u-ca-islamic',{day:'2-digit'}).format(Date.now());
+            var h_month = new Intl.DateTimeFormat('ar-TN-u-ca-islamic',{month:'2-digit'}).format(Date.now());
+            var h_year = new Intl.DateTimeFormat('ar-TN-u-ca-islamic',{year:'numeric'}).format(Date.now());
+            console.log(h_year+"-"+h_month+"-"+h_day)
+            // const localeDateString = new Date().toLocaleDateString('ar-TN-u-ca-islamic', { day: '2-digit', month: '2-digit', year: 'numeric' })
+            $("#todayDateHijri").val(h_day+"-"+h_month+"-"+h_year);
 
             $(".datepicker").hijriDatePicker({
                 hijri: true,
