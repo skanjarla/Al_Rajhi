@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Al Rajhi</title>
+    <title>Al Rajhi - Mortgage Forms</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="stylesheet" href="./assets/css/jquery-ui.min.css" />
@@ -55,6 +55,7 @@
                                         name="customer_number" maxlength="10" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
+
                                 <!-- 3 Contract / Order Number -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="orderNumber">رقم العقد/رقم الطلب</label><span
@@ -72,6 +73,7 @@
                                         name="national_id_number" maxlength="10" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
+
                                 <!-- 5 - Home Phone -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="homePhone">هاتف المنزل</label>
@@ -150,8 +152,8 @@
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="officePhone">هاتف المكتب</label>
                                     <span class="required mx-1">*</span>
-                                    <input type="text" class="form-control" id="officePhone"
-                                        name="office_phone" maxlength="10" />
+                                    <input type="text" class="form-control" id="officePhone" name="office_phone"
+                                        maxlength="10" />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
 
@@ -313,7 +315,7 @@
                                 <!-- 4 - Type of property -->
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="typeOfProperty">نوع العقار</label>
-                                    <span class="required mx-1">*</span> 
+                                    <span class="required mx-1">*</span>
                                     <select class="custom-select form-control" id="descriptionItem"
                                         name="description_item">
                                         <option value="شقة" dir="rtl">شقة</option>
@@ -333,7 +335,7 @@
                                         maxlength="100" required />
                                     <span class="error" aria-live="polite"></span>
                                 </div>
-     
+
                                 <div class="form-group col-md-6 col-lg-3 col-12">
                                     <label for="landArea">مساحة الأرض الإجمالية</label>
                                     <span class="required mx-1">*</span>
@@ -498,8 +500,8 @@
                             <div class="form-row">
                                 <!-- 38 - Total Amount Excluding VAT -->
                                 <div class="form-group col-md-6 col-lg-4 col-12">
-                                    <label for="totalNoVat"> مبلغ العقار بدون ضريبة القيمة المضافة بالريال السعودي</label><span
-                                        class="required mx-1">*</span>
+                                    <label for="totalNoVat"> مبلغ العقار بدون ضريبة القيمة المضافة بالريال
+                                        السعودي</label><span class="required mx-1">*</span>
                                     <input type="text" class="form-control number" id="totalNoVat" maxlength="100"
                                         name="total_excluding_vat" required />
                                     <span class="error" aria-live="polite"></span>
@@ -724,7 +726,7 @@
 
                                     <span class="error" aria-live="polite"></span>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1176,16 +1178,16 @@
         // Datepicker
         $(function () {
             // date picker
-             $("#todayDate").datepicker({
-                 isRTL: true,
-                 prevText: "",
-                 nextText: "",
-                 dateFormat: "yy-mm-dd",
-             });
+            $("#todayDate").datepicker({
+                isRTL: true,
+                prevText: "",
+                nextText: "",
+                dateFormat: "yy-mm-dd",
+            });
             // // Today's date by default
-             $("#todayDate")
-                 .datepicker({ dateFormat: "yy-mm-dd" })
-                 .datepicker("setDate", new Date());
+            $("#todayDate")
+                .datepicker({ dateFormat: "yy-mm-dd" })
+                .datepicker("setDate", new Date());
 
             /* $("#todayDate")
                 .hijriDatePicker({ defalut: new Date() }) */
@@ -1269,7 +1271,7 @@
                     inputError.textContent = "يرجى ملء هذا الحقل";
                 }
 
-            } else if (input.validity.typeMismatch) { 
+            } else if (input.validity.typeMismatch) {
                 inputError.textContent = "قيمة إدخال غير صالحة";
             }
             inputError.className = "error active";
@@ -1286,7 +1288,7 @@
                 }
             });
         });
- 
+
         // Toggle check boxes for The opinion of the direct employee to contract
         $("#notAppear").change(function () {
             if ($("#foundOut").is(":checked")) {
@@ -1539,14 +1541,6 @@
                     payload[arr[i].name] = arr[i].value;
                 }
 
-                function pause(msec) {
-                    return new Promise(
-                    function(resolve, reject) {
-                    setTimeout(resolve, msec || 1000);
-                     }
-                    );
-                }
-                 
                 function downloadDocumentIE(file_url, file_name) {
                     var xhr = new XMLHttpRequest();
                     xhr.open("GET", file_url, true);
@@ -1566,45 +1560,65 @@
                     };
                     xhr.send();
                 }
+
+                var tempLink = document.createElement('a');
+                document.body.appendChild(tempLink);
+
+                function downloadMultipleFiles(fileUrls) {
+                    setTimeout(function () {
+                        var fileIndex = fileUrls.length * 1 - 1 * 1;
+                        var fileUrl = fileUrls[fileIndex];
+
+                        var file_url = window.location.href + "MortgageReports/" + fileUrls[fileIndex] + ".docx";
+                        var file_name = fileUrls[fileIndex] + ".docx";
+
+                        tempLink.setAttribute('href', file_url);
+                        tempLink.setAttribute('download', file_name);
+                        tempLink.click();
+
+                        if (fileIndex > -1) {
+                            fileUrls.splice(fileIndex, 1);
+                        }
+
+                        if (fileUrls.length > 0) {
+                            downloadMultipleFiles(fileUrls);
+                        } else {
+                            document.body.removeChild(tempLink);
+                        }
+
+                    }, 200);
+                }
+
                 $.ajax({
                     type: "POST",
                     url: "/generate_documents",
                     data: JSON.stringify({ data: payload, }),
-                    success: function (outputDocuments) {                     
+                    success: function (outputDocuments) {
                         if (outputDocuments.filenames.length !== 0) {
-                            for (var i = 0; i < outputDocuments.filenames.length; i++) {                                
-                                var file_url = window.location.href + "/MortgageReports/" + outputDocuments.filenames[i] + ".docx";
-                                var file_name = outputDocuments.filenames[i] + ".docx";
-                                // for IE broser
-                                if (navigator.msSaveBlob) {
+                            if (navigator.msSaveBlob) {
+                                for (var i = 0; i < outputDocuments.filenames.length; i++) {
+                                    var file_url = window.location.href + "MortgageReports/" + outputDocuments.filenames[i] + ".docx";
+                                    var file_name = outputDocuments.filenames[i] + ".docx";
+                                    // for IE broser                                     
                                     downloadDocumentIE(file_url, file_name);
-                                } else {
-                                    var count =0;                                
-                                    var link = document.createElement("a");
-                                    link.href = window.location.href + "/MortgageReports/" + outputDocuments.filenames[i] + ".docx";
-                                    link.setAttribute("download", outputDocuments.filenames[i]);
-                                    document.body.appendChild(link);
-                                    link.click();                                      
-                                     if (++count >= 9) {
-                                        pause(1000);
-                                        count = 0;                                                                        
-                                    }                                                                                                            
                                 }
+                            } else {
+                                downloadMultipleFiles(outputDocuments.filenames);
                             }
-                            $("#thankModal").modal();
-                            document.getElementById("appForm").reset();
-                            $(".spinner-border").toggle();
-                            $(".app-btn").prop("disabled", true);
-                            generateCaptcha();
-                            document.getElementById("notesList").classList.add("d-none");
-                            document.getElementById("realOtherText").classList.add("d-none");
                         }
+                        $("#thankModal").modal();
+                        document.getElementById("appForm").reset();
+                        $(".spinner-border").toggle();
+                        $(".app-btn").prop("disabled", true);
+                        generateCaptcha();
+                        document.getElementById("notesList").classList.add("d-none");
+                        document.getElementById("realOtherText").classList.add("d-none");
                     },
                     contentType: "application/json",
                     dataType: "json",
                 });
             }
-        }); 
+        });
     </script>
 </body>
 
