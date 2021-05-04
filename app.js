@@ -6,7 +6,8 @@ const PizZip = require("pizzip");
 const Docxtemplater = require("docxtemplater"); 
 const cors = require("cors"); 
 
-const port = process.env.PORT || 8080; 
+const port = process.env.PORT || 5000; 
+
 app.use(express.static("App"));
 app.use(express.json());
 app.use(cors());
@@ -94,6 +95,7 @@ app.post("/generate_documents", (req, res) => {
   res.status(200).send({filenames:docsArr}); 
   }    
 }); 
+
 app.listen(port, () => {
   console.log(`application running at port : ${port}`);
 });
