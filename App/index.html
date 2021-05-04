@@ -1590,7 +1590,7 @@
                         var fileIndex = fileUrls.length * 1 - 1 * 1;
                         var fileUrl = fileUrls[fileIndex];
 
-                        var file_url = window.location.href + "MortgageReports/" + fileUrls[fileIndex] + ".docx";
+                        var file_url = window.location.href.replace(/\/+$/, '') + "/MortgageReports/" + fileUrls[fileIndex] + ".docx";
                         var file_name = fileUrls[fileIndex] + ".docx";
 
                         tempLink.setAttribute('href', file_url);
@@ -1618,7 +1618,7 @@
                         if (outputDocuments.filenames.length !== 0) {
                             if (navigator.msSaveBlob) {
                                 for (var i = 0; i < outputDocuments.filenames.length; i++) {
-                                    var file_url = window.location.href + "MortgageReports/" + outputDocuments.filenames[i] + ".docx";
+                                    var file_url = window.location.href.replace(/\/+$/, '') + "/MortgageReports/" + outputDocuments.filenames[i] + ".docx";
                                     var file_name = outputDocuments.filenames[i] + ".docx";
                                     // for IE broser                                     
                                     downloadDocumentIE(file_url, file_name);
