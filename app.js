@@ -1,4 +1,4 @@
-const express = require("express");
+﻿const express = require("express");
 const app = express();
 const fs = require("fs");
 const path = require("path");
@@ -7,6 +7,7 @@ const Docxtemplater = require("docxtemplater");
 const cors = require("cors"); 
 
 const port = process.env.PORT || 8080; 
+// const port = 8082; 
 
 app.use(express.static("App"));
 app.use(express.json());
@@ -60,7 +61,7 @@ function generateDocument(inputTemplateFilename, payload) {
   }
   var buf = doc.getZip().generate({ type: "nodebuffer" });   
   // buf is a nodejs buffer, you can either write it to a file or do anything else with it.
-  fs.writeFileSync(path.resolve(__dirname, `App/MortgageReports/${outputFileName}.docx`),buf);   
+  fs.writeFileSync(path.resolve(__dirname, `App/morgreports/${outputFileName}.docx`),buf);   
   return outputFileName;
 }
 
@@ -68,7 +69,7 @@ function generateDocument(inputTemplateFilename, payload) {
 function deleteDocument(docs) {         
     docs.map((doc) => {
       // console.log(doc);
-      fs.unlink((__dirname, `App/MortgageReports/${doc}.docx`), (err) => {
+      fs.unlink((__dirname, `App/morgreports/${doc}.docx`), (err) => {
         if (err) {
           throw err;
         }
@@ -81,7 +82,7 @@ function deleteDocument(docs) {
 app.post("/generate_documents", (req, res) => {
   var h_date = req.body.data.h_year+"-"+req.body.data.h_month+"-"+req.body.data.h_day;   
   if(req.body && req.body.data){             
-    let templatesArray = ["ارادة الشراء الحقيقي","أقرار معاينة عقار قابل للتأجير","إقرار معاينة","الإقرار الضريبي للمالك", "التعهد","تعهد والتزام بمراحل البناء","خيار الشرط","فاتورة بيع عقار","نموذج إرادة شراء","نموذج عرض السعر","التعهد بتوفير مستند رخصة البناء"] ;
+    let templatesArray = ["ارادة الشراء الحقيقي","أقرار معاينة عقار قابل للتأجير","إقرار معاينة","الإقرار الضريبي للمالك", "التعهد","تعهد والتزام بمراحل البناء","خيار الشرط","فاتورة بيع عقار","نموذج إرادة شراء","نموذج عرض السعر","التعهد بتوفير مستند رخصة البناء","نموذج الشراء للعميل"] ;
     let docsArr = [];     
     templatesArray.map((template) => {
         docsArr.push(generateDocument(template,{...req.body.data,...{today_date_hijri:h_date}}));
@@ -95,7 +96,6 @@ app.post("/generate_documents", (req, res) => {
   res.status(200).send({filenames:docsArr}); 
   }    
 }); 
-
 app.listen(port, () => {
   console.log(`application running at port : ${port}`);
 });
